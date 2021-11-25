@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         //meow
         //wong
         //edit on git
+        //test with sean
         setContentView(R.layout.activity_main);
     }
 }
