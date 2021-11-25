@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         //hello;
         //meow
         //wong
+        //commit to another branch
         setContentView(R.layout.activity_main);
     }
 }
