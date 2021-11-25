@@ -9,9 +9,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //hello;
-        //meow
-        //wong
         setContentView(R.layout.activity_main);
     }
 }
