@@ -2,4 +2,9 @@
     <string name="app_name">CSCB_Project</string>
     <string name="button_Login">Login</string>
     <string name="button_SignUp">Sign Up</string>
+    <string name="button_Signout">Sign out</string>
+    <string name="textview_price">Price</string>
+    <string name="textview_brand">Brand</string>
+    <string name="button_work_on_it">Work on it</string>
+    <string name="button_complete">Complete</string>
 </resources>
