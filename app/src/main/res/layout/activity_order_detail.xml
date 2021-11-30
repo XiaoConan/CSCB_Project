@@ -21,9 +21,10 @@
         android:id="@+id/textView6"
         android:layout_width="232dp"
         android:layout_height="260dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="80dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -31,7 +32,7 @@
         android:id="@+id/button9"
         android:layout_width="106dp"
         android:layout_height="33dp"
-        android:text="Button"
+        android:text="@string/button_complete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="505dp" />

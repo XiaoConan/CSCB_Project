@@ -8,12 +8,15 @@
     <string name="button_work_on_it">Work on it</string>
     <string name="button_complete">Complete</string>
     <string name="button_go_shop">Go shop</string>
-    <string name="button_cart">Cart</string>
-    <string name="button_add_to_order">Add to order</string>
     <string name="button_submit">Submit</string>
     <string name="button_products">Products</string>
     <string name="button_orders">Orders</string>
     <string name="button_back">Back</string>
-    <string name="textview_quaility">Quaility</string>
     <string name="textview_total_price">Total price</string>
+    <string name="textview_Quantity">Quantity</string>
+    <string name="button_MyCart">My Cart</string>
+    <string name="textview_Bmazon">Bmazon</string>
+    <string name="EditText_Username">Enter Your Username</string>
+    <string name="EditText_Password">Enter Your Password</string>
+    <string name="button_AddToCart">Add to Cart</string>
 </resources>
