@@ -11,4 +11,9 @@
     <string name="button_cart">Cart</string>
     <string name="button_add_to_order">Add to order</string>
     <string name="button_submit">Submit</string>
+    <string name="button_products">Products</string>
+    <string name="button_orders">Orders</string>
+    <string name="button_back">Back</string>
+    <string name="textview_quaility">Quaility</string>
+    <string name="textview_total_price">Total price</string>
 </resources>
