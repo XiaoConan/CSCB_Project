@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB_Project">
         <activity
+            android:name=".OrderDetail"
+            android:exported="false" />
+        <activity
+            android:name=".OwnerOrdersPage"
+            android:exported="false" />
+        <activity
+            android:name=".OwnerProductPage"
+            android:exported="false" />
+        <activity
+            android:name=".StoreOwnerPage"
+            android:exported="false" />
+        <activity
             android:name=".SignUpPage"
             android:exported="false" />
         <activity
