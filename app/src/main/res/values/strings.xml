@@ -10,4 +10,5 @@
     <string name="button_go_shop">Go shop</string>
     <string name="button_cart">Cart</string>
     <string name="button_add_to_order">Add to order</string>
+    <string name="button_submit">Submit</string>
 </resources>
