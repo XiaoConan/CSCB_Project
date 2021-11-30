@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB_Project">
         <activity
+            android:name=".CartPage"
+            android:exported="false" />
+        <activity
+            android:name=".ShoppingStore"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerPage"
+            android:exported="false" />
+        <activity
             android:name=".SignUpPage"
             android:exported="false" />
         <activity
             android:name=".LoginPage"
-            android:exported="false" />
-        <activity
-            android:name=".UserPage"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
