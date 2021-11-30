@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
         android:autoText="false"
-        android:text="@string/button_Login1"
+        android:text="@string/button_Login"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="162dp" />
 
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="156dp"
-        android:text="@string/button_SignUp1"
+        android:text="@string/button_SignUp"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="245dp" />
 

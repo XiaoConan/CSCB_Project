@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">CSCB_Project</string>
-    <string name="button_Login1">Login</string>
-    <string name="button_SignUp1">Sign Up</string>
+    <string name="button_Login">Login</string>
+    <string name="button_SignUp">Sign Up</string>
 </resources>
