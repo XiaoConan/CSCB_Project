@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB_Project">
         <activity
+            android:name=".DisplaySuccessfulMessage"
+            android:exported="false" />
+        <activity
             android:name=".CartPage"
             android:exported="false" />
         <activity

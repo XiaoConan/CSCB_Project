@@ -19,4 +19,5 @@
     <string name="EditText_Username">Enter Your Username</string>
     <string name="EditText_Password">Enter Your Password</string>
     <string name="button_AddToCart">Add to Cart</string>
+    <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
 </resources>
