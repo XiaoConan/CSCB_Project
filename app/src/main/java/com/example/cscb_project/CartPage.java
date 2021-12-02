@@ -15,8 +15,6 @@ public class CartPage extends AppCompatActivity {
     }
 
     public void sentOrder(View view){
-        Intent intent = new Intent(this, DisplaySuccessfulMessage.class);
-
-        startActivity(intent);
+       Intent intent = getIntent();
     }
 }
