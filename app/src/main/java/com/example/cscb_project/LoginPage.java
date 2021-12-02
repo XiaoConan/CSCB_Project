@@ -32,30 +32,36 @@ public class LoginPage extends AppCompatActivity {
             if (MainActivity.owners.contains(owner) == false) { //CHECK if firebase contains the username
                 check.setText("User not found");
             }
-            else if () { //Check if the password matches the username
-
-            }
-            else { //If all conditions satisfied
-                intent = new Intent(this, CustomerPage.class);
-                startActivity(intent);
+            else {
+                int index = MainActivity.owners.indexOf(owner);
+                OwnerAccount current = MainActivity.owners.get(index);
+                if (current.getPassword() != password) { //Check if the password matches the username
+                    check.setText("Incorrect Password");
+                }
+                else { //If all conditions satisfied
+                    Intent intent2 = new Intent(this, StoreOwnerPage.class);
+                    startActivity(intent);
+                }
             }
         }
         else {
+            CustomerAccount customer = new CustomerAccount(username, password);
             if (MainActivity.customers.contains(username)) { //CHECK if firebase contains the username
-
+                check.setText("User not found");
             }
-            else if () { //Check if the password matches the username
-
-            }
-            else { //If all conditions satisfied
-                intent = new Intent(this, CustomerPage.class);
-                startActivity(intent);
+            else {
+                int index = MainActivity.customers.indexOf(customer);
+                CustomerAccount current = MainActivity.customers.get(index);
+                if (current.getPassword() != password) { //Check if the password matches the username
+                    check.setText("Incorrect Password");
+                }
+                else { //If all conditions satisfied
+                    Intent intent2 = new Intent(this, CustomerPage.class);
+                    startActivity(intent);
+                }
             }
 
         }
-
-    }
-    public void checkUsername() {
 
     }
 }
