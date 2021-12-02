@@ -19,4 +19,8 @@
     <string name="EditText_Username">Enter Your Username</string>
     <string name="EditText_Password">Enter Your Password</string>
     <string name="button_AddToCart">Add to Cart</string>
+    <string-array name="main_spinner_values">
+        <item>Store Owner</item>
+        <item>Customer</item>
+    </string-array>
 </resources>
