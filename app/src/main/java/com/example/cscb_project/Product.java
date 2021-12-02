@@ -6,18 +6,25 @@ public class Product {
     private String name;
     private double price;
     private String brand;
+    private Store store;
 
     public Product() {
         name = "";
         price = 0;
         brand = "";
+        store = null;
     }
 
-    public Product(String name, double price, String brand) {
+    public Product(String name, double price, String brand, Store store) {
         this.name = name;
         this.price = price;
         this.brand = brand;
+        this.store = store;
     }
+
+    public Store getStore() { return store; }
+
+    public void setStore(Store store) { this.store = store; }
 
     public double getPrice() {
         return price;

@@ -8,8 +8,6 @@ import android.view.View;
 
 public class CartPage extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
