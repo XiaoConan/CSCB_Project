@@ -5,16 +5,12 @@ import java.util.ArrayList;
 public class Store {
     private ArrayList<OrderList> orderLists;
     private ArrayList<Product> products;
-    private ArrayList<UserAccount> Users;
 
-    /*missing constructor
-    *
-    *
-    *
-    *
-    *
-    *
-    * */
+    public Store(){
+        this.orderLists = new ArrayList<OrderList>();
+        this.products = new ArrayList<Product>();
+    }
+
 
     public ArrayList<OrderList> getOrderLists() {
         return orderLists;
@@ -32,11 +28,4 @@ public class Store {
         this.products = products;
     }
 
-    public ArrayList<UserAccount> getUsers() {
-        return Users;
-    }
-
-    public void setUsers(ArrayList<UserAccount> users) {
-        Users = users;
-    }
 }
