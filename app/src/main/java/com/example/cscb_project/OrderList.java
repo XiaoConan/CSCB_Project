@@ -25,6 +25,11 @@ public class OrderList {
         complete = false;
     }
 
+    public OrderList(ArrayList<Order> orders) {
+        this.orders = orders;
+        complete = false;
+    }
+
     public void addOrder(Order order) {
         // Simplest way to do this
         // Maybe can change how OrderList works if we want it to better
