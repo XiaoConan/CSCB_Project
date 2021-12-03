@@ -11,7 +11,6 @@ public class Store {
         this.products = new ArrayList<Product>();
     }
 
-
     public ArrayList<OrderList> getOrderLists() {
         return orderLists;
     }
@@ -27,5 +26,7 @@ public class Store {
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
+
+    public void addProduct(Product product){ products.add(product); }
 
 }

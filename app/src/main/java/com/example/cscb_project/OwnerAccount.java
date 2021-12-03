@@ -3,22 +3,31 @@ package com.example.cscb_project;
 import java.util.ArrayList;
 
 public class OwnerAccount extends UserAccount {
-    private ArrayList<Product> products;
-    private ArrayList<OrderList> orders;
     private Store store;
 
     public OwnerAccount() {
         super();
-        products = new ArrayList<Product>();
-        orders = new ArrayList<OrderList>();
         store = new Store();
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
     }
 
     public OwnerAccount(String username, String password) {
         super(username, password);
-        products = new ArrayList<Product>();
-        orders = new ArrayList<OrderList>();
         store = new Store();
     }
 
+    public void addProduct(String name, String brand, double price ){
+        store.addProduct(new Product(name, price, brand, store));
+    }
+
+    public void CompleteOrder(OrderList order){
+        order.setComplete();
+    }
 }
