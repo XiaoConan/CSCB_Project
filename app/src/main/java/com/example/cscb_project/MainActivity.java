@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,16 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Read from Firebase
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-        ValueEventListener valueEventListener = new ValueEventListener() {
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                (DataSnapshot ds:snapshot.getChildren()) {
-                    TextView textView = findViewById(R.id.textView);
-                    textView.setText(message);
+            public void onDataChange(DataSnapshot snapshot) {
+                String value = snapshot.getValue(String.class);
+                TextView textView = findViewById(R.id.textView);
+                textView.setText(value);
                 }
             }
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError error) {
                 Log.w("warning", "loadPost:onCancelled", error.toException());
             }
         };
