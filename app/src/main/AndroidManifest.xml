@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB_Project">
         <activity
+            android:name=".StoreList"
+            android:exported="false" />
+        <activity
+            android:name=".SentToCartSuccessfully"
+            android:exported="false" />
+        <activity
             android:name=".DisplaySuccessfulMessage"
             android:exported="false" />
         <activity
