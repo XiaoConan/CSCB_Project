@@ -16,10 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<OwnerAccount> owners;
-    public static ArrayList<CustomerAccount> customers;
-    public DatabaseReference ownerData;
-    public DatabaseReference customerData;
+    public static ArrayList<UserAccount> users;
+    public DatabaseReference data;
     public static final String EXTRA_MESSAGE = "";
 
     @Override
@@ -27,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Read from Firebase
-        ownerData = FirebaseDatabase.getInstance().getReference("OwnerAccounts");
-        ValueEventListener listener1 = new ValueEventListener() {
+        data = FirebaseDatabase.getInstance().getReference();
+        ValueEventListener listener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot child:dataSnapshot.getChildren()) {
-                    owners.add(child.getValue(OwnerAccount.class));
+                    users.add(child.getValue(UserAccount.class));
                 }
             }
             @Override
@@ -41,22 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         databaseError.toException());
             }
         };
-        ownerData.addValueEventListener(listener1);
-        customerData = FirebaseDatabase.getInstance().getReference("CustomerAccounts");
-        ValueEventListener listener2 = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot child:dataSnapshot.getChildren()) {
-                    customers.add(child.getValue(CustomerAccount.class));
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w("warning", "loadPost:onCancelled",
-                        databaseError.toException());
-            }
-        };
-        customerData.addValueEventListener(listener2);
+        data.addValueEventListener(listener);
     }
 
     public void goToLogin() {
