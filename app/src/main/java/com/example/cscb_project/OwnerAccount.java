@@ -1,8 +1,9 @@
 package com.example.cscb_project;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class OwnerAccount extends UserAccount {
+public class OwnerAccount extends UserAccount implements Serializable{
     private Store store;
 
     public OwnerAccount() {

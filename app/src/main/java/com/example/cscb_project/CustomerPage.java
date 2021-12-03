@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class CustomerPage extends AppCompatActivity {
+    public static final String MY_ACCOUNT = "com.example.cscb_project.CURRENTACCOUNT";
     CustomerAccount myAccount;
 
     @Override
@@ -14,7 +15,7 @@ public class CustomerPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_page);
         Intent intent = getIntent();
-        myAccount = (CustomerAccount) intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+        CustomerAccount customer = (CustomerAccount)intent.getSerializableExtra("customer");
     }
 
     /** Called when the user taps the Go shop button */

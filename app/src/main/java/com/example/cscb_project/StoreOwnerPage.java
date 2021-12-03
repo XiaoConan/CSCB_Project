@@ -13,6 +13,8 @@ public class StoreOwnerPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_owner_page);
         // receive info from intent??
+        Intent intent = getIntent();
+        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra("owner");
     }
 
     /** Called when the user taps the View Products button */
