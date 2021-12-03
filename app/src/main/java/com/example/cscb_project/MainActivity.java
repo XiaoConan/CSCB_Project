@@ -27,34 +27,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Write Random info to Firebase
-        FirebaseDatabase data = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = data.getReference("Users");
-        myRef.child("username").setValue("password");
-        myRef = data.getReference("Stores");
-        myRef.child("store").setValue("s");
-        myRef = data.getReference("Products");
-        myRef.child("product").setValue("p");
-        myRef = data.getReference("Orders");
-        myRef.child("order").setValue("o");
-        //asdasdad
+//        FirebaseDatabase data = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = data.getReference("Users");
+//        myRef.child("username").setValue("password");
+//        myRef = data.getReference("Stores");
+//        myRef.child("store").setValue("s");
+//        myRef = data.getReference("Products");
+//        myRef.child("product").setValue("p");
+//        myRef = data.getReference("Orders");
+//        myRef.child("order").setValue("o");
+//        //asdasdad
 
 
 
         //Read from Firebase
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
-                TextView textView = findViewById(R.id.textView);
-                textView.setText(value);
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError error) {
-                Log.w("warning", "loadPost:onCancelled", error.toException());
-            }
-        };
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users/username");
+//        ref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                String value = snapshot.getValue(String.class);
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                Log.w("warning", "loadPost:onCancelled", error.toException());
+//            }
+//        });
     }
 
     public void goToLogin() {
