@@ -1,8 +1,19 @@
 <resources>
-    <string name="app_name">CSCB_Project</string>
+    <!-- Strings used for fragments of Signing up(Sunny added these) -->
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <string name="button_Login">Login</string>
     <string name="button_SignUp">Sign Up</string>
     <string name="button_Signout">Sign out</string>
+    <string name="textview_productName">Product name</string>
     <string name="textview_price">Price</string>
     <string name="textview_brand">Brand</string>
     <string name="button_work_on_it">Work on it</string>
@@ -27,4 +38,8 @@
     </string-array>
     <string name="owner_orders_message">Pending Orders</string>
     <string name="welcome_message">Welcome</string>
+    <string name="button_Confirm">Confirm</string>
+    <string name="textview_EnterProductName">Enter The Product Name</string>
+    <string name="textview_EnterPrice">Enter The Price For This Product</string>
+    <string name="textview_EnterBrand">Enter The Brand Of This Product</string>
 </resources>

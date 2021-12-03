@@ -15,6 +15,7 @@ public class OrderList {
     }
 
     public OrderList(String name) {
+        orders = new ArrayList<Order>();
         this.name = name;
         complete = false;
     }

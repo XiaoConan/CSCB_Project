@@ -6,6 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".OwnerProductPage">
 
+    <EditText
+        android:id="@+id/editTextTextProductPrice"
+        android:layout_width="200dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/textview_EnterPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <EditText
+        android:id="@+id/editTextTextProductName"
+        android:layout_width="200dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/textview_EnterProductName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <EditText
+        android:id="@+id/editTextTextProductBrand"
+        android:layout_width="200dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/textview_EnterBrand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/textview_brand"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:text="@string/textview_productName"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/textview_price"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:layout_editor_absoluteX="31dp" />
+
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="409dp"
@@ -14,51 +79,23 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="51dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="135dp"
-        android:layout_height="24dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="154dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="134dp"
-        android:layout_height="26dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="252dp" />
-
     <Button
         android:id="@+id/button6"
         android:layout_width="66dp"
         android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/button_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <Button
+        android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textview_price"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="155dp" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:text="@string/textview_brand"
+        android:text="@string/button_Confirm"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="259dp" />
+        tools:layout_editor_absoluteY="458dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
