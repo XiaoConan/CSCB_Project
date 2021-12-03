@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 
 public class CustomerPage extends AppCompatActivity {
+    public static final String MY_ACCOUNT = "com.example.cscb_project.CURRENTACCOUNT";
+    CustomerAccount myAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_page);
+        Intent intent = getIntent();
+        myAccount = (CustomerAccount) intent.getSerializableExtra(MY_ACCOUNT);
     }
 
     /** Called when the user taps the Go shop button */
