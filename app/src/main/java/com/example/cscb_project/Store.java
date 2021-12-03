@@ -29,4 +29,6 @@ public class Store {
 
     public void addProduct(Product product){ products.add(product); }
 
+    public void receiveOrder(OrderList newOrder){orderLists.add(newOrder); }
+
 }

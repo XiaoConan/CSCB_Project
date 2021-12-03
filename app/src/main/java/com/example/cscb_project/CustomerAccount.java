@@ -24,6 +24,22 @@ public class CustomerAccount extends UserAccount implements Serializable{
         cart = new ArrayList<Order>();
     }
 
+    public ArrayList<OrderList> getOrders() {
+        return orders;
+    }
+
+    public ArrayList<Order> getCart() {
+        return cart;
+    }
+
+    public void setCart(ArrayList<Order> cart) {
+        this.cart = cart;
+    }
+
+    public void setOrders(ArrayList<OrderList> orders) {
+        this.orders = orders;
+    }
+
     public void addProduct(Product product, int amount){
         cart.add(new Order(product, amount));
     }

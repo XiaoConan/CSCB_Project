@@ -18,7 +18,7 @@ public class CartPage extends AppCompatActivity {
     }
 
     public void sentOrder(View view){
-
-
+        myAccount.getCart().get(0).getProduct().getStore().receiveOrder(new OrderList(myAccount.getCart()));
+        myAccount.sendOrder();
     }
 }
