@@ -53,10 +53,10 @@ public class OwnerProductPage extends AppCompatActivity {
                 }
 
                 //Spinner areaSpinner = (Spinner) findViewById(R.id.spinner);
-                ArrayAdapter<String> areasAdapter = new ArrayAdapter<String>(UAdminActivity.this, android.R.layout.simple_spinner_item, areas);
-                areasAdapter.add("Add Product"); //first choice.
-                areasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner.setAdapter(areasAdapter);
+                //ArrayAdapter<String> areasAdapter = new ArrayAdapter<String>(UAdminActivity.this, android.R.layout.simple_spinner_item, areas);
+                //areasAdapter.add("Add Product"); //first choice.
+                //areasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                //spinner.setAdapter(areasAdapter);
             }
 
             @Override
@@ -68,7 +68,7 @@ public class OwnerProductPage extends AppCompatActivity {
 
         // I need a loop to keep checking new products if the user switches the spinner.
         //**and remember to change this condition.**
-        while(false){
+        /*while(false){
             // if the spinner is not on "Add Product", display the info of the product
             Product product = ref.child("products").child(spinnerVal).getValue();
             // ok, assuming I have retrieved productN
@@ -86,7 +86,7 @@ public class OwnerProductPage extends AppCompatActivity {
                 productPrice.setText("");
                 productBrand.setText("");
             }
-        }
+        }*/
     }
 
     public void updateProduct(View view){

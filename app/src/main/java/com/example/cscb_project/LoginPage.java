@@ -17,7 +17,7 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
 
     }
-    public void login() {
+    /*public void login() {
         Intent intent = getIntent();
         String status = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         EditText un = (EditText) findViewById(R.id.editTextTextPersonName3);
@@ -68,5 +68,5 @@ public class LoginPage extends AppCompatActivity {
 
         }
 
-    }
+    }*/
 }

@@ -30,7 +30,7 @@ public class SignUpPage extends AppCompatActivity {
         textView.setText(s);
     }
 
-    public void signUp(View view){
+    /*public void signUp(View view){
         // This correspond to the actions of the button
         // Checks if the username & password are valid
         // if valid: complete the action of signing up, then directed to the user's page
@@ -90,7 +90,7 @@ public class SignUpPage extends AppCompatActivity {
             intent2 = new Intent(this, CustomerPage.class);
         }
         startActivity(intent2);
-    }
+    }*/
 
     public void returnToMain(View view){
         // Maybe we don't need this?? because there is a back button at the top.
