@@ -3,15 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_login_page.xml" value="0.4" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_login_user.xml" value="0.264" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_owner_orders_page.xml" value="0.4" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_owner_product_page.xml" value="0.4" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_sign_up_page.xml" value="0.4" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_owner_page.xml" value="0.4" />
-        <entry key="..\:/Users/JHLSunny/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_user_page.xml" value="0.4" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_order_detail.xml" value="0.749534450651769" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_cart_page.xml" value="0.6" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_customer_page.xml" value="0.536" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_login_page.xml" value="0.4" />
@@ -26,6 +17,7 @@
         <entry key="app/src/main/res/layout/activity_customer_page.xml" value="0.26744128941444517" />
         <entry key="app/src/main/res/layout/activity_display_successful_message.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/activity_sent_to_cart_successfully.xml" value="0.23462297647997113" />
+        <entry key="app/src/main/res/layout/activity_shopping_store.xml" value="0.5688259582251681" />
       </map>
     </option>
   </component>
