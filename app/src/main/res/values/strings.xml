@@ -9,8 +9,8 @@
     <string name="button_complete">Complete</string>
     <string name="button_go_shop">Go shop</string>
     <string name="button_submit">Submit</string>
-    <string name="button_products">Products</string>
-    <string name="button_orders">Orders</string>
+    <string name="button_products">View Your Products</string>
+    <string name="button_orders">View Your Orders</string>
     <string name="button_back">Back</string>
     <string name="textview_total_price">Total price</string>
     <string name="textview_Quantity">Quantity</string>
@@ -24,4 +24,6 @@
         <item>Store Owner</item>
         <item>Customer</item>
     </string-array>
+    <string name="owner_orders_message">Pending Orders</string>
+    <string name="welcome_message">Welcome</string>
 </resources>
