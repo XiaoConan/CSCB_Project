@@ -1,8 +1,9 @@
 package com.example.cscb_project;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class UserAccount {
+public abstract class UserAccount implements Serializable {
     private String username;
     private String password;
 

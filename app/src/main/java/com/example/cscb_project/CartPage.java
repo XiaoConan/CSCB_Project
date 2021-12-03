@@ -7,14 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 
 public class CartPage extends AppCompatActivity {
+    CustomerAccount myAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_page);
+        Intent intent = getIntent();
+        myAccount = (CustomerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
     }
 
     public void sentOrder(View view){
-        Intent intent = getIntent();
+
+
     }
 }
