@@ -24,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Write Random info to Firebase
+        data = FirebaseDatabase.getInstance().getReference();
+        data.child("Users");
+        data.child("Products");
+        data.child("orders");
+        data.child("stores");
+
+
         //Read from Firebase
         data = FirebaseDatabase.getInstance().getReference();
         ValueEventListener listener = new ValueEventListener() {
