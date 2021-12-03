@@ -1,5 +1,6 @@
 package com.example.cscb_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<UserAccount> users;
-    public DatabaseReference data;
+    FirebaseDatabase data;
     public static final String EXTRA_MESSAGE = "";
 
     @Override
@@ -25,29 +26,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Write Random info to Firebase
-        data = FirebaseDatabase.getInstance().getReference();
-        data.child("Users");
-        data.child("Products");
-        data.child("orders");
-        data.child("stores");
+        FirebaseDatabase data = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = data.getReference("Users");
+        myRef.child("username").setValue("password");
+        myRef = data.getReference("Stores");
+        myRef.child("store").setValue("s");
+        myRef = data.getReference("Products");
+        myRef.child("product").setValue("p");
+        myRef = data.getReference("Orders");
+        myRef.child("order").setValue("o");
+
 
 
         //Read from Firebase
-        data = FirebaseDatabase.getInstance().getReference();
-        ValueEventListener listener = new ValueEventListener() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot child:dataSnapshot.getChildren()) {
-                    users.add(child.getValue(UserAccount.class));
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                (DataSnapshot ds:snapshot.getChildren()) {
+                    TextView textView = findViewById(R.id.textView);
+                    textView.setText(message);
                 }
             }
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w("warning", "loadPost:onCancelled",
-                        databaseError.toException());
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("warning", "loadPost:onCancelled", error.toException());
             }
         };
-        data.addValueEventListener(listener);
     }
 
     public void goToLogin() {

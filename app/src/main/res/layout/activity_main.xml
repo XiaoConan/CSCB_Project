@@ -36,22 +36,24 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="75dp"
-        android:layout_height="27dp"
+        android:layout_width="124dp"
+        android:layout_height="41dp"
         android:layout_marginTop="36dp"
         android:text="@string/textview_Bmazon"
+        android:textAlignment="center"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="351dp"
+        android:layout_height="49dp"
         android:layout_marginTop="24dp"
         android:entries="@array/main_spinner_values"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
