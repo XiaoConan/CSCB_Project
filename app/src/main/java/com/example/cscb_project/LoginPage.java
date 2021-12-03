@@ -42,7 +42,7 @@ public class LoginPage extends AppCompatActivity {
                 else { //If all conditions satisfied
                     Intent intent2 = new Intent(this, StoreOwnerPage.class);
                     //send owner to next page
-                    intent2.putExtra(MY_ACCOUNT, owner);
+                    intent2.putExtra(MY_ACCOUNT, current);
                     startActivity(intent2);
                 }
             }
@@ -61,7 +61,7 @@ public class LoginPage extends AppCompatActivity {
                 else { //If all conditions satisfied
                     Intent intent2 = new Intent(this, CustomerPage.class);
                     //send customer to next page
-                    intent2.putExtra(MY_ACCOUNT, customer);
+                    intent2.putExtra(MY_ACCOUNT, current);
                     startActivity(intent2);
                 }
             }
