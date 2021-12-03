@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 
 public class StoreOwnerPage extends AppCompatActivity {
-
+    OwnerAccount myAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_owner_page);
         // receive info from intent??
         Intent intent = getIntent();
-        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra("owner");
+        myAccount = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
     }
 
     /** Called when the user taps the View Products button */
