@@ -10,9 +10,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OwnerProductPage extends AppCompatActivity {
 
@@ -20,7 +24,7 @@ public class OwnerProductPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_product_page);
-        /* Reads the firebase for the items in the store, and display the name of the products
+        /** Reads the firebase for the items in the store, and display the name of the products
              in the spinner(and the first choice is "Add Product").
            Should the user choose an item of the spinner, display the information accordingly
              by getting the info of the product from firebase.
@@ -63,19 +67,30 @@ public class OwnerProductPage extends AppCompatActivity {
         // code ends. spinner should be populated by now.
 
         // I need a loop to keep checking new products if the user switches the spinner.
+        //**and remember to change this condition.**
         while(false){
             // if the spinner is not on "Add Product", display the info of the product
+            Product product = ref.child("products").child(spinnerVal).getValue();
+            // ok, assuming I have retrieved productN
+            EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
+            EditText productPrice = (EditText) findViewById(R.id.editTextTextProductName);
+            EditText productBrand = (EditText) findViewById(R.id.editTextTextProductName);
+
             if (! spinnerVal.equals("Add Product")){
-
+                productN.setText(product.getName());
+                productPrice.setText(String.valueOf(product.getPrice()));
+                productBrand.setText(product.getBrand());
             }
-            else{ // set the fields to empty
-
+            else{ // set the fields to empty(in case they're not)
+                productN.setText("");
+                productPrice.setText("");
+                productBrand.setText("");
             }
         }
     }
 
     public void updateProduct(View view){
-        /* Triggered by the button "Confirm".
+        /** Triggered by the button "Confirm".
            if the spinner is in "Add Product", add the specifications given as a product to the
              store on firebase.
            if the spinner is in another product, then pressing "Confirm" will update the
@@ -90,7 +105,7 @@ public class OwnerProductPage extends AppCompatActivity {
         // read from firebase for the list of products.
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
-        // now we fill in the fields.
+        // if spinner is on "Add Product", we add a new product to store.
         String productName = String.valueOf(spinner.getSelectedItem());
         if (productName.equals("Add Product")){ // new product
             EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
@@ -103,16 +118,9 @@ public class OwnerProductPage extends AppCompatActivity {
             // add to firebase.
             ref.child("products").child(productName).setValue(newProduct);
         }
-        // Display the info of the product from firebase
+        // make the changes and update the product in firebase.
         else{
-            Product product = ref.child("products").child(productName).getValue();
-            // ok, assuming I have retrieved productN
-            EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
-            productN.setText(product.getName());
-            EditText productPrice = (EditText) findViewById(R.id.editTextTextProductName);
-            productN.setText(String.valueOf(product.getPrice()));
-            EditText productBrand = (EditText) findViewById(R.id.editTextTextProductName);
-            productN.setText(product.getBrand());
+            //TODO
         }
     }
 }
