@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<UserAccount> users;
+    public ArrayList<UserAccount> users;
     public DatabaseReference data;
     public static final String EXTRA_MESSAGE = "";
 
@@ -25,11 +25,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Write Random info to Firebase
-        data = FirebaseDatabase.getInstance().getReference();
-        data.child("Users");
-        data.child("Products");
-        data.child("orders");
-        data.child("stores");
+//        data = FirebaseDatabase.getInstance().getReference();
+//        data.child("Users");
+//        data.child("Products");
+//        data.child("orders");
+//        data.child("stores");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        UserAccount user = new OwnerAccount("sean", "abcd");
+        ref.child("Users").child("user1").setValue(user);
 
 
         //Read from Firebase
