@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class LoginPage extends AppCompatActivity {
+    public static final String MY_ACCOUNT = "com.example.cscb_project.CURRENTACCOUNT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
