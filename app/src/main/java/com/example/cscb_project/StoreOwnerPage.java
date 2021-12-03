@@ -20,14 +20,16 @@ public class StoreOwnerPage extends AppCompatActivity {
     /** Called when the user taps the View Products button */
     public void goToProducts(View view) {
         Intent intent = new Intent(this, OwnerProductPage.class);
-        // intent.putExtra(EXTRA_MESSAGE, message);
+        // send to owner product page
+        intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
         startActivity(intent);
     }
 
     /** Called when the user taps the View Orders button */
     public void goToOrders(View view) {
         Intent intent = new Intent(this, OwnerOrdersPage.class);
-        // intent.putExtra(EXTRA_MESSAGE, message);
+        // send the owner to owner order
+        intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
         startActivity(intent);
     }
 

@@ -20,7 +20,8 @@ public class CustomerPage extends AppCompatActivity {
     /** Called when the user taps the Go shop button */
     public void goToShop(View view) {
         Intent intent = new Intent(this, ShoppingStore.class);
-        // intent.putExtra(EXTRA_MESSAGE, message);
+        // send customer to shop page
+        intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
         startActivity(intent);
     }
 
