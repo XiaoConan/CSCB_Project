@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class StoreOwnerPage extends AppCompatActivity {
     OwnerAccount myAccount;
@@ -15,6 +16,8 @@ public class StoreOwnerPage extends AppCompatActivity {
         // receive info from intent??
         Intent intent = getIntent();
         myAccount = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+        TextView textView = findViewById(R.id.textView);
+        textView.setText(myAccount.getUsername());
     }
 
     /** Called when the user taps the View Products button */
