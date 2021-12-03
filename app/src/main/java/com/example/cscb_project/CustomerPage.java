@@ -15,7 +15,7 @@ public class CustomerPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_page);
         Intent intent = getIntent();
-        myAccount = (CustomerAccount) intent.getSerializableExtra(MY_ACCOUNT);
+        CustomerAccount customer = (CustomerAccount)intent.getSerializableExtra("customer");
     }
 
     /** Called when the user taps the Go shop button */

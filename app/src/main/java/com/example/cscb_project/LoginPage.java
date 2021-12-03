@@ -40,7 +40,9 @@ public class LoginPage extends AppCompatActivity {
                 }
                 else { //If all conditions satisfied
                     Intent intent2 = new Intent(this, StoreOwnerPage.class);
-                    startActivity(intent);
+                    //send owner to next page
+                    intent2.putExtra("owner", owner);
+                    startActivity(intent2);
                 }
             }
         }
@@ -57,7 +59,9 @@ public class LoginPage extends AppCompatActivity {
                 }
                 else { //If all conditions satisfied
                     Intent intent2 = new Intent(this, CustomerPage.class);
-                    startActivity(intent);
+                    //send customer to next page
+                    intent2.putExtra("customer", customer);
+                    startActivity(intent2);
                 }
             }
 

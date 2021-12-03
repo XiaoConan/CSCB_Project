@@ -1,8 +1,9 @@
 package com.example.cscb_project;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class CustomerAccount extends UserAccount {
+public class CustomerAccount extends UserAccount implements Serializable{
     // fields??
     private ArrayList<OrderList> orders;
     private ArrayList<Order> cart;
