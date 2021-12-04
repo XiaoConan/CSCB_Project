@@ -13,6 +13,8 @@
 
     <string name="app_name">CSCB_Project</string>
     <string name="textview_Bmazon">Bmazon</string>
+    <string name="owner_tag">Store Owner</string>
+    <string name="customer_tag">Customer</string>
     <string-array name="main_spinner_values">
         <item>Store Owner</item>
         <item>Customer</item>
@@ -21,6 +23,8 @@
     <string name="button_SignUp">Sign Up</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
+
+    <string name="users_path">Users</string>
 
 
 

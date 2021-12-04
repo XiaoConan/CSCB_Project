@@ -2,10 +2,29 @@ package com.example.cscb_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.regex.Pattern;
+
 public class SignUpPage extends AppCompatActivity {
+    public static final String empty_username_error = "Please enter a username";
+    public static final String empty_password_error = "Please enter a password";
+    public static final String invalid_username_error = "Username cannot contain spaces or special characters";
+    public static final String username_taken_error = "Username already in use";
+    public static final String success_message = "Successfully registered!";
+    public static final String validUsernameRegex = "\\w+";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,72 +32,60 @@ public class SignUpPage extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_page);
     }
 
-    public void message(String s){
-        // display the message s in textView
-        TextView textView = findViewById(R.id.signupErrorText);
+    public void display(String s) {
+        // display s in signupErrorField
+        TextView textView = (TextView) findViewById(R.id.signupMessage);
         textView.setText(s);
     }
 
-    /*public void signUp(View view){
-        // This correspond to the actions of the button
-        // Checks if the username & password are valid
-        // if valid: complete the action of signing up, then directed to the user's page
-        // if invalid: pop up a text message.
+    public void signUp(View view) {
+        Intent intent = getIntent();
+        String userType = intent.getStringExtra(MainActivity.USER_TYPE_MESSAGE);
 
-        EditText userName = (EditText) findViewById(R.id.editTextTextPersonName10);
-        String name = userName.getText().toString();
-        if (name == ""){message("Username cannot be empty");}
-        if (name.contains(" ")){message("Username cannot contain spaces");}
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
 
-        //now we create the user, but without setting the password at the moment.
-        UserAccount newUser;
-        Intent intent = getIntent(); // gets the intent from Main, to me more specifically, the status of the spinner.
-        String userIdentity = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        if (userIdentity.equals("Store Owner")){
-            newUser = new OwnerAccount();
-            newUser.setUsername(name);
-            // check if username is valid.
-            if (MainActivity.owners.contains(newUser)){ // **account name taken (needs alteration to make sure this only checks username)
-                // pop message: Username taken
-                message("Username is taken.");
+        EditText usernameEditText = (EditText) findViewById(R.id.signupUsernameField);
+        EditText passwordEditText = (EditText) findViewById(R.id.signupPasswordField);
+        String username = usernameEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+
+        // Check username & password valid
+        if (username.isEmpty()) {
+            display(empty_username_error);
+        } else if (password.isEmpty()) {
+            display(empty_password_error);
+        } else if (!Pattern.matches(validUsernameRegex, username)) {
+            display(invalid_username_error);
+        }
+
+        // Check if username already exists
+        ValueEventListener listener = usersRef.child(username).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    display(username_taken_error);
+                } else {
+                    // Add info to firebase
+                    usersRef.child(username).child("password").setValue(password);
+                    usersRef.child(username).child("type").setValue(userType);
+
+                    display(success_message);
+
+                    // Clear fields
+                    usernameEditText.setText("");
+                    passwordEditText.setText("");
+                }
             }
 
-        }
-        //else if (userIdentity.equals("Customer")){
-        else{ // for fulfilling initialization of newUser on line 76.
-            newUser = new CustomerAccount();
-            newUser.setUsername(userName.getText().toString());
-            // check if username is valid
-            if (MainActivity.customers.contains(newUser)){ // **account name taken (needs alteration to make sure this only checks username)
-                // pop message: Username taken
-                message("Username is taken.");
+            @Override
+            public void onCancelled(DatabaseError error) {
+
             }
-        }
+        });
 
-        // if the username is not taken && is valid, we check the password.
-        EditText password = (EditText) findViewById(R.id.editTextTextPassword2);
-        String pass = password.getText().toString();
-        // check password
-        if (pass == ""){message("Password cannot be empty");}
-        if (pass.contains(" ")){message("Password cannot contain spaces");}
-        // and we set the password
-        newUser.setPassword(pass);
-
-        // now we write to database.
-        // Writing to a realtime database
-        // (**come back later? for firebase**)
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        ref.child("users").child(name).setValue(newUser);   //creates a new child.
-
-        // we now go to the user's page.
-        Intent intent2;
-        if (userIdentity.equals("Store Owner")){
-            intent2 = new Intent(this, StoreOwnerPage.class);
-        }
-        else{
-            intent2 = new Intent(this, CustomerPage.class);
-        }
-        startActivity(intent2);
-    }*/
+        // Close listener
+        usersRef.removeEventListener(listener);
+    }
 
 }

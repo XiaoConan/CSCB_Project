@@ -7,7 +7,7 @@
     tools:context=".LoginPage">
 
     <TextView
-        android:id="@+id/loginErrorText"
+        android:id="@+id/loginMessage"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
@@ -39,9 +39,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
-        android:ems="10"
         android:hint="@string/hint_username"
-        android:inputType="textPersonName"
+        android:inputType="textVisiblePassword"
         app:layout_constraintBottom_toTopOf="@+id/loginPasswordField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -53,7 +52,6 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:ems="10"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
         app:endIconMode="clear_text"
