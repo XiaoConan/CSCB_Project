@@ -30,10 +30,10 @@ public class OwnerProductPage extends AppCompatActivity {
              by getting the info of the product from firebase.
            Leave empty if the spinner chooses "Add Product"
          */
-        Intent intent = getIntent();
-        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
-        Spinner spinner = findViewById(R.id.spinner);
-        String spinnerVal = String.valueOf(spinner.getSelectedItem());
+//        Intent intent = getIntent();
+//        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+//        Spinner spinner = findViewById(R.id.spinner);
+//        String spinnerVal = String.valueOf(spinner.getSelectedItem());
 
         // read from firebase for the list of products.
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -98,29 +98,29 @@ public class OwnerProductPage extends AppCompatActivity {
          */
 
         // I need to get the owner info from previous page. Assume an Intent is passed with OwnerAccount.
-        Intent intent = getIntent();
-        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+//        Intent intent = getIntent();
+//        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
 
         Spinner spinner = findViewById(R.id.spinner);
         // read from firebase for the list of products.
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
-        // if spinner is on "Add Product", we add a new product to store.
-        String productName = String.valueOf(spinner.getSelectedItem());
-        if (productName.equals("Add Product")){ // new product
-            EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
-            String name = productN.getText().toString();
-            EditText productPrice = (EditText) findViewById(R.id.editTextTextProductPrice);
-            double price = Double.parseDouble(productPrice.getText().toString());
-            EditText productBrand = (EditText) findViewById(R.id.editTextTextProductBrand);
-            String brand = productBrand.getText().toString();
-            Product newProduct = new Product(name, price, brand, owner.getStore());
-            // add to firebase.
-            ref.child("products").child(productName).setValue(newProduct);
-        }
+//        // if spinner is on "Add Product", we add a new product to store.
+//        String productName = String.valueOf(spinner.getSelectedItem());
+//        if (productName.equals("Add Product")){ // new product
+//            EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
+//            String name = productN.getText().toString();
+//            EditText productPrice = (EditText) findViewById(R.id.editTextTextProductPrice);
+//            double price = Double.parseDouble(productPrice.getText().toString());
+//            EditText productBrand = (EditText) findViewById(R.id.editTextTextProductBrand);
+//            String brand = productBrand.getText().toString();
+//            Product newProduct = new Product(name, price, brand, owner.getStore());
+//            // add to firebase.
+//            ref.child("products").child(productName).setValue(newProduct);
+//        }
         // make the changes and update the product in firebase.
-        else{
-            //TODO
-        }
+//        else{
+//            //TODO
+//        }
     }
 }

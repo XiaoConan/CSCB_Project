@@ -13,12 +13,11 @@ public class CartPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_page);
-        Intent intent = getIntent();
-        myAccount = (CustomerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+
     }
 
-    public void sentOrder(View view){
-        myAccount.getCart().get(0).getProduct().getStore().receiveOrder(new OrderList(myAccount.getCart()));
-        myAccount.sendOrder();
+    public void sentOrder(View view) {
+//        myAccount.getCart().get(0).getProduct().getStore().receiveOrder(new OrderList(myAccount.getCart()));
+//        myAccount.sendOrder();
     }
 }

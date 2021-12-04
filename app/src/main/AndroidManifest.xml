@@ -29,6 +29,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".StoreOwnerPage"
+            android:exported="false" />
+
+        <activity
             android:name=".SignUpPage"
             android:label="@string/label_signup"
             android:exported="false"

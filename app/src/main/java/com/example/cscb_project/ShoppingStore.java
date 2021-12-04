@@ -28,7 +28,7 @@ public class ShoppingStore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_store);
         Intent intent = getIntent();
-        myAccount = (CustomerAccount) intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+        //myAccount = (CustomerAccount) intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
         currentStore = (Store) intent.getSerializableExtra(StoreList.CURRENT_STORE);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(currentStore.getOwner().getUsername()).child("products");
         ValueEventListener valueEventListener = new ValueEventListener() {

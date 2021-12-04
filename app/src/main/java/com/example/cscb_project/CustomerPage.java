@@ -5,31 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class CustomerPage extends AppCompatActivity {
-    CustomerAccount myAccount;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_page);
+
         Intent intent = getIntent();
-        myAccount = (CustomerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+        username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
+
+        TextView textView = findViewById(R.id.textView2);
+        String message = "Welcome " + username;
+        textView.setText(message);
     }
 
-    /** Called when the user taps the Go shop button */
-    public void goToShop(View view) {
-        Intent intent = new Intent(this, ShoppingStore.class);
-        // send customer to shop page
-        intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
-        startActivity(intent);
+    public void browseStores(View view) {
+        //Intent intent = new Intent(this, ShoppingStore.class);
+        // go to storelist page i think?
+        // ??????????????????????????????????
+        //startActivity(intent);
     }
 
-    /** Called when the user taps the My Cart button */
     public void goToCart(View view) {
-        Intent intent = new Intent(this, CartPage.class);
-        // send customer to cart page
-        intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
-        startActivity(intent);
+        //Intent intent = new Intent(this, CartPage.class);
+        // ?????????????
+
+        //startActivity(intent);
+    }
+
+    public void signOut(View view) {
+
     }
 }

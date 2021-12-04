@@ -6,38 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".StoreOwnerPage">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="32dp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/button_products"
+        android:text="@string/label_signout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/button_settings"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/button_orders"
+        android:layout_marginBottom="24dp"
+        android:text="@string/button_store"
+        app:layout_constraintBottom_toTopOf="@+id/button13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
+        android:id="@+id/welcomeTextview"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/welcome_message"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -28,7 +28,7 @@ public class StoreList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
         Intent intent = getIntent();
-        myAccount = (CustomerAccount) intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+        //myAccount = (CustomerAccount) intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("stores");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -50,7 +50,7 @@ public class StoreList extends AppCompatActivity {
         //need to able choose a store
         Store choosingStore = new Store();
         intent.putExtra(CURRENT_STORE, choosingStore);
-        intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
+        //intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
         startActivity(intent);
     }
 }
