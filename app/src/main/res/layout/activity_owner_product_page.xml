@@ -50,7 +50,7 @@
         android:layout_width="116dp"
         android:layout_height="34dp"
         android:layout_marginTop="32dp"
-        android:text="@string/textview_brand"
+        android:text="@string/label_brand"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         tools:layout_editor_absoluteX="31dp" />
 
@@ -58,7 +58,7 @@
         android:id="@+id/textView15"
         android:layout_width="116dp"
         android:layout_height="34dp"
-        android:text="@string/textview_productName"
+        android:text="@string/label_name"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="136dp" />
 
@@ -67,7 +67,7 @@
         android:layout_width="116dp"
         android:layout_height="34dp"
         android:layout_marginTop="40dp"
-        android:text="@string/textview_price"
+        android:text="@string/label_price"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         tools:layout_editor_absoluteX="31dp" />
 
@@ -80,20 +80,10 @@
         tools:layout_editor_absoluteY="51dp" />
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="66dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/button_back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_Confirm"
+        android:text="@string/label_confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="458dp" />

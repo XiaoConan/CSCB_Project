@@ -1,51 +1,55 @@
 <resources>
     <!-- Strings used for fragments of Signing up(Sunny added these) -->
-
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
+    <!-- Firebase directory paths?-->
+    <string name="users_path">Users</string>
+    <string name="products_path">Products</string>
+    <string name="orders_path">Stores</string>
+    <string name="stores_path">Orders</string>
+
+    <!-- Labels & stuff-->
     <string name="app_name">CSCB_Project</string>
     <string name="textview_Bmazon">Bmazon</string>
-    <string name="owner_tag">Store Owner</string>
-    <string name="customer_tag">Customer</string>
+    <string name="label_owner">Store Owner</string>
+    <string name="label_customer">Customer</string>
     <string name="label_login">Login</string>
     <string name="label_signup">Sign Up</string>
     <string name="label_account_type">Account Type:</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
 
-    <string name="users_path">Users</string>
+    <string name="label_signout">Sign Out &amp; Exit</string>
 
-
-
-
-    <string name="button_Signout">Sign out</string>
-    <string name="textview_productName">Product name</string>
-    <string name="textview_price">Price</string>
-    <string name="textview_brand">Brand</string>
-    <string name="button_work_on_it">Work on it</string>
-    <string name="button_complete">Complete</string>
-    <string name="button_go_shop">Go shop</string>
-    <string name="button_submit">Submit</string>
+    <string name="label_item">Item</string>
+    <string name="label_name">Item Name</string>
+    <string name="label_price">Price</string>
+    <string name="label_brand">Brand</string>
+    <string name="label_quantity">Quantity</string>
     <string name="button_products">View Your Products</string>
-    <string name="button_orders">View Your Orders</string>
-    <string name="button_back">Back</string>
+    <string name="button_orders">My Orders</string>
+    <string name="button_shop">Browse Stores</string>
+    <string name="button_store_orders">Pending Orders</string>
+    <string name="button_settings">Account Info</string>
+
+
+    <!-- Haven't really gotten to these yet-->
+    <string name="button_work_on_it">Work on it</string>
+    <string name="label_complete">Complete</string>
+    <string name="label_submit">Submit</string>
+    <string name="label_confirm">Confirm</string>
     <string name="textview_total_price">Total price</string>
-    <string name="textview_Quantity">Quantity</string>
-    <string name="button_MyCart">My Cart</string>
     <string name="button_AddToCart">Add to Cart</string>
     <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
-    <string name="owner_orders_message">Pending Orders</string>
     <string name="welcome_message">Welcome</string>
-    <string name="button_Confirm">Confirm</string>
     <string name="textview_EnterProductName">Enter The Product Name</string>
     <string name="textview_EnterPrice">Enter The Price For This Product</string>
     <string name="textview_EnterBrand">Enter The Brand Of This Product</string>
