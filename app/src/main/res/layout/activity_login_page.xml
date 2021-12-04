@@ -11,8 +11,8 @@
         android:layout_width="156dp"
         android:layout_height="43dp"
         android:ems="10"
+        android:hint="@string/hint_password"
         android:inputType="textPassword"
-        android:text="@string/EditText_Password"
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="85dp" />
 
@@ -22,8 +22,8 @@
         android:layout_height="45dp"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="@string/hint_username"
         android:inputType="textPersonName"
-        android:text="@string/EditText_Username"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="128dp" />
 

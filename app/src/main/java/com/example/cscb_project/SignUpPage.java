@@ -92,10 +92,4 @@ public class SignUpPage extends AppCompatActivity {
         startActivity(intent2);
     }*/
 
-    public void returnToMain(View view){
-        // Maybe we don't need this?? because there is a back button at the top.
-        // Returns to the MainActivity. Triggered by the button Back.
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 }
