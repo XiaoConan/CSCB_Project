@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,17 +19,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<UserAccount> users;
-    FirebaseDatabase data;
-    public static final String EXTRA_MESSAGE = "";
+    public static final String USER_TYPE_MESSAGE = "USER_TYPE_MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Write Random info to Firebase
-//        FirebaseDatabase data = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = data.getReference("Users");
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("Users");
 //        myRef.child("username").setValue("password");
 //        myRef = data.getReference("Stores");
 //        myRef.child("store").setValue("s");
@@ -45,20 +44,30 @@ public class MainActivity extends AppCompatActivity {
 //        ref.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot snapshot) {
-//                String value = snapshot.getValue(String.class);
+//                String value = snapshot.getValue(String.class); // do something with value
 //            }
 //            @Override
 //            public void onCancelled(DatabaseError error) {
 //                Log.w("warning", "loadPost:onCancelled", error.toException());
 //            }
 //        });
+
+
     }
 
-    public void goToLogin() {
+    public void goToLoginPage(View view) {
         Intent intent = new Intent(this, LoginPage.class);
         Spinner main_spinner = findViewById(R.id.spinner);
         String status = String.valueOf(main_spinner.getSelectedItem());
-        intent.putExtra(EXTRA_MESSAGE, status);
+        intent.putExtra(USER_TYPE_MESSAGE, status);
+        startActivity(intent);
+    }
+
+    public void goToSignUpPage(View view) {
+        Intent intent = new Intent(this, SignUpPage.class);
+        Spinner main_spinner = findViewById(R.id.spinner);
+        String status = String.valueOf(main_spinner.getSelectedItem());
+        intent.putExtra(USER_TYPE_MESSAGE, status);
         startActivity(intent);
     }
 }
