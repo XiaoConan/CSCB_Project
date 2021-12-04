@@ -14,7 +14,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String USER_TYPE_MESSAGE = "USER_TYPE_MESSAGE";
 
     public void exampleFirebaseCode() {
         // EXAMPLE WRITE FROM FIREBASE
@@ -36,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // EXAMPLE READ FROM FIREBASE
-        // Basic get value
+        // Listener that checks data every time it changes
+        // If you want a one-time snapshot, use addListenerForSingleValueEvent
         ref = database.getReference("Users/username");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,17 +64,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToLoginPage(View view) {
         Intent intent = new Intent(this, LoginPage.class);
-        Spinner main_spinner = findViewById(R.id.spinner);
-        String status = String.valueOf(main_spinner.getSelectedItem());
-        intent.putExtra(USER_TYPE_MESSAGE, status);
         startActivity(intent);
     }
 
     public void goToSignUpPage(View view) {
         Intent intent = new Intent(this, SignUpPage.class);
-        Spinner main_spinner = findViewById(R.id.spinner);
-        String status = String.valueOf(main_spinner.getSelectedItem());
-        intent.putExtra(USER_TYPE_MESSAGE, status);
         startActivity(intent);
     }
 }

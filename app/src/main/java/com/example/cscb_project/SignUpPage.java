@@ -2,10 +2,11 @@ package com.example.cscb_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,6 +20,7 @@ import java.util.regex.Pattern;
 public class SignUpPage extends AppCompatActivity {
     public static final String empty_username_error = "Please enter a username";
     public static final String empty_password_error = "Please enter a password";
+    public static final String no_type_selected_error = "Please select an account type";
     public static final String username_taken_error = "Username already in use";
     public static final String success_message = "Successfully registered!";
     public static final String invalid_username_error1 = "Username cannot contain special characters";
@@ -39,9 +41,6 @@ public class SignUpPage extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        Intent intent = getIntent();
-        String userType = intent.getStringExtra(MainActivity.USER_TYPE_MESSAGE);
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
 
@@ -50,11 +49,15 @@ public class SignUpPage extends AppCompatActivity {
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
-        // Check username & password valid
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        // Check username & password valid & account type selected
         if (username.isEmpty()) {
             display(empty_username_error);
         } else if (password.isEmpty()) {
             display(empty_password_error);
+        } else if (radioGroup.getCheckedRadioButtonId() == -1) {
+              display(no_type_selected_error);
         } else if (!Pattern.matches(validUsernameRegex1, username)) {
             display(invalid_username_error1);
         } else if (!Pattern.matches(validUsernameRegex2, username)) {
@@ -69,6 +72,8 @@ public class SignUpPage extends AppCompatActivity {
                     } else {
                         // Add info to firebase
                         usersRef.child(username).child("password").setValue(password);
+                        RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+                        String userType = selectedButton.getText().toString();
                         usersRef.child(username).child("type").setValue(userType);
 
                         display(success_message);

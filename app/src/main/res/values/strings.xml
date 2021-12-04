@@ -15,12 +15,9 @@
     <string name="textview_Bmazon">Bmazon</string>
     <string name="owner_tag">Store Owner</string>
     <string name="customer_tag">Customer</string>
-    <string-array name="main_spinner_values">
-        <item>Store Owner</item>
-        <item>Customer</item>
-    </string-array>
-    <string name="button_Login">Login</string>
-    <string name="button_SignUp">Sign Up</string>
+    <string name="label_login">Login</string>
+    <string name="label_signup">Sign Up</string>
+    <string name="label_account_type">Account Type:</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
 

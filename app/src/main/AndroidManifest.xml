@@ -30,7 +30,7 @@
 
         <activity
             android:name=".SignUpPage"
-            android:label="@string/button_SignUp"
+            android:label="@string/label_signup"
             android:exported="false"
             android:parentActivityName=".MainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -41,7 +41,7 @@
 
         <activity
             android:name=".LoginPage"
-            android:label="@string/button_Login"
+            android:label="@string/label_login"
             android:exported="false"
             android:parentActivityName=".MainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->

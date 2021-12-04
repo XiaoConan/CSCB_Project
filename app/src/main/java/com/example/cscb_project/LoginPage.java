@@ -25,7 +25,6 @@ public class LoginPage extends AppCompatActivity {
 
     public void login(View view) {
         Intent intent = getIntent();
-        String status = intent.getStringExtra(MainActivity.USER_TYPE_MESSAGE);
         EditText un = (EditText) findViewById(R.id.loginUsernameField);
         String username = un.getText().toString();
         EditText pw = (EditText) findViewById(R.id.loginPasswordField);
