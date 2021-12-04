@@ -1,20 +1,9 @@
 package com.example.cscb_project;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpPage extends AppCompatActivity {
 
@@ -26,7 +15,7 @@ public class SignUpPage extends AppCompatActivity {
 
     public void message(String s){
         // display the message s in textView
-        TextView textView = findViewById(R.id.textView18);
+        TextView textView = findViewById(R.id.signupErrorText);
         textView.setText(s);
     }
 

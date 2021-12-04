@@ -17,7 +17,7 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
 
     }
-    /*public void login() {
+    /*public void login(View view) {
         Intent intent = getIntent();
         String status = intent.getStringExtra(MainActivity.USER_TYPE_MESSAGE);
         EditText un = (EditText) findViewById(R.id.editTextTextPersonName3);

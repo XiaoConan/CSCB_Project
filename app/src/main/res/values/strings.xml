@@ -6,12 +6,25 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="app_name">CSCB_Project</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+
+    <string name="app_name">CSCB_Project</string>
+    <string name="textview_Bmazon">Bmazon</string>
+    <string-array name="main_spinner_values">
+        <item>Store Owner</item>
+        <item>Customer</item>
+    </string-array>
     <string name="button_Login">Login</string>
     <string name="button_SignUp">Sign Up</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+
+
+
+
     <string name="button_Signout">Sign out</string>
     <string name="textview_productName">Product name</string>
     <string name="textview_price">Price</string>
@@ -26,16 +39,9 @@
     <string name="textview_total_price">Total price</string>
     <string name="textview_Quantity">Quantity</string>
     <string name="button_MyCart">My Cart</string>
-    <string name="textview_Bmazon">Bmazon</string>
-    <string name="hint_username">Username</string>
-    <string name="hint_password">Password</string>
     <string name="button_AddToCart">Add to Cart</string>
     <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
-    <string-array name="main_spinner_values">
-        <item>Store Owner</item>
-        <item>Customer</item>
-    </string-array>
     <string name="owner_orders_message">Pending Orders</string>
     <string name="welcome_message">Welcome</string>
     <string name="button_Confirm">Confirm</string>
