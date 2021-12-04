@@ -22,6 +22,7 @@ public class ShoppingStore extends AppCompatActivity {
     Store currentStore;
     ArrayList<Product> products = new ArrayList<Product>();
     Product product;
+    String storeID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

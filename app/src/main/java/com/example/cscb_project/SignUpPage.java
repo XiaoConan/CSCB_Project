@@ -64,31 +64,42 @@ public class SignUpPage extends AppCompatActivity {
             display(invalid_username_error2);
         } else {
             // Check if username already exists
-            usersRef.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    if (snapshot.exists()) {
-                        display(username_taken_error);
-                    } else {
-                        // Add info to firebase
-                        usersRef.child(username).child("password").setValue(password);
-                        RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
-                        String userType = selectedButton.getText().toString();
-                        usersRef.child(username).child("type").setValue(userType);
+//            usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(DataSnapshot snapshot) {
+//                    if (snapshot.exists()) {
+//                        display(username_taken_error);
+//                    } else {
+//                        // Add info to firebase
+//                        usersRef.child(username).child("password").setValue(password);
+//                        RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+//                        String userType = selectedButton.getText().toString();
+//                        usersRef.child(username).child("type").setValue(userType);
+//
+//                        display(success_message);
+//
+//                        // Clear fields
+//                        usernameEditText.setText("");
+//                        passwordEditText.setText("");
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(DatabaseError error) {
+//
+//                }
+//
+//            });
+            usersRef.child(username).child("password").setValue(password);
+            RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+            String userType = selectedButton.getText().toString();
+            usersRef.child(username).child("type").setValue(userType);
 
-                        display(success_message);
+            display(success_message);
 
-                        // Clear fields
-                        usernameEditText.setText("");
-                        passwordEditText.setText("");
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError error) {
-
-                }
-            });
+            // Clear fields
+            usernameEditText.setText("");
+            passwordEditText.setText("");
         }
 
     }

@@ -18,7 +18,6 @@ public class LoginPage extends AppCompatActivity {
     public static final String invalid_username_error = "Username not found";
     public static final String invalid_password_error = "Your password is incorrect";
     public static final String unexpected_error = "Uh oh - unexpected error";
-
     public static final String EXTRA_MESSAGE = "com.example.cscb_project.MESSAGE";
 
     @Override

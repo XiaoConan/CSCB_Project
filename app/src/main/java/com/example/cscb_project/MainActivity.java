@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         // One line example: DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         // Two line example:
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
+        DatabaseReference ref = database.getReference("cscb07-abc1a-default-rtdb");
         // Use the reference from parent directory + .child to get to the key you need
         ref.child("Users").child("username").setValue("password");
         // Or you can create a reference using a path String
@@ -59,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // exampleFirebaseCode();
+         //exampleFirebaseCode();
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("message");
+//
+//        myRef.setValue("Hello, World!");
     }
 
     public void goToLoginPage(View view) {
