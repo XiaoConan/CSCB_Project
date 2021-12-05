@@ -26,8 +26,6 @@ public class StoreOwnerPage extends AppCompatActivity {
 
     public void goToProducts(View view) {
         Intent intent = new Intent(this, OwnerProductPage.class);
-        // send to owner product page
-        //intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
         startActivity(intent);
     }
 
@@ -41,11 +39,12 @@ public class StoreOwnerPage extends AppCompatActivity {
     // move orders+products onto a store page
 
     public void manageStore(View view) {
-        // ????????????????
+        // I think it should be done by owner product page
     }
 
     public void signOut(View view) {
-
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 
