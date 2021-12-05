@@ -17,10 +17,12 @@
         <entry key="app/src/main/res/layout/activity_customer_order_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_page.xml" value="0.26744128941444517" />
         <entry key="app/src/main/res/layout/activity_display_successful_message.xml" value="0.2265625" />
-        <entry key="app/src/main/res/layout/activity_owner_product_page.xml" value="0.4468433475904199" />
+        <entry key="app/src/main/res/layout/activity_owner_product_page.xml" value="0.29879422539615164" />
         <entry key="app/src/main/res/layout/activity_sent_to_cart_successfully.xml" value="0.23462297647997113" />
         <entry key="app/src/main/res/layout/activity_shopping_store.xml" value="0.5688259582251681" />
         <entry key="app/src/main/res/layout/activity_sign_up_page.xml" value="0.3584994065905876" />
+        <entry key="app/src/main/res/layout/activity_store_list.xml" value="0.24620770128354727" />
+        <entry key="app/src/main/res/layout/my_row.xml" value="0.17789031528021126" />
       </map>
     </option>
   </component>
