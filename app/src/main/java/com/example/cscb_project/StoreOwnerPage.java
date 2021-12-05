@@ -39,7 +39,8 @@ public class StoreOwnerPage extends AppCompatActivity {
     // move orders+products onto a store page
 
     public void manageStore(View view) {
-        // I think it should be done by owner product page
+        Intent intent = new Intent(this, StoreManagingPage.class);
+        startActivity(intent);
     }
 
     public void signOut(View view) {

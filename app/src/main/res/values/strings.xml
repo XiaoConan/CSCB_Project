@@ -8,7 +8,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <string-array name = "store_list">
+    <string-array name="store_list">
         <item></item>
     </string-array>
 
@@ -52,6 +52,7 @@
     <string name="label_confirm">Confirm</string>
     <string name="textview_total_price">Total price</string>
     <string name="button_AddToCart">Add to Cart</string>
+    <string name="button_AddProductToStore">Add product to store</string>
     <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
     <string name="welcome_message">Welcome</string>
