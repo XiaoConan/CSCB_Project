@@ -39,7 +39,7 @@ public class StoreOwnerPage extends AppCompatActivity {
     // move orders+products onto a store page
 
     public void manageStore(View view) {
-        // I think it should be done by owner product page
+        // ????????????????
     }
 
     public void signOut(View view) {
