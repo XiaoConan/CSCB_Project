@@ -10,60 +10,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSCB_Project">
         <activity
+            android:name=".CustomerOrderPage"
+            android:exported="false"
+            android:label="MyOrderList"
+            android:parentActivityName=".CustomerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CustomerPage" />
+        </activity>
+        <activity
             android:name=".StoreList"
-            android:exported="false" />
-        <activity
-            android:name=".SentToCartSuccessfully"
-            android:exported="false" />
-        <activity
-            android:name=".DisplaySuccessfulMessage"
-            android:exported="false" />
+            android:exported="false"
+            android:label="StoreList"
+            android:parentActivityName=".CustomerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CustomerPage" />
+        </activity>
         <activity
             android:name=".CartPage"
-            android:exported="false" />
+            android:exported="false"
+            android:label="MyCart"
+            android:parentActivityName=".CustomerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CustomerPage" />
+        </activity>
         <activity
             android:name=".ShoppingStore"
             android:exported="false" />
         <activity
             android:name=".CustomerPage"
             android:exported="false" />
-
         <activity
             android:name=".StoreOwnerPage"
             android:exported="false" />
-
         <activity
             android:name=".SignUpPage"
-            android:label="@string/label_signup"
             android:exported="false"
+            android:label="@string/label_signup"
             android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".LoginPage"
-            android:label="@string/label_login"
             android:exported="false"
+            android:label="@string/label_login"
             android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

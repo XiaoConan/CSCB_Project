@@ -31,13 +31,18 @@ public class CustomerPage extends AppCompatActivity {
     }
 
     public void goToCart(View view) {
-        //Intent intent = new Intent(this, CartPage.class);
-        // ?????????????
-
-        //startActivity(intent);
+        Intent intent = new Intent(this, CartPage.class);
+        startActivity(intent);
     }
 
     public void signOut(View view) {
-
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
+
+    public void checkOrder(View view){
+        Intent intent = new Intent(this, CustomerOrderPage.class);
+        startActivity(intent);
+    }
+
 }

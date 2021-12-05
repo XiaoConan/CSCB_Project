@@ -49,12 +49,7 @@ public class ShoppingStore extends AppCompatActivity {
         //Display product List
     }
 
-    public void addToCart(View view){
-        Intent intent = new Intent(this, SentToCartSuccessfully.class);
-        EditText editText = (EditText) findViewById(R.id.EditText_Amount);
-        //need to make sure that input is a valid int;
-        int amount = Integer.parseInt(editText.getText().toString());
-        myAccount.addProduct(product, amount);
-        startActivity(intent);
+    public void addToCart(){
+
     }
 }
