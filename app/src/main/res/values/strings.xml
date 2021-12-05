@@ -59,4 +59,6 @@
     <string name="textview_EnterPrice">Enter The Price For This Product</string>
     <string name="textview_EnterBrand">Enter The Brand Of This Product</string>
     <string name="button">Button</string>
+    <string name="textview">TextView</string>
+    <string name="store">Store</string>
 </resources>

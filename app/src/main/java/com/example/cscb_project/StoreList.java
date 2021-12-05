@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,8 +32,12 @@ public class StoreList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
+
+        //get myAccount info from intent
         Intent intent = getIntent();
-        //myAccount = (CustomerAccount) intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
+        myAccount = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
+
+        //read store list from the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Stores");
         ref.addListenerForSingleValueEvent( new ValueEventListener() {
@@ -49,18 +54,18 @@ public class StoreList extends AppCompatActivity {
             }
         });
 
-        String storeList[] = {"test"};
+        //use recyclerView to display store list
         recyclerView = findViewById(R.id.storeListView);
 
-        StoreListAdapter myAdapter = new StoreListAdapter(this, storeList);
+        StoreListAdapter myAdapter = new StoreListAdapter(this, stores, myAccount);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void goToStore(View view){
         Intent intent = new Intent(this, ShoppingStore.class);
-        Button clickedButton = (Button) findViewById(R.id.store_button);
-        String choosingStore = clickedButton.getText().toString();
+        TextView storeView = findViewById(R.id.store_button);
+        String choosingStore = storeView.getText().toString();
         intent.putExtra(CURRENT_STORE, choosingStore);
         intent.putExtra(LoginPage.EXTRA_MESSAGE, myAccount);
         startActivity(intent);
