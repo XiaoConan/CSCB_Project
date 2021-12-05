@@ -23,5 +23,6 @@ public class StoreManagingPage extends AppCompatActivity {
         String product_price = editText1.getText().toString();
         EditText editText3 = (EditText) findViewById(R.id.editTextTextPersonName2);
         String product_brand = editText1.getText().toString();
+        //Then write to the firebase
     }
 }
