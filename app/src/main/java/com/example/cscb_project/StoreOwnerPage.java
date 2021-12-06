@@ -31,13 +31,13 @@ public class StoreOwnerPage extends AppCompatActivity {
 
     public void goOwnerProductPage(View view) {
         Intent intent = new Intent(this, OwnerProductPage.class);
-        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);//
+        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
         startActivity(intent);
     }
 
     public void goOwnerOrdersPage(View view) {
         Intent intent = new Intent(this, OwnerOrdersPage.class);
-        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);//
+        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
         startActivity(intent);
     }
 
