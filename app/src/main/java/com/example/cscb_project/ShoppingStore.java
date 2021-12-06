@@ -63,11 +63,6 @@ public class ShoppingStore extends AppCompatActivity {
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-                recyclerView = findViewById(R.id.cartView);
-
-                CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
-                recyclerView.setAdapter(cartAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
             }
             @Override
