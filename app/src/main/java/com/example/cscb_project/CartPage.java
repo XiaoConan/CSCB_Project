@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class CartPage extends AppCompatActivity {
-    CustomerAccount myAccount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

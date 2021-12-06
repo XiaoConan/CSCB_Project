@@ -21,36 +21,39 @@ public class MainActivity extends AppCompatActivity {
         // One line example: DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         // Two line example:
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("cscb07-abc1a-default-rtdb");
+        DatabaseReference ref = database.getReference();
         // Use the reference from parent directory + .child to get to the key you need
-        ref.child("Users").child("username").setValue("password");
-        // Or you can create a reference using a path String
-        ref = database.getReference("Stores");
-        ref.child("store").setValue("s");
-        String path = "/asdf";
-        ref = database.getReference("Products" + path + "/name");
-        ref.child("product").setValue("p");
-        ref = database.getReference("Orders");
-        ref.child("order").setValue("o");
-
-
-        // EXAMPLE READ FROM FIREBASE
-        // Listener that checks data every time it changes
-        // If you want a one-time snapshot, use addListenerForSingleValueEvent
-        ref = database.getReference("Users/username");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                // If no data at location, getValue() returns null??
-                String value = snapshot.getValue(String.class);
-                // do something with value
-            }
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // This happens if getting the value failed... leave empty?
-                //Log.w("warning", "loadPost:onCancelled", error.toException());
-            }
-        });
+//        ref.child("Users").child("username").setValue("password");
+//        // Or you can create a reference using a path String
+//        ref = database.getReference("Stores");
+//        ref.child("store").setValue("s");
+//        String path = "/asdf";
+//        ref = database.getReference("Products" + path + "/name");
+//        ref.child("product").setValue("p");
+//        ref = database.getReference("Orders");
+//        ref.child("order").setValue("o");
+//
+//
+//        // EXAMPLE READ FROM FIREBASE
+//        // Listener that checks data every time it changes
+//        // If you want a one-time snapshot, use addListenerForSingleValueEvent
+//        ref = database.getReference("Users/username");
+//        ref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                // If no data at location, getValue() returns null??
+//                String value = snapshot.getValue(String.class);
+//                // do something with value
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                // This happens if getting the value failed... leave empty?
+//                //Log.w("warning", "loadPost:onCancelled", error.toException());
+//            }
+//        });
+        Product product = new Product("name", 13.33, "brand", "id");
+        DatabaseReference newRef = ref.child("Products").push();
+        newRef.setValue(product);
 
 
     }
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         //exampleFirebaseCode();
+         exampleFirebaseCode();
     }
 
     public void goToLoginPage(View view) {

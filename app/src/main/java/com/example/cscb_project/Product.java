@@ -6,25 +6,23 @@ public class Product {
     private String name;
     private double price;
     private String brand;
-    private Store store;
+    private String storeID;
 
     public Product() {
         name = "";
         price = 0;
         brand = "";
-        store = null;
+        storeID = "";
     }
 
-    public Product(String name, double price, String brand, Store store) {
+    public Product(String name, double price, String brand, String store) {
         this.name = name;
         this.price = price;
         this.brand = brand;
-        this.store = store;
+        this.storeID = storeID;
     }
 
-    public Store getStore() { return store; }
-
-    public void setStore(Store store) { this.store = store; }
+    public String getStore() { return storeID; }
 
     public double getPrice() {
         return price;
@@ -50,25 +48,6 @@ public class Product {
         this.price = price;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 && Objects.equals(name, product.name) && Objects.equals(brand, product.brand);
-    }
+    public void setStore(String store) { this.storeID = store; }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, price, brand);
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=$" + price +
-                ", brand='" + brand + '\'' +
-                '}';
-    }
 }
