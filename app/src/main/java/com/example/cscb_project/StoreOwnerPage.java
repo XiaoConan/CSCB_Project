@@ -41,6 +41,8 @@ public class StoreOwnerPage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void signOut(View view) { finish();}
+    public void signOut(View view) {
+        finish();
+    }
 
 }

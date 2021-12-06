@@ -24,7 +24,25 @@
             android:name=".ShoppingStore"
             android:exported="false" />
 
+        <activity
+            android:name=".OwnerProductPage"
+            android:exported="false"
+            android:label="@string/label_createProduct"
+            android:parentActivityName=".StoreOwnerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StoreOwnerPage" />
+        </activity>
 
+        <activity
+            android:name=".OwnerOrdersPage"
+            android:exported="false"
+            android:label="@string/label_createProduct"
+            android:parentActivityName=".StoreOwnerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StoreOwnerPage" />
+        </activity>
 
         <activity
             android:name=".CreateProductPage"
