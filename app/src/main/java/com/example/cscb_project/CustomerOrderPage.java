@@ -52,7 +52,7 @@ public class CustomerOrderPage extends AppCompatActivity {
 
                 recyclerView = findViewById(R.id.cOrdersDisplay);
 
-                CustomerOrderAdapter myAdapter = new CustomerOrderAdapter(context, productIDs, quantity, myAccount);
+                CustomerOrderAdapter myAdapter = new CustomerOrderAdapter(context, productIDs, quantity, myAccount, orderID);
                 //recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
