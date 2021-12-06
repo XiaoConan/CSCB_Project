@@ -1,6 +1,8 @@
 package com.example.cscb_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,110 +21,88 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class OwnerProductPage extends AppCompatActivity {
+    /**  This page displays the products available in this store.
+        (This page looks similar to StoreManagingPage, which allows the owner to
+        add/remove a product.)
+     */
+
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_product_page);
-        Intent intent = getIntent();
-        /** Reads the firebase for the items in the store, and display the name of the products
-             in the spinner(and the first choice is "Add Product").
-           Should the user choose an item of the spinner, display the information accordingly
-             by getting the info of the product from firebase.
-           Leave empty if the spinner chooses "Add Product"
+
+        /* Reads the firebase for the items in the store, and display the name of the products
+         in the Recycler View.
          */
-//        Intent intent = getIntent();
-//        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
-//        Spinner spinner = findViewById(R.id.spinner);
-//        String spinnerVal = String.valueOf(spinner.getSelectedItem());
+        // Assume I am getting the owner's name from Intent.
+        Intent intent = getIntent();
+        username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
+        DatabaseReference storeRef = database.getReference(getString(R.string.stores_path));
+        DatabaseReference productsRef = database.getReference(getString(R.string.products_path));
 
-        // read from firebase for the list of products.
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        // ** the following code is for a different program, requires a lot of change.
-        //    and how to change it depends on how accounts are stored.
-        ref.child("areas").addValueEventListener(new ValueEventListener() {
+        // for storing strings as them come in, the info will later be given to productsIDs.
+        ArrayList<String> productIDArrList = new ArrayList<String>();
+
+        // To display product information as Recycler View, we will get them as string arrays.
+        //  To do this, we first go to store(same name as owner's name), and
+        //    get all productIDs as String[].
+        //  Then, knowing the size of the following arrays(productIDs.length)we will populate
+        //     brands, names, prices in the corresponding order.
+        String storeID = usersRef.child(username).child(getString(R.string.store_id_child)).getKey();
+        storeRef.child(storeID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Is better to use a List, because you don't know the size
-                // of the iterator returned by dataSnapshot.getChildren() to
-                // initialize the array
-                final List<String> areas = new ArrayList<String>();
-
-                for (DataSnapshot areaSnapshot: dataSnapshot.getChildren()) {
-                    String areaName = areaSnapshot.child("areaName").getValue(String.class);
-                    areas.add(areaName);
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot products : snapshot.getChildren()) {
+                    productIDArrList.add((String) products.getValue());
                 }
-
-                //Spinner areaSpinner = (Spinner) findViewById(R.id.spinner);
-                //ArrayAdapter<String> areasAdapter = new ArrayAdapter<String>(UAdminActivity.this, android.R.layout.simple_spinner_item, areas);
-                //areasAdapter.add("Add Product"); //first choice.
-                //areasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                //spinner.setAdapter(areasAdapter);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(DatabaseError error) {
 
             }
         });
-        // code ends. spinner should be populated by now.
 
-        // I need a loop to keep checking new products if the user switches the spinner.
-        //**and remember to change this condition.**
-        /*while(false){
-            // if the spinner is not on "Add Product", display the info of the product
-            Product product = ref.child("products").child(spinnerVal).getValue();
-            // ok, assuming I have retrieved productN
-            EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
-            EditText productPrice = (EditText) findViewById(R.id.editTextTextProductName);
-            EditText productBrand = (EditText) findViewById(R.id.editTextTextProductName);
+        // initialize all the data arrays we need to display.
+        String[] productIDs = (String[]) productIDArrList.toArray();
+        String[] brands = new String[productIDs.length];
+        String[] names = new String[productIDs.length];
+        double[] prices = new double[productIDs.length];
 
-            if (! spinnerVal.equals("Add Product")){
-                productN.setText(product.getName());
-                productPrice.setText(String.valueOf(product.getPrice()));
-                productBrand.setText(product.getBrand());
-            }
-            else{ // set the fields to empty(in case they're not)
-                productN.setText("");
-                productPrice.setText("");
-                productBrand.setText("");
-            }
-        }*/
-    }
+        for (int i = 0; i < productIDs.length; i++) {
+            // we read each productID, and get the info
+            int finalI = i;
+            productsRef.child(productIDs[i]).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    brands[finalI] = snapshot.child("brand").getKey();
+                    names[finalI] = snapshot.child("name").getKey();
+                    prices[finalI] = Double.parseDouble(snapshot.child("price").getKey());
+                }
 
-    public void updateProduct(View view){
-        /** Triggered by the button "Confirm".
-           if the spinner is in "Add Product", add the specifications given as a product to the
-             store on firebase.
-           if the spinner is in another product, then pressing "Confirm" will update the
-             information of the product.
-         */
+                @Override
+                public void onCancelled(DatabaseError error) {
+                }
+            });
+        }
 
-        // I need to get the owner info from previous page. Assume an Intent is passed with OwnerAccount.
-//        Intent intent = getIntent();
-//        OwnerAccount owner = (OwnerAccount)intent.getSerializableExtra(LoginPage.MY_ACCOUNT);
 
-        Spinner spinner = findViewById(R.id.spinner);
-        // read from firebase for the list of products.
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        // After getting the information of the products, we create the RecyclerView
 
-//        // if spinner is on "Add Product", we add a new product to store.
-//        String productName = String.valueOf(spinner.getSelectedItem());
-//        if (productName.equals("Add Product")){ // new product
-//            EditText productN = (EditText) findViewById(R.id.editTextTextProductName);
-//            String name = productN.getText().toString();
-//            EditText productPrice = (EditText) findViewById(R.id.editTextTextProductPrice);
-//            double price = Double.parseDouble(productPrice.getText().toString());
-//            EditText productBrand = (EditText) findViewById(R.id.editTextTextProductBrand);
-//            String brand = productBrand.getText().toString();
-//            Product newProduct = new Product(name, price, brand, owner.getStore());
-//            // add to firebase.
-//            ref.child("products").child(productName).setValue(newProduct);
-//        }
-        // make the changes and update the product in firebase.
-//        else{
-//            //TODO
-//        }
+        // populate the Recycler view with the products.
+        // get the reference of RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.OwnerProductRecyclerView);
+        // passing the data.
+        OwnerProductAdapter adapter = new OwnerProductAdapter(this, productIDs, names, brands, prices);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // set LayoutManager to RecyclerView
+
     }
 }
