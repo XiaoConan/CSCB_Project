@@ -62,7 +62,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyVi
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            storeView = itemView.findViewById(R.id.storeName);
+            storeView = itemView.findViewById(R.id.listView);
             myLayout = itemView.findViewById(R.id.mainLayout);
         }
     }

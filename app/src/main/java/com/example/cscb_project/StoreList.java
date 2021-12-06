@@ -39,12 +39,12 @@ public class StoreList extends AppCompatActivity {
 
         //read store list from the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Stores");
+        DatabaseReference ref = database.getReference("Stores");
         ref.addListenerForSingleValueEvent( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()) {
-                    String bufferString = ds.getValue(String.class);
+                    String bufferString = ds.getKey();
                     stores.add(bufferString);
                 }
             }
@@ -62,12 +62,12 @@ public class StoreList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    public void goToStore(View view){
-        Intent intent = new Intent(this, ShoppingStore.class);
-        //TextView storeView = findViewById(R.id.store_button);
-        //String choosingStore = storeView.getText().toString();
-        //intent.putExtra(CURRENT_STORE, choosingStore);
-        intent.putExtra(LoginPage.EXTRA_MESSAGE, myAccount);
-        startActivity(intent);
-    }
+//    public void goToStore(View view){
+//        Intent intent = new Intent(this, ShoppingStore.class);
+//        //TextView storeView = findViewById(R.id.store_button);
+//        //String choosingStore = storeView.getText().toString();
+//        //intent.putExtra(CURRENT_STORE, choosingStore);
+//        intent.putExtra(LoginPage.EXTRA_MESSAGE, myAccount);
+//        startActivity(intent);
+//    }
 }
