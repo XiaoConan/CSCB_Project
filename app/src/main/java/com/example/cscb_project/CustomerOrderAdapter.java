@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,12 +26,14 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
     ArrayList<Integer> quantity;
     Context context;
     String myAccount;
+    String orderID;
 
-    public CustomerOrderAdapter(Context context, ArrayList<String> products, ArrayList<Integer> amounts, String myAcc) {
+    public CustomerOrderAdapter(Context context, ArrayList<String> products, ArrayList<Integer> amounts, String myAcc, String id) {
         this.context = context;
         this.products = products;
         this.quantity = amounts;
         this.myAccount = myAcc;
+        this.orderID = id;
     }
 
     @NonNull
@@ -48,6 +51,20 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
         int amount= quantity.get(position);
         String amountS = String.valueOf(amount);
         holder.productAmount.setText(amountS);
+
+        DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders").child(orderID);
+        orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String status = snapshot.child("complete").getValue(String.class);
+                holder.textStatus.setText(status);
+                String brand = snapshot.child("brand").getValue(String.class);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("warning", "loadPost:onCancelled", error.toException());
+            }
+        });
     }
 
     @Override
@@ -59,14 +76,12 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
 
         TextView productName;
         TextView productAmount;
-        TextView subtotal;
-        ConstraintLayout myLayout;
+        TextView textStatus;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            productName = itemView.findViewById(R.id.cartProductName);
-            productAmount = itemView.findViewById(R.id.cartProductAmount);
-            subtotal = itemView.findViewById(R.id.cartProductPrice);
-            myLayout = itemView.findViewById(R.id.myCartView);
+            productName = itemView.findViewById(R.id.orderProductName);
+            productAmount = itemView.findViewById(R.id.orderProductAmount);
+            textStatus = itemView.findViewById(R.id.status);
         }
     }
 }
