@@ -68,7 +68,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                     public void onClick(View view) {
                         Order order = new Order(name, 1, d);
                         if(cart.contains(name)){
-                            cart.get(cart.indexOf(order));
+                            cart.get(cart.indexOf(order)).setQuantity(cart.get(cart.indexOf(order)).getQuantity() + 1);
+                            cart.get(cart.indexOf(order)).setSubtotal(cart.get(cart.indexOf(order)).getSubtotal() + order.getSubtotal());
+                        }
+                        else{
+                            cart.add(order);
                         }
                     }
                 });
