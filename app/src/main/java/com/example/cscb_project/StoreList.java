@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class StoreList extends AppCompatActivity {
     public static final String CURRENT_STORE = "com.example.cscb_project.CURRENTSTORE";
@@ -47,13 +46,12 @@ public class StoreList extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 stores = new ArrayList<String>();
-                int i = 0;
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     String bufferString = ds.getKey();
-//                    stores[i] = bufferString;
-//                    i++;
                     stores.add(bufferString);
                 }
+
+                //use recyclerView to display store list
                 recyclerView = findViewById(R.id.allStores);
 
                 StoreListAdapter myAdapter = new StoreListAdapter(con, stores, myAccount);
@@ -65,9 +63,6 @@ public class StoreList extends AppCompatActivity {
                 Log.w("warning", "loadPost:onCancelled", error.toException());
             }
         });
-
-
-        //use recyclerView to display store list
 
     }
 

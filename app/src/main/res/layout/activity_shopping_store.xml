@@ -6,34 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ShoppingStore">
 
-    <TextView
-        android:id="@+id/currentStoreView"
-        android:layout_width="82dp"
-        android:layout_height="40dp"
-        android:text="@string/store"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/productView"
         android:layout_width="411dp"
-        android:layout_height="600dp"
+        android:layout_height="374dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentStoreView" />
+        tools:layout_editor_absoluteY="1dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartView"
+        android:layout_width="409dp"
+        android:layout_height="253dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="375dp" />
+
+    <Button
+        android:id="@+id/sentOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="669dp" />
 
     <TextView
-        android:id="@+id/addToCartMessage"
-        android:layout_width="411dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="1.0" />
+        android:id="@+id/setOrderInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="229dp"
+        tools:layout_editor_absoluteY="681dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
