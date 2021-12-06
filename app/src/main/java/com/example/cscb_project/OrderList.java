@@ -5,20 +5,20 @@ import java.util.Objects;
 
 public class OrderList {
     private ArrayList<Order> orders;
-    private String userID;
+    private String customerID;
     private String storeID;
     private boolean complete;
 
     public OrderList() {
         orders = new ArrayList<Order>();
-        userID = "";
+        customerID = "";
         storeID = "";
         complete = false;
     }
 
     public OrderList(ArrayList<Order> orders) {
         this.orders = orders;
-        userID = "";
+        customerID = "";
         storeID = "";
         complete = false;
     }
@@ -31,16 +31,16 @@ public class OrderList {
         this.storeID = storeID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setCustomerID(String userID) {
+        this.customerID = userID;
     }
 
     public String getStoreID() {
         return storeID;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getCustomerID() {
+        return customerID;
     }
 
     public void removeOrder(Order order) {
