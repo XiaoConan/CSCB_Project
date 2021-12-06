@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+    <color name="yellow_orange">#ffbd33</color>
     <color name="green">#1B5E20</color>
     <color name="green_dark">#003300</color>
     <color name="green_light">#A5D6A7</color>
@@ -16,6 +18,7 @@
     <color name='blue_light'>#2196F3</color>
     <color name='red'>#f3212d</color>
     <color name='pink'>#ff094b</color>
+    <color name='pink_light'>#ff71a3</color>
 
 
 </resources>
