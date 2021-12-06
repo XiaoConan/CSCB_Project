@@ -64,7 +64,7 @@ public class SignUpPage extends AppCompatActivity {
             display(invalid_username_error2);
         } else {
             // Check if username already exists
-            usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            usersRef.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
                     if (snapshot.exists()) {
