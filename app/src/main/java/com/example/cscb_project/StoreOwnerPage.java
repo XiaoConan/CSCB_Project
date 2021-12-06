@@ -40,5 +40,4 @@ public class StoreOwnerPage extends AppCompatActivity {
 
     public void signOut(View view) { finish();}
 
-
 }
