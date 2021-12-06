@@ -1,7 +1,5 @@
 package com.example.cscb_project;
 
-import java.util.Objects;
-
 public class Product {
     private String name;
     private String brand;
@@ -15,14 +13,14 @@ public class Product {
         storeID = "";
     }
 
-    public Product(String name, String brand, double price, String store) {
+    public Product(String name, String brand, double price, String storeID) {
         this.name = name;
         this.price = price;
         this.brand = brand;
         this.storeID = storeID;
     }
 
-    public String getStore() { return storeID; }
+    public String getStoreID() { return storeID; }
 
     public double getPrice() {
         return price;
@@ -48,6 +46,6 @@ public class Product {
         this.price = price;
     }
 
-    public void setStore(String store) { this.storeID = store; }
+    public void setStoreID(String store) { this.storeID = store; }
 
 }

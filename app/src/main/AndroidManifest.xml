@@ -24,7 +24,25 @@
             android:name=".ShoppingStore"
             android:exported="false" />
 
+        <activity
+            android:name=".OwnerProductPage"
+            android:exported="false"
+            android:label="@string/label_createProduct"
+            android:parentActivityName=".StoreOwnerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StoreOwnerPage" />
+        </activity>
 
+        <activity
+            android:name=".OwnerOrdersPage"
+            android:exported="false"
+            android:label="@string/label_createProduct"
+            android:parentActivityName=".StoreOwnerPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StoreOwnerPage" />
+        </activity>
 
         <activity
             android:name=".CreateProductPage"
@@ -94,26 +112,6 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".OwnerProductPage"
-            android:exported="false"
-            android:label="@string/label_login"
-            android:parentActivityName=".StoreOwnerPage">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".StoreOwnerPage" />
-        </activity>
-
-        <activity
-            android:name=".OwnerOrdersPage"
-            android:exported="false"
-            android:label="@string/label_login"
-            android:parentActivityName=".StoreOwnerPage">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".StoreOwnerPage" />
         </activity>
 
     </application>

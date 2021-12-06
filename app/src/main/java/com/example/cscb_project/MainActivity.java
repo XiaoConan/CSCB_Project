@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
 //                //Log.w("warning", "loadPost:onCancelled", error.toException());
 //            }
 //        });
-        Product product = new Product("name",  "brand", 13.33,"id");
-        DatabaseReference newRef = ref.child("Products").push();
-        newRef.setValue(product);
-
+        DatabaseReference storesRef = database.getReference(getString(R.string.stores_path));
+        Store store = new Store("test123");
+        String key = storesRef.push().getKey();
+        storesRef.child(key).setValue(store);
 
     }
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // exampleFirebaseCode();
+        //exampleFirebaseCode();
     }
 
     public void goToLoginPage(View view) {

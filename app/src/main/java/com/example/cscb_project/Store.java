@@ -4,49 +4,51 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Store {
+    public static final String DEFAULT_NAME = "Unnamed Store";
     private String ownerUsername;
-    private ArrayList<OrderList> orders;
-    private ArrayList<Product> products;
-
-    public Store() {
-        this.orders = new ArrayList<OrderList>();
-        this.products = new ArrayList<Product>();
-    }
+    private String storeName;
+    private ArrayList<String> orderIDs;
+    private ArrayList<String> productIDs;
 
     public Store(String username) {
         ownerUsername = username;
-        this.orders = new ArrayList<OrderList>();
-        this.products = new ArrayList<Product>();
-    }
-
-    public String getOwner() {
-        return ownerUsername;
+        storeName = DEFAULT_NAME;
+        orderIDs = new ArrayList<>();
+        productIDs = new ArrayList<>();
     }
 
     public void setOwner(String owner) {
         this.ownerUsername = owner;
     }
 
-    public ArrayList<OrderList> getOrderLists() {
-        return orders;
+    public String getOwnerUsername() {
+        return ownerUsername;
     }
 
-    public ArrayList<Product> getProducts() {
-        return products;
+    public String getStoreName() {
+        return storeName;
     }
 
-    public void setOrders(ArrayList<OrderList> orderLists) {
-        this.orders = orderLists;
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
     }
 
-    public void setProducts(ArrayList<Product> products) {
-        this.products = products;
+    public void setOwnerUsername(String ownerUsername) {
+        this.ownerUsername = ownerUsername;
     }
 
-    public void addProduct(Product product) {
-        products.add(product);
+    public ArrayList<String> getOrderIDs() {
+        return orderIDs;
     }
 
-    public void receiveOrder(OrderList newOrder) {orders.add(newOrder); }
+    public ArrayList<String> getProductIDs() {
+        return productIDs;
+    }
+
+    public void addProductID(String productID) {
+        productIDs.add(productID);
+    }
+
+    public void addOrderID(String orderID) {orderIDs.add(orderID); }
 
 }
