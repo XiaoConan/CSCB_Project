@@ -21,9 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ShoppingStore extends AppCompatActivity {
-    String  myAccount;
+    String myAccount;
     String currentStore;
-    ArrayList<String> products = new ArrayList<String>();
+    ArrayList<String> products;
     RecyclerView recyclerView;
 
     @Override
@@ -56,8 +56,8 @@ public class ShoppingStore extends AppCompatActivity {
             }
         });
 
-        TextView storeName = findViewById(R.id.currentStoreView);
-        storeName.setText(currentStore);
+        //TextView storeName = findViewById(R.id.currentStoreView);
+        //storeName.setText(currentStore);
 
         //Display product List
         recyclerView = findViewById(R.id.storeListView);

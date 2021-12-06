@@ -33,7 +33,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
-        textView.findViewById(R.id.addToCartMessage);
+        //textView.findViewById(R.id.addToCartMessage);
     }
 
     @NonNull
