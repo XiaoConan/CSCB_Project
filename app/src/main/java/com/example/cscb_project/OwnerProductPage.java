@@ -56,7 +56,7 @@ public class OwnerProductPage extends AppCompatActivity {
         //  Then, knowing the size of the following arrays(productIDs.length)we will populate
         //     brands, names, prices in the corresponding order.
         String storeID = usersRef.child(username).child(getString(R.string.store_id_child)).getKey();
-        storeRef.child(storeID).addListenerForSingleValueEvent(new ValueEventListener() {
+        storeRef.child(storeID).child(getString(R.string.store_product_list)).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot products : snapshot.getChildren()) {
