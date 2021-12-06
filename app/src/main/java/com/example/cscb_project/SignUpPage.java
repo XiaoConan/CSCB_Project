@@ -43,6 +43,8 @@ public class SignUpPage extends AppCompatActivity {
     public void signUp(View view) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
+        //Add the user to stores if this is an storeOwner
+        DatabaseReference storesRef = database.getReference("Stores");
 
         EditText usernameEditText = (EditText) findViewById(R.id.signupUsernameField);
         EditText passwordEditText = (EditText) findViewById(R.id.signupPasswordField);
@@ -75,6 +77,10 @@ public class SignUpPage extends AppCompatActivity {
                         RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
                         String userType = selectedButton.getText().toString();
                         usersRef.child(username).child("type").setValue(userType);
+                        if (userType.equals(getString(R.string.label_owner))) {
+                            storesRef.child(username).child("ProductsID").setValue("");
+                        }
+
 
                         display(success_message);
 

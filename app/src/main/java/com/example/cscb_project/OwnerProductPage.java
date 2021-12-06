@@ -24,6 +24,7 @@ public class OwnerProductPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_product_page);
+        Intent intent = getIntent();
         /** Reads the firebase for the items in the store, and display the name of the products
              in the spinner(and the first choice is "Add Product").
            Should the user choose an item of the spinner, display the information accordingly

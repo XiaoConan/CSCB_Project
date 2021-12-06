@@ -9,8 +9,9 @@
     <Button
         android:id="@+id/button6"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:onClick="signOut"
         android:text="@string/label_signout"
@@ -28,7 +29,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:onClick="goManageStore"
         android:text="@string/button_store"
         app:layout_constraintBottom_toTopOf="@+id/button6"
@@ -47,4 +48,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/allOrders"
+        android:layout_width="343dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="goOwnerOrdersPage"
+        android:text="@string/button_store_orders"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myProduct" />
+
+    <Button
+        android:id="@+id/myProduct"
+        android:layout_width="342dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="148dp"
+        android:onClick="goOwnerProductPage"
+        android:text="@string/button_products"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextview" />
 </androidx.constraintlayout.widget.ConstraintLayout>

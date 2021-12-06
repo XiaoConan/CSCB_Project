@@ -25,4 +25,4 @@ public class StoreManagingPage extends AppCompatActivity {
         String product_brand = editText1.getText().toString();
         //Then write to the firebase
     }
-}
+}   

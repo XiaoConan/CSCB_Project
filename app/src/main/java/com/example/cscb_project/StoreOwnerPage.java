@@ -28,8 +28,16 @@ public class StoreOwnerPage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void signOut(View view) {
-        finish();
+    public void goOwnerProductPage(View view) {
+        Intent intent = new Intent(this, OwnerProductPage.class);
+        startActivity(intent);
     }
+
+    public void goOwnerOrdersPage(View view) {
+        Intent intent = new Intent(this, OwnerOrdersPage.class);
+        startActivity(intent);
+    }
+
+    public void signOut(View view) { finish();}
 
 }
