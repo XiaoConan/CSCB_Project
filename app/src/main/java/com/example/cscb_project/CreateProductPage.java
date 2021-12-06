@@ -1,6 +1,8 @@
 package com.example.cscb_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.TaskStackBuilder;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -75,4 +77,9 @@ public class CreateProductPage extends AppCompatActivity {
         }
 
     }
-}   
+
+    @Override
+    public void onPrepareSupportNavigateUpTaskStack(@NonNull TaskStackBuilder builder) {
+        super.onPrepareSupportNavigateUpTaskStack(builder);
+    }
+}
