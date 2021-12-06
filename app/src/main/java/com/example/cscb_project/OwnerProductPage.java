@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,14 @@ public class OwnerProductPage extends AppCompatActivity {
         add/remove a product.)
      */
 
-    //private String username;
+    String myAccount;
+    String storeID;
+    ArrayList<String> productIDs;
+    RecyclerView recyclerView;
+    Context context = this;
+    TextView displayMessageBox;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference productRef = database.getReference("Products");//private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

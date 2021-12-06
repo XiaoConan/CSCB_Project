@@ -29,6 +29,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     Context context;
     String myAccount;
     ArrayList<Order> cart;
+    RecyclerView recyclerView2;
     //TextView textView;
 
     public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount, ArrayList<Order> cart){
@@ -74,6 +75,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                         else{
                             cart.add(order);
                         }
+                        recyclerView2 = view.findViewById(R.id.cartView);
+
+                        CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
+                        recyclerView2.setAdapter(cartAdapter);
+                        recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+
                     }
                 });
             }

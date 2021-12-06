@@ -10,15 +10,19 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="@android:drawable/progress_horizontal"
+        android:backgroundTint="@color/blue_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             tools:layout_editor_absoluteY="16dp">
 
             <TextView
@@ -26,6 +30,8 @@
                 android:layout_width="70dp"
                 android:layout_height="33dp"
                 android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/productPrice"
                 app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +42,8 @@
                 android:layout_width="78dp"
                 android:layout_height="33dp"
                 android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.535"
@@ -47,6 +55,8 @@
                 android:layout_width="74dp"
                 android:layout_height="33dp"
                 android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/productPrice"

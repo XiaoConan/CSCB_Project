@@ -71,4 +71,5 @@
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
 
     <string name="no_products_available">No products available, please add products in </string>
+    <string name="statusString">Status:</string>
 </resources>
