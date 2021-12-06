@@ -26,12 +26,13 @@ public class ShoppingStore extends AppCompatActivity {
     String myAccount;
     String storeID;
     ArrayList<String> productIDs;
-    ArrayList<Order> cart;
+   // ArrayList<Order> cart;
     RecyclerView recyclerView;
     Context context = this;
     TextView displayMessageBox;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference productRef = database.getReference("Products");
+    RecyclerView recyclerView2;
  //
 
     @Override
@@ -50,7 +51,7 @@ public class ShoppingStore extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 productIDs = new ArrayList<>();
-                cart = new ArrayList<Order>();
+                //cart = new ArrayList<Order>();
 
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     String productID = ds.getKey();
@@ -58,11 +59,17 @@ public class ShoppingStore extends AppCompatActivity {
                 }
 
                 recyclerView = findViewById(R.id.productView);
+                recyclerView2 = findViewById(R.id.cartView);
 
-                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount, cart);
+                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount, recyclerView2);
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
+//                recyclerView2 = findViewById(R.id.cartView);
+//
+//                CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
+//                recyclerView2.setAdapter(cartAdapter);
+//                recyclerView2.setLayoutManager(new LinearLayoutManager(context));
 
             }
             @Override
