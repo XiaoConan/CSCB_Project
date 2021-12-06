@@ -33,7 +33,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
-        textView.findViewById(R.id.addToCartMessage);
+        textView.findViewById(R.id.setOrderInfo);
     }
 
     @NonNull
@@ -47,35 +47,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ProductListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.productView.setText(list.get(position));
-
+        
         holder.myLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //read how many item (I don't know why here needs a array, if i just use int will be a error
-                final int[] amount = new int[1];
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Carts").child(myAccount);
-                ref.addListenerForSingleValueEvent( new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        //if item exist then add one, if not create the item and set it as 1
-                        if(snapshot.exists())
-                            amount[0] = (int)snapshot.getValue();
-                        else{
-                            amount[0] = 0;
-                            ref.child(list.get(position)).setValue(amount[0]);
-                        }
-
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("warning", "loadPost:onCancelled", error.toException());
-                    }
-                });
-                ref.child(list.get(position)).setValue(amount[0] + 1);
-                textView.setText("add one " + list.get(position) + " successfully" + "\n" + "now you have " + (amount[0] +1) +" of "+ list.get(position) + " in the Cart");
             }
         });
     }

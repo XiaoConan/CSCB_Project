@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,8 @@ public class ShoppingStore extends AppCompatActivity {
     String currentStore;
     ArrayList<String> products = new ArrayList<String>();
     RecyclerView recyclerView;
+    Context context = this;
+    TextView displayMessageBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,15 @@ public class ShoppingStore extends AppCompatActivity {
                         products.add(bufferString);
                     }
                 }
+
+                recyclerView = findViewById(R.id.storeListView);
+
+                ProductListAdapter myAdapter = new ProductListAdapter(context, products, myAccount);
+                recyclerView.setAdapter(myAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+                displayMessageBox = findViewById(R.id.setOrderInfo);
+                displayMessageBox.setText("");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -56,15 +68,8 @@ public class ShoppingStore extends AppCompatActivity {
             }
         });
 
-        TextView storeName = findViewById(R.id.currentStoreView);
-        storeName.setText(currentStore);
-
         //Display product List
-        recyclerView = findViewById(R.id.storeListView);
 
-        ProductListAdapter myAdapter = new ProductListAdapter(this, products, myAccount);
-        recyclerView.setAdapter(myAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 }

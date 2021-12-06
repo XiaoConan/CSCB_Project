@@ -27,15 +27,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="669dp" />
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="650dp" />
 
     <TextView
         android:id="@+id/setOrderInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="679dp" />
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="669dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
