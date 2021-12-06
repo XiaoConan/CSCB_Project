@@ -55,7 +55,7 @@ public class StoreList extends AppCompatActivity {
         });
 
         //use recyclerView to display store list
-        recyclerView = findViewById(R.id.storeListView);
+        recyclerView = findViewById(R.id.allStores);
 
         StoreListAdapter myAdapter = new StoreListAdapter(this, stores, myAccount);
         recyclerView.setAdapter(myAdapter);

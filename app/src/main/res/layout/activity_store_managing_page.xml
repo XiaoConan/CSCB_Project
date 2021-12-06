@@ -69,7 +69,8 @@
         android:layout_height="79dp"
         android:text="@string/button_AddProductToStore"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="284dp" />
+        tools:layout_editor_absoluteY="316dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

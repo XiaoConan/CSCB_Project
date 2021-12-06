@@ -9,7 +9,9 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string-array name="store_list">
-        <item></item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 
 

@@ -20,10 +20,10 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyVi
     Context context;
     String myAccount;
 
-    public StoreListAdapter(Context ct, ArrayList<String> s1, String myAccount){
+    public StoreListAdapter(Context ct, ArrayList<String> s1, String myAcc){
         this.context = ct;
         this.list = s1;
-        this.myAccount = myAccount;
+        this.myAccount = myAcc;
     }
 
     @NonNull
@@ -62,7 +62,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyVi
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            storeView = itemView.findViewById(R.id.listView);
+            storeView = itemView.findViewById(R.id.storeName);
             myLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
