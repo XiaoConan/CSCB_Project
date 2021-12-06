@@ -26,14 +26,12 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
     ArrayList<Integer> quantity;
     Context context;
     String myAccount;
-    String orderID;
 
-    public CustomerOrderAdapter(Context context, ArrayList<String> products, ArrayList<Integer> amounts, String myAcc, String id) {
+    public CustomerOrderAdapter(Context context, ArrayList<String> products, ArrayList<Integer> amounts, String myAcc) {
         this.context = context;
         this.products = products;
         this.quantity = amounts;
         this.myAccount = myAcc;
-        this.orderID = id;
     }
 
     @NonNull
@@ -52,7 +50,7 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
         String amountS = String.valueOf(amount);
         holder.productAmount.setText(amountS);
 
-        DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders").child(orderID);
+        DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders");
         orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
