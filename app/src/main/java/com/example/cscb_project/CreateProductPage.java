@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class StoreManagingPage extends AppCompatActivity {
+public class CreateProductPage extends AppCompatActivity {
     public static final String invalid_product_error = "You already have this product";
     public static final String empty_box = "You need to enter all information of a product";
     public static final String unexpected_error = "Uh oh - unexpected error";
@@ -27,7 +27,7 @@ public class StoreManagingPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_managing_page);
+        setContentView(R.layout.activity_create_product_page);
         display(initial_message);
 
         Intent intent = getIntent();
