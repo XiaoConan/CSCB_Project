@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 
 public class StoreManagingPage extends AppCompatActivity {
+    public static final String invalid_product_error = "You already have this product";
+    public static final String empty_box = "You need to enter all information of a product";
+    public static final String unexpected_error = "Uh oh - unexpected error";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,9 @@ public class StoreManagingPage extends AppCompatActivity {
         String product_price = editText1.getText().toString();
         EditText editText3 = (EditText) findViewById(R.id.editTextTextPersonName2);
         String product_brand = editText1.getText().toString();
+
+
+
         //Then write to the firebase
     }
 }   
