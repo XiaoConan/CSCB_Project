@@ -20,11 +20,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="516dp"
         android:layout_height="83dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView">
+        tools:layout_editor_absoluteY="16dp">
 
         <TextView
             android:id="@+id/cartProductName"
