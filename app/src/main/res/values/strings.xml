@@ -46,6 +46,8 @@
     <string name="button_store_orders">Pending Orders</string>
     <string name="button_settings">My Cart</string>
     <string name="button_addProduct">Add Product</string>
+    <string name="button_editStore">Edit Store Name</string>
+    <string name="welcome_message">Welcome</string>
 
 
     <!-- Haven't really gotten to these yet-->
@@ -55,16 +57,11 @@
     <string name="label_confirm">Confirm</string>
     <string name="textview_total_price">Total price</string>
     <string name="button_AddToCart">Add to Cart</string>
+    <string name="store">Store</string>
 
     <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
-    <string name="welcome_message">Welcome</string>
-    <string name="textview_EnterProductName">Enter The Product Name</string>
-    <string name="textview_EnterPrice">Enter The Price For This Product</string>
-    <string name="textview_EnterBrand">Enter The Brand Of This Product</string>
-    <string name="button">Button</string>
-    <string name="textview">TextView</string>
-    <string name="store">Store</string>
+
 
     <string name="no_products_available">No products available, please add products in </string>
 </resources>

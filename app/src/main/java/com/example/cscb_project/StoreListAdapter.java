@@ -16,13 +16,15 @@ import java.util.ArrayList;
 
 public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyViewHolder> {
 
-    ArrayList<String> list;
+    ArrayList<String> ids;
+    ArrayList<String> names;
     Context context;
     String myAccount;
 
-    public StoreListAdapter(Context ct, ArrayList<String> s1, String myAcc){
+    public StoreListAdapter(Context ct, ArrayList<String> s1, ArrayList<String> s2, String myAcc) {
         this.context = ct;
-        this.list = s1;
+        this.names = s1;
+        this.ids = s2;
         this.myAccount = myAcc;
     }
 
@@ -37,14 +39,14 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        holder.storeView.setText(list.get(position));
+        holder.storeView.setText(names.get(position));
 
         holder.myLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ShoppingStore.class);
                 intent.putExtra(LoginPage.EXTRA_MESSAGE, myAccount);
-                intent.putExtra(StoreList.CURRENT_STORE, list.get(position));
+                intent.putExtra(StoreList.CURRENT_STORE, ids.get(position));
                 context.startActivity(intent);
             }
         });
@@ -52,7 +54,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return ids.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

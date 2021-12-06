@@ -17,20 +17,21 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ShoppingStore extends AppCompatActivity {
     String myAccount;
-    String currentStore;
-    ArrayList<Product> products;
+    String storeID;
+    ArrayList<String> productIDs;
     RecyclerView recyclerView;
     Context context = this;
     TextView displayMessageBox;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference productRef = database.getReference("Products");
- //   DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(currentStore).child("productList");
+ //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,37 +41,61 @@ public class ShoppingStore extends AppCompatActivity {
         //get user info and store info from intent
         Intent intent = getIntent();
         myAccount = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
-        currentStore = intent.getStringExtra(StoreList.CURRENT_STORE);
+        storeID = intent.getStringExtra(StoreList.CURRENT_STORE);
 
-        //get product belong to the firebase
-        productRef.addListenerForSingleValueEvent( new ValueEventListener() {
+//        Query productQuery = productRef.orderByChild("storeID").equalTo(storeID);
+//
+//        productQuery.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                products = new ArrayList<>();
+//
+//                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+//                    Product product = dataSnapshot.getValue(Product.class);
+//                    products.add(product);
+//                }
+//
+//                RecyclerView recyclerView = findViewById(R.id.productView);
+//
+//                ProductListAdapter myAdapter = new ProductListAdapter(context, products, myAccount);
+//                recyclerView.setAdapter(myAdapter);
+//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+        DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(storeID).child("productList");
+
+        storeRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds: snapshot.getChildren()) {
-                    //check the product list and get all the products that belong to currentStore
-                    if(ds.child("storeID").getValue().toString().equals(currentStore))
-                        products.add(ds.getValue(Product.class));
+                productIDs = new ArrayList<>();
 
-//                   searchProudctById(bufferId);
+                for(DataSnapshot ds: snapshot.getChildren()) {
+                    String productID = ds.getKey();
+                    productIDs.add(productID);
                 }
 
-                recyclerView = findViewById(R.id.storeListView);
+                recyclerView = findViewById(R.id.productView);
 
-                ProductListAdapter myAdapter = new ProductListAdapter(context, products, myAccount);
+                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount);
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-//                displayMessageBox = findViewById(R.id.setOrderInfo);
-//                displayMessageBox.setText("");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.w("warning", "loadPost:onCancelled", error.toException());
             }
         });
-        //TextView storeName = findViewById(R.id.currentStoreView);
-        //storeName.setText(currentStore);
 
+//        //TextView storeName = findViewById(R.id.currentStoreView);
+//        //storeName.setText(storeID);
+//
 
     }
 

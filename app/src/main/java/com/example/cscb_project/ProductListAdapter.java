@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,32 +25,50 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.MyViewHolder> {
-    ArrayList<Product> list;
+    ArrayList<String> list;
     Context context;
     String myAccount;
-    TextView textView;
+    //TextView textView;
 
-    public ProductListAdapter(Context ct, ArrayList<Product> s1, String myAccount){
+    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount){
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
-        textView.findViewById(R.id.setOrderInfo);
+     //   textView.findViewById(R.id.setOrderInfo);
         //textView.findViewById(R.id.addToCartMessage);
     }
 
     @NonNull
     @Override
-    public ProductListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
-        return new ProductListAdapter.MyViewHolder(view);
+        View view = inflater.inflate(R.layout.product_list_view, parent, false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.productName.setText(list.get(position).getName());
-        holder.productBrand.setText(list.get(position).getBrand());
-        holder.productPrice.setText(String.valueOf(list.get(position).getPrice()));
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
+        DatabaseReference productRef = FirebaseDatabase.getInstance().getReference("Products").child(list.get(position));
+
+        productRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String name = snapshot.child("name").getValue(String.class);
+                holder.productName.setText(name);
+                String brand = snapshot.child("brand").getValue(String.class);
+                holder.productPrice.setText(brand);
+                Double d = snapshot.child("price").getValue(Double.class);
+                String price = Double.toString(d);
+                holder.productBrand.setText(price);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("warning", "loadPost:onCancelled", error.toException());
+            }
+        });
+
+
 
 //        holder.myLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override

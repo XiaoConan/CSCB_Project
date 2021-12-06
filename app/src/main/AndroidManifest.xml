@@ -12,17 +12,15 @@
 
 
         <activity
-            android:name=".CartPage"
+            android:name=".ShoppingStore"
             android:exported="false"
-            android:label="MyCart"
+            android:label="@string/label_createProduct"
             android:parentActivityName=".CustomerPage">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CustomerPage" />
+            />
         </activity>
-        <activity
-            android:name=".ShoppingStore"
-            android:exported="false" />
 
         <activity
             android:name=".OwnerProductPage"

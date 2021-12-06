@@ -27,6 +27,7 @@ public class StoreList extends AppCompatActivity {
     public static final String CURRENT_STORE = "com.example.cscb_project.CURRENTSTORE";
     String myAccount;
     ArrayList<String> stores;
+    ArrayList<String> ids;
     RecyclerView recyclerView;
     Context con = this;
 
@@ -46,15 +47,18 @@ public class StoreList extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 stores = new ArrayList<String>();
+                ids = new ArrayList<String>();
                 for(DataSnapshot ds: snapshot.getChildren()) {
-                    String bufferString = ds.getKey();
-                    stores.add(bufferString);
+                    String name = ds.child("storeName").getValue(String.class);
+                    String id = ds.getKey();
+                    stores.add(name);
+                    ids.add(id);
                 }
 
                 //use recyclerView to display store list
                 recyclerView = findViewById(R.id.allStores);
 
-                StoreListAdapter myAdapter = new StoreListAdapter(con, stores, myAccount);
+                StoreListAdapter myAdapter = new StoreListAdapter(con, stores, ids, myAccount);
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(con));
             }
