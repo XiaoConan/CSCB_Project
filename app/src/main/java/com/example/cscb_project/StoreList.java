@@ -54,12 +54,14 @@ public class StoreList extends AppCompatActivity {
             }
         });
 
+        TextView tx = findViewById(R.id.testText);
+        tx.setText(stores.get(0));
         //use recyclerView to display store list
-        recyclerView = findViewById(R.id.allStores);
-
-        StoreListAdapter myAdapter = new StoreListAdapter(this, stores, myAccount);
-        recyclerView.setAdapter(myAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView = findViewById(R.id.allStores);
+//
+//        StoreListAdapter myAdapter = new StoreListAdapter(this, stores, myAccount);
+//        recyclerView.setAdapter(myAdapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 //    public void goToStore(View view){
