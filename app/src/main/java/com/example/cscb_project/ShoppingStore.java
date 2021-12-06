@@ -22,9 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ShoppingStore extends AppCompatActivity {
-    String  myAccount;
+    String myAccount;
     String currentStore;
-    ArrayList<String> products = new ArrayList<String>();
+    ArrayList<String> products;
     RecyclerView recyclerView;
     Context context = this;
     TextView displayMessageBox;
@@ -68,8 +68,15 @@ public class ShoppingStore extends AppCompatActivity {
             }
         });
 
-        //Display product List
+        //TextView storeName = findViewById(R.id.currentStoreView);
+        //storeName.setText(currentStore);
 
+        //Display product List
+        recyclerView = findViewById(R.id.storeListView);
+
+        ProductListAdapter myAdapter = new ProductListAdapter(this, products, myAccount);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 }
