@@ -60,7 +60,7 @@ public class OwnerProductPage extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot products : snapshot.getChildren()) {
-                    productIDArrList.add((String) products.getValue());
+                    productIDArrList.add((String) products.getKey()); // since the data is stored as productID:true.
                 }
             }
 
@@ -93,9 +93,12 @@ public class OwnerProductPage extends AppCompatActivity {
                 productsRef.child(productIDs[i]).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
-                        brands[finalI] = snapshot.child("brand").getKey();
-                        names[finalI] = snapshot.child("name").getKey();
-                        prices[finalI] = Double.parseDouble(snapshot.child("price").getKey());
+                        Product product = snapshot.getValue(Product.class);
+                        brands[finalI] = product.getBrand();
+                        names[finalI] = product.getName();
+                        prices[finalI] = product.getPrice();
+                        // we don't need to get the store id, do we?
+                        // we're displaying to the store owner afterall.
                     }
 
                     @Override
