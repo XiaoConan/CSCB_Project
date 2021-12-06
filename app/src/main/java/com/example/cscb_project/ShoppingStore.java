@@ -24,10 +24,13 @@ import java.util.ArrayList;
 public class ShoppingStore extends AppCompatActivity {
     String myAccount;
     String currentStore;
-    ArrayList<String> products;
+    ArrayList<Product> products;
     RecyclerView recyclerView;
     Context context = this;
     TextView displayMessageBox;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference productRef = FirebaseDatabase.getInstance().getReference("Products");
+    DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(currentStore).child("productList");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +43,13 @@ public class ShoppingStore extends AppCompatActivity {
         currentStore = intent.getStringExtra(StoreList.CURRENT_STORE);
 
         //get product belong to the firebase
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Products");
-        ref.addListenerForSingleValueEvent( new ValueEventListener() {
+        storeRef.addListenerForSingleValueEvent( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     //check the product list and get all the products that belong to currentStore
-                    if(ds.child("StoreId").getValue().toString().equals(currentStore)) {
-                        String bufferString = ds.getValue(String.class);
-                        products.add(bufferString);
-                    }
+                   String bufferId = ds.getKey();
+                   searchProudctById(bufferId);
                 }
 
                 recyclerView = findViewById(R.id.storeListView);
@@ -59,24 +58,34 @@ public class ShoppingStore extends AppCompatActivity {
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-                displayMessageBox = findViewById(R.id.setOrderInfo);
-                displayMessageBox.setText("");
+//                displayMessageBox = findViewById(R.id.setOrderInfo);
+//                displayMessageBox.setText("");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.w("warning", "loadPost:onCancelled", error.toException());
             }
         });
-
         //TextView storeName = findViewById(R.id.currentStoreView);
         //storeName.setText(currentStore);
 
-        //Display product List
-        recyclerView = findViewById(R.id.storeListView);
 
-        ProductListAdapter myAdapter = new ProductListAdapter(this, products, myAccount);
-        recyclerView.setAdapter(myAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void searchProudctById(String id){
+
+        productRef.child(id).addListenerForSingleValueEvent( new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Product product;
+                product = (Product) snapshot.getValue(Product.class);
+                products.add(product);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("warning", "loadPost:onCancelled", error.toException());
+            }
+        });
     }
 
 }

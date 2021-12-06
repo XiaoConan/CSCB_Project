@@ -24,12 +24,12 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.MyViewHolder> {
-    ArrayList<String> list;
+    ArrayList<Product> list;
     Context context;
     String myAccount;
     TextView textView;
 
-    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount){
+    public ProductListAdapter(Context ct, ArrayList<Product> s1, String myAccount){
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
@@ -47,38 +47,18 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ProductListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.productView.setText(list.get(position));
+        holder.productName.setText(list.get(position).getName());
+        holder.productBrand.setText(list.get(position).getBrand());
+        holder.productPrice.setText(String.valueOf(list.get(position).getPrice()));
 
-        holder.myLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //read how many item (I don't know why here needs a array, if i just use int will be a error
-                final int[] amount = new int[1];
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Carts").child(myAccount);
-                ref.addListenerForSingleValueEvent( new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        //if item exist then add one, if not create the item and set it as 1
-                        if(snapshot.exists())
-                            amount[0] = (int)snapshot.getValue();
-                        else{
-                            amount[0] = 0;
-                            ref.child(list.get(position)).setValue(amount[0]);
-                        }
-
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.w("warning", "loadPost:onCancelled", error.toException());
-                    }
-                });
-                ref.child(list.get(position)).setValue(amount[0] + 1);
-                textView.setText("add one " + list.get(position) + " successfully" + "\n" + "now you have " + (amount[0] +1) +" of "+ list.get(position) + " in the Cart");
-            }
-        });
+//        holder.myLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//
+//
+//            }
+//        });
     }
 
     @Override
@@ -87,13 +67,17 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView productView;
+        TextView productName;
+        TextView productBrand;
+        TextView productPrice;
         ConstraintLayout myLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            productView = itemView.findViewById(R.id.listView);
-            myLayout = itemView.findViewById(R.id.mainLayout);
+            productName = itemView.findViewById(R.id.productName);
+            productBrand = itemView.findViewById(R.id.productBrand);
+            productPrice = itemView.findViewById(R.id.productPrice);
+            myLayout = itemView.findViewById(R.id.productListView);
         }
     }
 }
