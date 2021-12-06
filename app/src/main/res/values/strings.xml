@@ -64,4 +64,6 @@
     <string name="button">Button</string>
     <string name="textview">TextView</string>
     <string name="store">Store</string>
+
+    <string name="no_products_available">No products available, please add products in </string>
 </resources>

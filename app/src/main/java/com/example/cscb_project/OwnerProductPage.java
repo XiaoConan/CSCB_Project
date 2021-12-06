@@ -29,7 +29,7 @@ public class OwnerProductPage extends AppCompatActivity {
         add/remove a product.)
      */
 
-    private String username;
+    //private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class OwnerProductPage extends AppCompatActivity {
          */
         // Assume I am getting the owner's name from Intent.
         Intent intent = getIntent();
-        username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
+        String username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
         DatabaseReference storeRef = database.getReference(getString(R.string.stores_path));
@@ -70,29 +70,40 @@ public class OwnerProductPage extends AppCompatActivity {
             }
         });
 
-        // initialize all the data arrays we need to display.
-        String[] productIDs = (String[]) productIDArrList.toArray();
-        String[] brands = new String[productIDs.length];
-        String[] names = new String[productIDs.length];
-        double[] prices = new double[productIDs.length];
+        String[] productIDs, brands, names;
+        double[] prices;
 
-        for (int i = 0; i < productIDs.length; i++) {
-            // we read each productID, and get the info
-            int finalI = i;
-            productsRef.child(productIDs[i]).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    brands[finalI] = snapshot.child("brand").getKey();
-                    names[finalI] = snapshot.child("name").getKey();
-                    prices[finalI] = Double.parseDouble(snapshot.child("price").getKey());
-                }
-
-                @Override
-                public void onCancelled(DatabaseError error) {
-                }
-            });
+        if (productIDArrList.isEmpty()){
+            // if empty, we manually given them a value which is the message we want to display.
+            productIDs = null;
+            brands = new String[]{"no brand"};
+            names = new String[]{"no products yet, please return to the previous page to add a product."};
+            prices = new double[]{0};
         }
+        else {
+            // initialize all the data arrays we need to display.
+            productIDs = (String[]) productIDArrList.toArray();
+            brands = new String[productIDs.length];
+            names = new String[productIDs.length];
+            prices = new double[productIDs.length];
 
+            for (int i = 0; i < productIDs.length; i++) {
+                // we read each productID, and get the info
+                int finalI = i;
+                productsRef.child(productIDs[i]).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        brands[finalI] = snapshot.child("brand").getKey();
+                        names[finalI] = snapshot.child("name").getKey();
+                        prices[finalI] = Double.parseDouble(snapshot.child("price").getKey());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                    }
+                });
+            }
+        }
 
         // After getting the information of the products, we create the RecyclerView
 
@@ -103,6 +114,6 @@ public class OwnerProductPage extends AppCompatActivity {
         OwnerProductAdapter adapter = new OwnerProductAdapter(this, productIDs, names, brands, prices);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); // set LayoutManager to RecyclerView
-
     }
+
 }
