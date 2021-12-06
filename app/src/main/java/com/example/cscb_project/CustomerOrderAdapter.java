@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class CustomerOrderAdapter {
+public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdapter.MyViewHolder> {
     ArrayList<String> products;
     ArrayList<Integer> quantity;
     Context context;
@@ -33,40 +33,40 @@ public class CustomerOrderAdapter {
         this.myAccount = myAcc;
     }
 
-//    @NonNull
-//    @Override
-//    public CustomerOrderAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        LayoutInflater inflater = LayoutInflater.from(context);
-//        View view = inflater.inflate(R.layout.my_cart_view, parent, false);
-//        return new CustomerOrderAdapter.MyViewHolder(view);
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull CustomerOrderAdapter.MyViewHolder holder, int position) {
-//        String name = products.get(position);
-//        holder.productName.setText(name);
-//        int amount= quantity.get(position);
-//        String amountS = String.valueOf(amount);
-//        holder.productAmount.setText(amountS);
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return products.size();
-//    }
-//
-//    public class MyViewHolder extends RecyclerView.ViewHolder {
-//
-//        TextView productName;
-//        TextView productAmount;
-//        TextView subtotal;
-//        ConstraintLayout myLayout;
-//        public MyViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//            productName = itemView.findViewById(R.id.cartProductName);
-//            productAmount = itemView.findViewById(R.id.cartProductAmount);
-//            subtotal = itemView.findViewById(R.id.cartProductPrice);
-//            myLayout = itemView.findViewById(R.id.myCartView);
-//        }
-//    }
+    @NonNull
+    @Override
+    public CustomerOrderAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.my_cart_view, parent, false);
+        return new CustomerOrderAdapter.MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull CustomerOrderAdapter.MyViewHolder holder, int position) {
+        String name = products.get(position);
+        holder.productName.setText(name);
+        int amount= quantity.get(position);
+        String amountS = String.valueOf(amount);
+        holder.productAmount.setText(amountS);
+    }
+
+    @Override
+    public int getItemCount() {
+        return products.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView productName;
+        TextView productAmount;
+        TextView subtotal;
+        ConstraintLayout myLayout;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            productName = itemView.findViewById(R.id.cartProductName);
+            productAmount = itemView.findViewById(R.id.cartProductAmount);
+            subtotal = itemView.findViewById(R.id.cartProductPrice);
+            myLayout = itemView.findViewById(R.id.myCartView);
+        }
+    }
 }
