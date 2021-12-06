@@ -99,8 +99,7 @@ public class OwnerProductPage extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError error) {
-                    }
+                    public void onCancelled(DatabaseError error) { }
                 });
             }
         }
