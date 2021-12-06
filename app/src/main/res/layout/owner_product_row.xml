@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="369dp"
-        android:layout_height="64dp"
+        android:layout_height="80dp"
         android:backgroundTint="@color/blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +16,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="78dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/TextView_OwnerProductRowBrand"

@@ -68,7 +68,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                     @Override
                     public void onClick(View view) {
                         Order order = new Order(name, 1, d);
-                        if(cart.contains(name)){
+                        if(cart.contains(order)){
                             cart.get(cart.indexOf(order)).setQuantity(cart.get(cart.indexOf(order)).getQuantity() + 1);
                             cart.get(cart.indexOf(order)).setSubtotal(cart.get(cart.indexOf(order)).getSubtotal() + order.getSubtotal());
                         }
