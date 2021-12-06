@@ -31,6 +31,10 @@
     <string name="hint_password">Password</string>
 
     <string name="label_signout">Sign Out &amp; Exit</string>
+    <string name="label_home">Home</string>
+    <string name="label_storeList">All Stores</string>
+    <string name="label_orderList">My Orders</string>
+    <string name="label_manageStore">My Store</string>
 
     <string name="label_item">Item</string>
     <string name="label_name">Item Name</string>

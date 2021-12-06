@@ -18,35 +18,18 @@ public class StoreOwnerPage extends AppCompatActivity {
         Intent intent = getIntent();
         username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
 
-        TextView textView = findViewById(R.id.textView3);
+        TextView textView = findViewById(R.id.welcomeTextview);
         String message = "Welcome " + username;
         textView.setText(message);
     }
 
-
-    public void goToProducts(View view) {
-        Intent intent = new Intent(this, OwnerProductPage.class);
-        startActivity(intent);
-    }
-
-    public void goToOrders(View view) {
-        Intent intent = new Intent(this, OwnerOrdersPage.class);
-        // send the owner to owner order
-        //intent.putExtra(LoginPage.MY_ACCOUNT, myAccount);
-        startActivity(intent);
-    }
-
-    // move orders+products onto a store page
-
-    public void manageStore(View view) {
+    public void goManageStore(View view) {
         Intent intent = new Intent(this, StoreManagingPage.class);
         startActivity(intent);
     }
 
     public void signOut(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
-
 
 }

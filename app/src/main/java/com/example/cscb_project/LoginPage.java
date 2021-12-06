@@ -68,10 +68,12 @@ public class LoginPage extends AppCompatActivity {
                                 usernameEditText.setText("");
                                 passwordEditText.setText("");
                                 startActivity(createIntent(StoreOwnerPage.class, username));
+                                finish();
                             } else if (type.equals(getString(R.string.label_customer))) {
                                 usernameEditText.setText("");
                                 passwordEditText.setText("");
                                 startActivity(createIntent(CustomerPage.class, username));
+                                finish();
                             } else {
                                 // This is only if for some reason we read a type that is not owner/customer
                                 display(unexpected_error);

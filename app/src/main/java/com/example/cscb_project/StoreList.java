@@ -64,9 +64,9 @@ public class StoreList extends AppCompatActivity {
 
     public void goToStore(View view){
         Intent intent = new Intent(this, ShoppingStore.class);
-        TextView storeView = findViewById(R.id.store_button);
-        String choosingStore = storeView.getText().toString();
-        intent.putExtra(CURRENT_STORE, choosingStore);
+        //TextView storeView = findViewById(R.id.store_button);
+        //String choosingStore = storeView.getText().toString();
+        //intent.putExtra(CURRENT_STORE, choosingStore);
         intent.putExtra(LoginPage.EXTRA_MESSAGE, myAccount);
         startActivity(intent);
     }

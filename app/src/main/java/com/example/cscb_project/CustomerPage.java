@@ -2,9 +2,12 @@ package com.example.cscb_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class CustomerPage extends AppCompatActivity {
@@ -24,25 +27,18 @@ public class CustomerPage extends AppCompatActivity {
     }
 
     public void browseStores(View view) {
-        //Intent intent = new Intent(this, ShoppingStore.class);
-        // go to storelist page i think?
-        // ??????????????????????????????????
-        //startActivity(intent);
+        Intent intent = new Intent(this, StoreList.class);
+        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
+        startActivity(intent);
     }
 
-    public void goToCart(View view) {
-        Intent intent = new Intent(this, CartPage.class);
+    public void goMyOrders(View view){
+        Intent intent = new Intent(this, CustomerOrderPage.class);
         startActivity(intent);
     }
 
     public void signOut(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void checkOrder(View view){
-        Intent intent = new Intent(this, CustomerOrderPage.class);
-        startActivity(intent);
+        finish();
     }
 
 }
