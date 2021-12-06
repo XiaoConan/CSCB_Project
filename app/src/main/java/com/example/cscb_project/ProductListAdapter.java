@@ -28,12 +28,14 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     ArrayList<String> list;
     Context context;
     String myAccount;
+    ArrayList<Order> cart;
     //TextView textView;
 
-    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount){
+    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount, ArrayList<Order> cart){
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
+        this.cart = cart;
      //   textView.findViewById(R.id.setOrderInfo);
         //textView.findViewById(R.id.addToCartMessage);
     }
@@ -61,6 +63,15 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 Double d = snapshot.child("price").getValue(Double.class);
                 String price = Double.toString(d);
                 holder.productBrand.setText(price);
+                holder.myLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Order order = new Order(name, 1, d);
+                        if(cart.contains(name)){
+                            cart.get(cart.indexOf(order));
+                        }
+                    }
+                });
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -68,16 +79,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             }
         });
 
-
-
-//        holder.myLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//
-//            }
-//        });
     }
 
     @Override

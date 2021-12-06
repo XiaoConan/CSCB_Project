@@ -26,6 +26,7 @@ public class ShoppingStore extends AppCompatActivity {
     String myAccount;
     String storeID;
     ArrayList<String> productIDs;
+    ArrayList<Order> cart;
     RecyclerView recyclerView;
     Context context = this;
     TextView displayMessageBox;
@@ -43,37 +44,13 @@ public class ShoppingStore extends AppCompatActivity {
         myAccount = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
         storeID = intent.getStringExtra(StoreList.CURRENT_STORE);
 
-//        Query productQuery = productRef.orderByChild("storeID").equalTo(storeID);
-//
-//        productQuery.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                products = new ArrayList<>();
-//
-//                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-//                    Product product = dataSnapshot.getValue(Product.class);
-//                    products.add(product);
-//                }
-//
-//                RecyclerView recyclerView = findViewById(R.id.productView);
-//
-//                ProductListAdapter myAdapter = new ProductListAdapter(context, products, myAccount);
-//                recyclerView.setAdapter(myAdapter);
-//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
         DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(storeID).child("productList");
 
         storeRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 productIDs = new ArrayList<>();
+                cart = new ArrayList<Order>();
 
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     String productID = ds.getKey();
@@ -82,8 +59,14 @@ public class ShoppingStore extends AppCompatActivity {
 
                 recyclerView = findViewById(R.id.productView);
 
-                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount);
+                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount, cart);
                 recyclerView.setAdapter(myAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+                recyclerView = findViewById(R.id.cartView);
+
+                CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
+                recyclerView.setAdapter(cartAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
             }
@@ -99,20 +82,6 @@ public class ShoppingStore extends AppCompatActivity {
 
     }
 
-//    public void searchProudctById(String id){
-//
-//        productRef.child(id).addListenerForSingleValueEvent( new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                Product product;
-//                product = (Product) snapshot.getValue(Product.class);
-//                products.add(product);
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Log.w("warning", "loadPost:onCancelled", error.toException());
-//            }
-//        });
-//    }
+
 
 }

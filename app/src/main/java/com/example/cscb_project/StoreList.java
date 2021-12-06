@@ -31,6 +31,7 @@ public class StoreList extends AppCompatActivity {
     RecyclerView recyclerView;
     Context con = this;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,7 @@ public class StoreList extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 stores = new ArrayList<String>();
                 ids = new ArrayList<String>();
+
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     String name = ds.child("storeName").getValue(String.class);
                     String id = ds.getKey();
@@ -58,9 +60,11 @@ public class StoreList extends AppCompatActivity {
                 //use recyclerView to display store list
                 recyclerView = findViewById(R.id.allStores);
 
-                StoreListAdapter myAdapter = new StoreListAdapter(con, stores, ids, myAccount);
-                recyclerView.setAdapter(myAdapter);
+                StoreListAdapter productAdapter = new StoreListAdapter(con, stores, ids, myAccount);
+                recyclerView.setAdapter(productAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(con));
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

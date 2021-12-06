@@ -3,37 +3,56 @@ package com.example.cscb_project;
 import java.util.Objects;
 
 public class Order {
-    private Product product;
+    private String name;
     private int quantity;
+    private double subtotal;
 
     public Order() {
-        product = new Product();
+        name = "";
         quantity = 0;
+        subtotal = 0;
     }
 
-    public Order(Product product) {
-        this.product = product;
-    }
-
-    public Order(Product product, int quantity) {
-        this.product = product;
+    public Order(String name, int quantity, double subtotal) {
+        this.name = name;
         this.quantity = quantity;
+        this.subtotal = subtotal;
     }
 
-    public void setQuantity(int newQuantity) {
-        quantity = newQuantity;
+    public String getName() {
+        return name;
     }
 
-    public void setProduct(Product newProduct) {
-        product = newProduct;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public Product getProduct() {
-        return product;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return name.equals(order.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }
