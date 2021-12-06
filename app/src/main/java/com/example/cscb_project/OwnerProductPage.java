@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,7 +70,7 @@ public class OwnerProductPage extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot products : snapshot.getChildren()) {
                     //String prodID = (String) products.getKey(); // since the data is stored as productID:true.
-                    String prodID = products.getValue(String.class);
+                    final String prodID = products.getKey();
                     productIDArrList.add(prodID);
                 }
             }
@@ -86,8 +87,8 @@ public class OwnerProductPage extends AppCompatActivity {
         if (productIDArrList.isEmpty()){
             // if empty, we manually given them a value which is the message we want to display.
             productIDs = null;
-            brands = new String[]{"no brand"};
-            names = new String[]{"no products yet, please return to the previous page to add a product."};
+            brands = new String[]{"No brand"};
+            names = new String[]{"No products yet, please return to the previous page to add a product."};
             prices = new double[]{0};
         }
         else {
