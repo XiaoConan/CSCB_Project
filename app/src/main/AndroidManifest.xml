@@ -14,11 +14,11 @@
         <activity
             android:name=".ShoppingStore"
             android:exported="false"
-            android:label="@string/label_createProduct"
-            android:parentActivityName=".CustomerPage">
+            android:label="@string/label_shop"
+            android:parentActivityName=".StoreList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CustomerPage" />
+                android:value=".StoreList" />
             />
         </activity>
 

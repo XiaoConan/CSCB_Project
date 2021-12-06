@@ -43,7 +43,7 @@ public class StoreList extends AppCompatActivity {
         //read store list from the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("Stores");
-        ref.addListenerForSingleValueEvent( new ValueEventListener() {
+        ref.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 stores = new ArrayList<String>();
