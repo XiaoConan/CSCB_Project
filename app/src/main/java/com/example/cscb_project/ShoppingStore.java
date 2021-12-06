@@ -26,7 +26,7 @@ public class ShoppingStore extends AppCompatActivity {
     String myAccount;
     String storeID;
     ArrayList<String> productIDs;
-   // ArrayList<Order> cart;
+    ArrayList<Order> cart;
     RecyclerView recyclerView;
     Context context = this;
     TextView displayMessageBox;
@@ -61,7 +61,7 @@ public class ShoppingStore extends AppCompatActivity {
                 recyclerView = findViewById(R.id.productView);
                 recyclerView2 = findViewById(R.id.cartView);
 
-                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount, recyclerView2);
+                ProductListAdapter myAdapter = new ProductListAdapter(context, productIDs, myAccount, recyclerView2, cart);
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 

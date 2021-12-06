@@ -32,12 +32,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     RecyclerView recyclerView;
     //TextView textView;
 
-    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount, RecyclerView recyclerView){
+    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount, RecyclerView recyclerView, ArrayList<Order> cart){
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
         this.recyclerView = recyclerView;
-        this.cart = new ArrayList<Order>();
+        this.cart = cart;
      //   textView.findViewById(R.id.setOrderInfo);
         //textView.findViewById(R.id.addToCartMessage);
     }
@@ -76,13 +76,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                         else{
                             cart.add(order);
                         }
-
-                        CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
-                        recyclerView.setAdapter(cartAdapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-
                     }
                 });
+                CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
+                recyclerView.setAdapter(cartAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
