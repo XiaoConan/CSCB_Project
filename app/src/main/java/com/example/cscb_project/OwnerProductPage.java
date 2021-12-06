@@ -35,7 +35,7 @@ public class OwnerProductPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_product_page);
 
-        /** Reads the firebase for the items in the store, and display the name of the products
+        /* Reads the firebase for the items in the store, and display the name of the products
          in the Recycler View.
          */
         // Assume I am getting the owner's name from Intent.
@@ -54,7 +54,8 @@ public class OwnerProductPage extends AppCompatActivity {
         //    get all productIDs as String[].
         //  Then, knowing the size of the following arrays(productIDs.length)we will populate
         //     brands, names, prices in the corresponding order.
-        storeRef.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
+        String storeID = usersRef.child(username).child(getString(R.string.store_id_child)).getKey();
+        storeRef.child(storeID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot products : snapshot.getChildren()) {
