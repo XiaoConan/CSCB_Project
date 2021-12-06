@@ -27,7 +27,7 @@
 
 
         <activity
-            android:name=".StoreManagingPage"
+            android:name=".CreateProductPage"
             android:exported="false"
             android:label="@string/label_manageStore"
             android:parentActivityName=".StoreOwnerPage">
