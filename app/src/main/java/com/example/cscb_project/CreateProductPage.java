@@ -8,11 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class CreateProductPage extends AppCompatActivity {
@@ -25,6 +22,7 @@ public class CreateProductPage extends AppCompatActivity {
 
     private DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     private String storeID;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +31,8 @@ public class CreateProductPage extends AppCompatActivity {
         display(initial_message);
 
         Intent intent = getIntent();
-        String username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
-
-        // Get storeID from user info
-        ref.child(getString(R.string.users_path)).child(username).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                storeID = snapshot.child("storeID").getValue(String.class);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
-        });
-
+        username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
+        storeID = intent.getStringExtra(StoreList.CURRENT_STORE);
     }
 
     public void display(String s) {
@@ -56,7 +41,7 @@ public class CreateProductPage extends AppCompatActivity {
     }
 
     public void addProduct(View view){
-        EditText editText1 = findViewById(R.id.itemNameField);
+        EditText editText1 = findViewById(R.id.itemField);
         String name = editText1.getText().toString();
         EditText editText2 = findViewById(R.id.brandField);
         String brand = editText2.getText().toString();

@@ -14,8 +14,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class StoreOwnerPage extends AppCompatActivity {
+    public static final String STORE_NAME = "com.example.cscb_project.STORENAME";
     private String username;
-
+    private String storeID;
+    private String storeName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,9 @@ public class StoreOwnerPage extends AppCompatActivity {
         usersRef.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                String storeID = snapshot.child("storeID").getValue(String.class);
-                searchStoreName(storeID);
+                String id = snapshot.child("storeID").getValue(String.class);
+                storeID = id;
+                searchStoreName(id);
             }
 
             @Override
@@ -49,10 +52,10 @@ public class StoreOwnerPage extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    String storeName = snapshot.getValue(String.class);
-                    displayWelcome(username, storeName);
+                    String name = snapshot.getValue(String.class);
+                    storeName = name;
+                    displayWelcome(username, name);
                 }
-
             }
 
             @Override
@@ -68,21 +71,32 @@ public class StoreOwnerPage extends AppCompatActivity {
         textView.setText(message);
     }
 
-    public void goManageStore(View view) {
+    public void goCreateProduct(View view) {
         Intent intent = new Intent(this, CreateProductPage.class);
         intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
+        intent.putExtra(StoreList.CURRENT_STORE, storeID);
         startActivity(intent);
     }
 
     public void goOwnerProductPage(View view) {
         Intent intent = new Intent(this, OwnerProductPage.class);
         intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
+        intent.putExtra(StoreList.CURRENT_STORE, storeID);
         startActivity(intent);
     }
 
     public void goOwnerOrdersPage(View view) {
         Intent intent = new Intent(this, OwnerOrdersPage.class);
         intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
+        intent.putExtra(StoreList.CURRENT_STORE, storeID);
+        startActivity(intent);
+    }
+
+    public void goEditStore(View view) {
+        Intent intent = new Intent(this, EditStoreNamePage.class);
+        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
+        intent.putExtra(StoreList.CURRENT_STORE, storeID);
+        intent.putExtra(StoreOwnerPage.STORE_NAME, storeName);
         startActivity(intent);
     }
 

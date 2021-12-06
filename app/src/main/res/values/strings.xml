@@ -39,30 +39,36 @@
     <string name="label_brand">Brand</string>
     <string name="label_quantity">Quantity</string>
     <string name="label_shop">Products</string>
+    <string name="label_confirm">Confirm</string>
     <string name="label_createProduct">Create a New Product</string>
     <string name="button_store">Manage My Store</string>
     <string name="button_products">View Your Products</string>
     <string name="button_orders">My Orders</string>
+    <string name="label_ownerOrders">My Orders</string>
     <string name="button_shop">Browse Stores</string>
     <string name="button_store_orders">Pending Orders</string>
     <string name="button_settings">My Cart</string>
     <string name="button_addProduct">Add Product</string>
     <string name="button_editStore">Edit Store Name</string>
     <string name="welcome_message">Welcome</string>
+    <string name="label_newName">New Name</string>
+    <string name="label_oldName">Old Name</string>
+    <string name="label_editStore">Edit Store Name</string>
+    <string name="label_ownerProducts">My Products</string>
+
+
 
 
     <!-- Haven't really gotten to these yet-->
-    <string name="button_work_on_it">Work on it</string>
     <string name="label_complete">Complete</string>
     <string name="label_submit">Submit</string>
-    <string name="label_confirm">Confirm</string>
+
     <string name="textview_total_price">Total price</string>
     <string name="button_AddToCart">Add to Cart</string>
     <string name="store">Store</string>
 
     <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
-
 
     <string name="no_products_available">No products available, please add products in </string>
 </resources>
