@@ -76,11 +76,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                         else{
                             cart.add(order);
                         }
+                        CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
+                        recyclerView.setAdapter(cartAdapter);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
                     }
                 });
-                CartViewAdapter cartAdapter = new CartViewAdapter(cart, context, myAccount);
-                recyclerView.setAdapter(cartAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
