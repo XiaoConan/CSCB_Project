@@ -60,7 +60,9 @@ public class OwnerProductPage extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot products : snapshot.getChildren()) {
-                    productIDArrList.add((String) products.getKey()); // since the data is stored as productID:true.
+                    //String prodID = (String) products.getKey(); // since the data is stored as productID:true.
+                    String prodID = products.getValue(String.class);
+                    productIDArrList.add(prodID);
                 }
             }
 
