@@ -25,6 +25,7 @@ public class StoreOwnerPage extends AppCompatActivity {
 
     public void goManageStore(View view) {
         Intent intent = new Intent(this, StoreManagingPage.class);
+        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
         startActivity(intent);
     }
 

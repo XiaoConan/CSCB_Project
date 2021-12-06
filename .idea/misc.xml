@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_cart_page.xml" value="0.33" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_customer_order_page.xml" value="0.67" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_customer_page.xml" value="0.33" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_display_successful_message.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_login_page.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_order_detail.xml" value="0.33" />
@@ -13,13 +15,9 @@
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_shopping_store.xml" value="0.67" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_sign_up_page.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_list.xml" value="0.33" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_managing_page.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_owner_page.xml" value="0.25" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_add_product_page.xml" value="0.6" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_add_product_to_store_page.xml" value="0.536" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_login_page.xml" value="0.6" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_owner_product_page.xml" value="0.6" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_managing_page.xml" value="0.72" />
-        <entry key="..\:/Users/16699/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_owner_page.xml" value="0.72" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/my_row.xml" value="0.5" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_cart_page.xml" value="0.6" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_customer_page.xml" value="0.536" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_login_page.xml" value="0.4" />

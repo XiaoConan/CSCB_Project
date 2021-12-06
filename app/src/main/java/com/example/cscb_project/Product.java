@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Product {
     private String name;
-    private double price;
     private String brand;
+    private double price;
     private String storeID;
 
     public Product() {
@@ -15,7 +15,7 @@ public class Product {
         storeID = "";
     }
 
-    public Product(String name, double price, String brand, String store) {
+    public Product(String name, String brand, double price, String store) {
         this.name = name;
         this.price = price;
         this.brand = brand;

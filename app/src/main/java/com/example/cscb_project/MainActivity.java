@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 //                //Log.w("warning", "loadPost:onCancelled", error.toException());
 //            }
 //        });
-        Product product = new Product("name", 13.33, "brand", "id");
+        Product product = new Product("name",  "brand", 13.33,"id");
         DatabaseReference newRef = ref.child("Products").push();
         newRef.setValue(product);
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         exampleFirebaseCode();
+        // exampleFirebaseCode();
     }
 
     public void goToLoginPage(View view) {

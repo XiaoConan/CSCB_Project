@@ -27,7 +27,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
     public void display(String s) {
-        TextView textView = (TextView) findViewById(R.id.loginMessage);
+        TextView textView = findViewById(R.id.loginMessage);
         textView.setText(s);
     }
 
@@ -41,8 +41,8 @@ public class LoginPage extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
 
-        EditText usernameEditText = (EditText) findViewById(R.id.loginUsernameField);
-        EditText passwordEditText = (EditText) findViewById(R.id.loginPasswordField);
+        EditText usernameEditText = findViewById(R.id.loginUsernameField);
+        EditText passwordEditText = findViewById(R.id.loginPasswordField);
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
@@ -65,13 +65,9 @@ public class LoginPage extends AppCompatActivity {
                             String type = snapshot.child("type").getValue(String.class);
 
                             if (type.equals(getString(R.string.label_owner))) {
-                                usernameEditText.setText("");
-                                passwordEditText.setText("");
                                 startActivity(createIntent(StoreOwnerPage.class, username));
                                 finish();
                             } else if (type.equals(getString(R.string.label_customer))) {
-                                usernameEditText.setText("");
-                                passwordEditText.setText("");
                                 startActivity(createIntent(CustomerPage.class, username));
                                 finish();
                             } else {

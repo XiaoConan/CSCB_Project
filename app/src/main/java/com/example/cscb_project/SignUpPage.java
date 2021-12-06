@@ -27,6 +27,7 @@ public class SignUpPage extends AppCompatActivity {
     public static final String invalid_username_error2 = "Username must contain at least one letter/number";
     public static final String validUsernameRegex1 = "\\w+"; // checking for anything with special character
     public static final String validUsernameRegex2 = "\\w*[a-zA-Z0-9]\\w*"; // allows numbers, letters, underscores, but must have at least one letter/number
+    public static final String noStoreValue = "NA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,7 @@ public class SignUpPage extends AppCompatActivity {
     }
 
     public void display(String s) {
-        // display s in signupErrorField
-        TextView textView = (TextView) findViewById(R.id.signupMessage);
+        TextView textView = findViewById(R.id.signupMessage);
         textView.setText(s);
     }
 
@@ -44,14 +44,14 @@ public class SignUpPage extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = database.getReference(getString(R.string.users_path));
         //Add the user to stores if this is an storeOwner
-        DatabaseReference storesRef = database.getReference("Stores");
+        DatabaseReference storesRef = database.getReference(getString(R.string.stores_path));
 
-        EditText usernameEditText = (EditText) findViewById(R.id.signupUsernameField);
-        EditText passwordEditText = (EditText) findViewById(R.id.signupPasswordField);
+        EditText usernameEditText = findViewById(R.id.signupUsernameField);
+        EditText passwordEditText = findViewById(R.id.signupPasswordField);
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
 
         // Check username & password valid & account type selected
         if (username.isEmpty()) {
@@ -74,13 +74,19 @@ public class SignUpPage extends AppCompatActivity {
                     } else {
                         // Add info to firebase
                         usersRef.child(username).child("password").setValue(password);
-                        RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+                        RadioButton selectedButton = findViewById(radioGroup.getCheckedRadioButtonId());
                         String userType = selectedButton.getText().toString();
                         usersRef.child(username).child("type").setValue(userType);
-                        if (userType.equals(getString(R.string.label_owner))) {
-                            storesRef.child(username).child("ProductsID").setValue("");
-                        }
 
+                        // Automatically create a store if store owner
+                        if (userType.equals(getString(R.string.label_owner))) {
+                            Store store = new Store(username);
+                            String key = storesRef.push().getKey();
+                            storesRef.child(key).setValue(store);
+                            usersRef.child(username).child("storeID").setValue(key);
+                        } else if (userType.equals(getString(R.string.label_customer))) {
+                            usersRef.child(username).child("storeID").setValue(noStoreValue);
+                        }
 
                         display(success_message);
 
@@ -96,16 +102,7 @@ public class SignUpPage extends AppCompatActivity {
                 }
 
             });
-//            usersRef.child(username).child("password").setValue(password);
-//            RadioButton selectedButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
-//            String userType = selectedButton.getText().toString();
-//            usersRef.child(username).child("type").setValue(userType);
-//
-//            display(success_message);
-//
-//            // Clear fields
-//            usernameEditText.setText("");
-//            passwordEditText.setText("");
+
         }
 
     }

@@ -18,8 +18,8 @@
     <!-- Firebase directory paths?-->
     <string name="users_path">Users</string>
     <string name="products_path">Products</string>
-    <string name="orders_path">Stores</string>
-    <string name="stores_path">Orders</string>
+    <string name="orders_path">Orders</string>
+    <string name="stores_path">Stores</string>
 
     <!-- Labels & stuff-->
     <string name="app_name">CSCB_Project</string>
@@ -49,6 +49,7 @@
     <string name="button_shop">Browse Stores</string>
     <string name="button_store_orders">Pending Orders</string>
     <string name="button_settings">My Cart</string>
+    <string name="button_addProduct">Add Product</string>
 
 
     <!-- Haven't really gotten to these yet-->
@@ -58,7 +59,7 @@
     <string name="label_confirm">Confirm</string>
     <string name="textview_total_price">Total price</string>
     <string name="button_AddToCart">Add to Cart</string>
-    <string name="button_AddProductToStore">Add product to store</string>
+
     <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
     <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
     <string name="welcome_message">Welcome</string>
