@@ -32,12 +32,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     RecyclerView recyclerView;
     //TextView textView;
 
-    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount, RecyclerView recyclerView, ArrayList<Order> cart){
+    public ProductListAdapter(Context ct, ArrayList<String> s1, String myAccount, RecyclerView recyclerView){
         this.context = ct;
         this.list = s1;
         this.myAccount = myAccount;
         this.recyclerView = recyclerView;
-        this.cart = cart;
+        this.cart = new ArrayList<Order>();
      //   textView.findViewById(R.id.setOrderInfo);
         //textView.findViewById(R.id.addToCartMessage);
     }
