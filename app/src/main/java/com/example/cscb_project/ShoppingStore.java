@@ -29,8 +29,8 @@ public class ShoppingStore extends AppCompatActivity {
     Context context = this;
     TextView displayMessageBox;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference productRef = FirebaseDatabase.getInstance().getReference("Products");
-    DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(currentStore).child("productList");
+    DatabaseReference productRef = database.getReference("Products");
+ //   DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(currentStore).child("productList");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +43,15 @@ public class ShoppingStore extends AppCompatActivity {
         currentStore = intent.getStringExtra(StoreList.CURRENT_STORE);
 
         //get product belong to the firebase
-        storeRef.addListenerForSingleValueEvent( new ValueEventListener() {
+        productRef.addListenerForSingleValueEvent( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     //check the product list and get all the products that belong to currentStore
-                   String bufferId = ds.getKey();
-                   searchProudctById(bufferId);
+                    if(ds.child("storeID").getValue().toString().equals(currentStore))
+                        products.add(ds.getValue(Product.class));
+
+//                   searchProudctById(bufferId);
                 }
 
                 recyclerView = findViewById(R.id.storeListView);
@@ -72,20 +74,20 @@ public class ShoppingStore extends AppCompatActivity {
 
     }
 
-    public void searchProudctById(String id){
-
-        productRef.child(id).addListenerForSingleValueEvent( new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Product product;
-                product = (Product) snapshot.getValue(Product.class);
-                products.add(product);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("warning", "loadPost:onCancelled", error.toException());
-            }
-        });
-    }
+//    public void searchProudctById(String id){
+//
+//        productRef.child(id).addListenerForSingleValueEvent( new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                Product product;
+//                product = (Product) snapshot.getValue(Product.class);
+//                products.add(product);
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.w("warning", "loadPost:onCancelled", error.toException());
+//            }
+//        });
+//    }
 
 }
