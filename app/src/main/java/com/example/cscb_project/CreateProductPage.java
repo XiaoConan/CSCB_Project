@@ -60,7 +60,7 @@ public class CreateProductPage extends AppCompatActivity {
         EditText editText2 = findViewById(R.id.brandField);
         String brand = editText1.getText().toString();
         EditText editText3 = findViewById(R.id.priceField);
-        double price = Double.parseDouble(editText1.getText().toString());
+        double price = Double.parseDouble(editText3.getText().toString());
 
         // Error checks/messages~~
 

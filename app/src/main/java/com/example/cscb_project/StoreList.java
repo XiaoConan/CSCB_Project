@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,12 +22,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class StoreList extends AppCompatActivity {
     public static final String CURRENT_STORE = "com.example.cscb_project.CURRENTSTORE";
     String myAccount;
     ArrayList<String> stores;
     RecyclerView recyclerView;
+    Context con = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +46,19 @@ public class StoreList extends AppCompatActivity {
         ref.addListenerForSingleValueEvent( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                stores = new ArrayList<String>();
+                int i = 0;
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     String bufferString = ds.getKey();
+//                    stores[i] = bufferString;
+//                    i++;
                     stores.add(bufferString);
                 }
+                recyclerView = findViewById(R.id.allStores);
+
+                StoreListAdapter myAdapter = new StoreListAdapter(con, stores, myAccount);
+                recyclerView.setAdapter(myAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(con));
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -54,14 +66,9 @@ public class StoreList extends AppCompatActivity {
             }
         });
 
-        TextView tx = findViewById(R.id.testText);
-        tx.setText(stores.get(0));
+
         //use recyclerView to display store list
-//        recyclerView = findViewById(R.id.allStores);
-//
-//        StoreListAdapter myAdapter = new StoreListAdapter(this, stores, myAccount);
-//        recyclerView.setAdapter(myAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
 //    public void goToStore(View view){

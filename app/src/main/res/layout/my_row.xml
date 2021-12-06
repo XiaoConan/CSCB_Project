@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:id="@+id/mainLayout">
+    android:paddingStart="64dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/listCard"
@@ -19,9 +20,13 @@
 
         <TextView
             android:id="@+id/listView"
-            android:layout_width="388dp"
-            android:layout_height="72dp"
-            android:text="@string/textview" />
+            android:layout_width="335dp"
+            android:layout_height="match_parent"
+            android:paddingStart="64dp"
+            android:paddingEnd="64dp"
+            android:text="@string/textview"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
     </androidx.cardview.widget.CardView>
 
