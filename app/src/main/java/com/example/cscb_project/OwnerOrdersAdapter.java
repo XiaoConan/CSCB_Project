@@ -42,18 +42,24 @@ public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.
         orderRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                OrderList orders = new OrderList();
+                orders = snapshot.getValue(OrderList.class);
                 String id = snapshot.getKey();
-                String other = snapshot.child("customerID").getValue(String.class);
-                String status = snapshot.child("complete").getValue(String.class);
+                String other = orders.getCustomerID();
+                Boolean status = orders.isComplete();
                 holder.idField.setText(id);
                 holder.otherField.setText(other);
-                holder.statusField.setText(status);
-                holder.myLayout.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        orderRef.child("complete").setValue("true");
-                    }
-                });
+                if(status){
+                    holder.statusField.setText("Complete");
+                }else{
+                    holder.statusField.setText("Incomplete");
+                }
+//                holder.myLayout.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        orderRef.child("complete").setValue("true");
+//                    }
+//                });
 
             }
             @Override
