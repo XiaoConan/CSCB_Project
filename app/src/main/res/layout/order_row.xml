@@ -19,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/scrollbar"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="@color/yellow_orange"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="16dp">
 
             <TextView
                 android:id="@+id/orderField"
-                android:layout_width="144dp"
+                android:layout_width="96dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:gravity="center"

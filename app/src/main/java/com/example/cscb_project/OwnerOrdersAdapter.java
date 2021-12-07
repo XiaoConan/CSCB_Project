@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.MyViewHolder> {
     ArrayList<String> list; // of orderIDs
     Context context;
+    public static final String complete_message = "Complete";
+    public static final String incomplete_message = "Incomplete";
 
     public OwnerOrdersAdapter (Context context, ArrayList<String> orderIDs) {
         this.context = context;
@@ -43,21 +45,26 @@ public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String id = snapshot.getKey();
-                String other = snapshot.child("customerID").getValue(String.class);
-                boolean status = (boolean) snapshot.child("customerID").getValue();
+                OrderList orderList = snapshot.getValue(OrderList.class);
+                String other = orderList.getCustomerID();
+                boolean status = orderList.isComplete();
+                //String other = snapshot.child("customerID").getValue(String.class);
+                //Boolean status = snapshot.child("complete").getValue(Boolean.class);
                 holder.idField.setText(id);
                 holder.otherField.setText(other);
-                if(status){
-                    holder.statusField.setText("Complete");
-                }else{
-                    holder.statusField.setText("Incomplete");
+
+
+                if (status) {
+                    holder.statusField.setText(complete_message);
+                } else {
+                    holder.statusField.setText(incomplete_message);
                 }
-//                holder.myLayout.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        orderRef.child("complete").setValue("true");
-//                    }
-//                });
+                holder.myLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        orderRef.child("complete").setValue(!status);
+                    }
+                });
 
             }
             @Override
