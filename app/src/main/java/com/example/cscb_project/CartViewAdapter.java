@@ -7,22 +7,27 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyViewHolder> {
-    ArrayList<Order> products;
+    ArrayList<Order> cart;
     Context context;
-    String myAccount;
     DecimalFormat df = new DecimalFormat("#.00");
 
-    public CartViewAdapter(ArrayList<Order> products, Context context, String myAccount) {
-        this.products = products;
+    public CartViewAdapter(ArrayList<Order> products, Context context) {
+        this.cart = products;
         this.context = context;
-        this.myAccount = myAccount;
+    }
+
+    public ArrayList<Order> getCart() {
+        return cart;
+    }
+
+    public void setCart(ArrayList<Order> cart) {
+        this.cart = cart;
     }
 
     @NonNull
@@ -35,12 +40,12 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        String name = products.get(position).getName();
+        String name = cart.get(position).getName();
         holder.productName.setText(name);
-        int amount = products.get(position).getQuantity();
-        String amountS = String.valueOf(amount) + "x";
+        int amount = cart.get(position).getQuantity();
+        String amountS = amount + "x";
         holder.productAmount.setText(amountS);
-        Double subtotal = products.get(position).getSubtotal();
+        Double subtotal = cart.get(position).getSubtotal();
 
         String subtotalS = "$" + df.format(subtotal);
         holder.subtotal.setText(subtotalS);
@@ -48,7 +53,7 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return cart.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

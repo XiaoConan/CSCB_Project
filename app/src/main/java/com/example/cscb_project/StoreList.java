@@ -8,13 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +31,8 @@ public class StoreList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
 
+        recyclerView = findViewById(R.id.allStores);
+
         //get myAccount info from intent
         Intent intent = getIntent();
         myAccount = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
@@ -47,8 +43,8 @@ public class StoreList extends AppCompatActivity {
         ref.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                stores = new ArrayList<String>();
-                ids = new ArrayList<String>();
+                stores = new ArrayList<>();
+                ids = new ArrayList<>();
 
                 for(DataSnapshot ds: snapshot.getChildren()) {
                     String name = ds.child("storeName").getValue(String.class);
@@ -57,29 +53,17 @@ public class StoreList extends AppCompatActivity {
                     ids.add(id);
                 }
 
-                //use recyclerView to display store list
-                recyclerView = findViewById(R.id.allStores);
-
                 StoreListAdapter productAdapter = new StoreListAdapter(con, stores, ids, myAccount);
                 recyclerView.setAdapter(productAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(con));
-
-
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("warning", "loadPost:onCancelled", error.toException());
+
             }
         });
 
     }
 
-//    public void goToStore(View view){
-//        Intent intent = new Intent(this, ShoppingStore.class);
-//        //TextView storeView = findViewById(R.id.store_button);
-//        //String choosingStore = storeView.getText().toString();
-//        //intent.putExtra(CURRENT_STORE, choosingStore);
-//        intent.putExtra(LoginPage.EXTRA_MESSAGE, myAccount);
-//        startActivity(intent);
-//    }
 }

@@ -1,30 +1,35 @@
 package com.example.cscb_project;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class OrderList {
-    private ArrayList<Order> orders;
+    private Map<String, Integer> productToQuantity;
     private String customerID;
     private String storeID;
     private boolean complete;
 
     public OrderList() {
-        orders = new ArrayList<Order>();
+        productToQuantity = new HashMap<>();
         customerID = "";
         storeID = "";
         complete = false;
     }
 
-    public OrderList(ArrayList<Order> orders) {
-        this.orders = orders;
-        customerID = "";
-        storeID = "";
+    public OrderList(String customerID, String storeID) {
+        productToQuantity = new HashMap<>();
+        this.customerID = customerID;
+        this.storeID = storeID;
         complete = false;
     }
 
-    public void addOrder(Order order) {
-        orders.add(order);
+    public  OrderList(String customerID, String storeID, Map<String, Integer> map) {
+        productToQuantity = map;
+        this.customerID = customerID;
+        this.storeID = storeID;
+        complete = false;
     }
 
     public void setStoreID(String storeID) {
@@ -43,36 +48,19 @@ public class OrderList {
         return customerID;
     }
 
-    public void removeOrder(Order order) {
-        orders.remove(order);
-    }
-
-    public void clearList() {
-        orders.clear();
-    }
-
-    public Order getOrder(int index) {
-        return orders.get(index);
-    }
-
-    public ArrayList<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
-    }
-
     public boolean isComplete() {
         return complete;
     }
 
-    public void setComplete() {
-        complete = true;
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 
-    public void setIncomplete() {
-        complete = false;
+    public Map<String, Integer> getProductToQuantity() {
+        return productToQuantity;
     }
 
+    public void setProductToQuantity(Map<String, Integer> productToQuantity) {
+        this.productToQuantity = productToQuantity;
+    }
 }

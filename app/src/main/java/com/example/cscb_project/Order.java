@@ -3,20 +3,31 @@ package com.example.cscb_project;
 import java.util.Objects;
 
 public class Order {
+    private String productID;
     private String name;
     private int quantity;
     private double subtotal;
 
     public Order() {
+        productID = "";
         name = "";
         quantity = 0;
         subtotal = 0;
     }
 
-    public Order(String name, int quantity, double subtotal) {
+    public Order(String productID, String name, int quantity, double subtotal) {
+        this.productID = productID;
         this.name = name;
         this.quantity = quantity;
         this.subtotal = subtotal;
+    }
+
+    public String getProductID() {
+        return productID;
+    }
+
+    public void setProductID(String productID) {
+        this.productID = productID;
     }
 
     public String getName() {
@@ -48,11 +59,11 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return name.equals(order.name);
+        return productID.equals(order.productID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(productID);
     }
 }

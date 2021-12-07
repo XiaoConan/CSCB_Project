@@ -70,7 +70,7 @@ public class OwnerProductPage extends AppCompatActivity {
         String storeID = usersRef.child(username).child(getString(R.string.store_id_child)).push().getKey(); //added .push().
 
         // store -> storeID -> productList -> listen here(to items in productList).
-        storeRef.child(storeID).child(getString(R.string.store_product_list)).addListenerForSingleValueEvent(new ValueEventListener() {
+        storeRef.child(storeID).child(getString(R.string.product_list)).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot products : snapshot.getChildren()) {

@@ -13,8 +13,11 @@
     <string name="products_path">Products</string>
     <string name="orders_path">Orders</string>
     <string name="stores_path">Stores</string>
+    <string name="test_path">Test</string>
     <string name="store_id_child">storeID</string>
-    <string name="store_product_list">productList</string>
+    <string name="store_name_child">storeName</string>
+    <string name="product_list">productList</string>
+    <string name="order_list">ordersList</string>
 
     <!-- Labels & stuff-->
     <string name="app_name">CSCB_Project</string>

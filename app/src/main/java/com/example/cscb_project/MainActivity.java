@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
 //                //Log.w("warning", "loadPost:onCancelled", error.toException());
 //            }
 //        });
-        DatabaseReference storesRef = database.getReference(getString(R.string.stores_path));
-        Store store = new Store("test123");
-        String key = storesRef.push().getKey();
-        storesRef.child(key).setValue(store);
+//        DatabaseReference storesRef = database.getReference(getString(R.string.stores_path));
+//        Store store = new Store("test123");
+//        String key = storesRef.push().getKey();
+//        storesRef.child(key).setValue(store);
 
     }
 

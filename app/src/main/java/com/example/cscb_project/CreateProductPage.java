@@ -19,8 +19,8 @@ public class CreateProductPage extends AppCompatActivity {
     public static final String empty_brand_error = "Please enter a brand";
     public static final String empty_price_error = "Please enter a price";
     public static final String unexpected_error = "Uh oh - unexpected error";
-    public static final String initial_message = "Please enter your product's information ^_^";
-    public static final String success_message = "Successfully added new product! ^_____________^";
+    public static final String initial_message = "Please enter your product's information";
+    public static final String success_message = "Successfully added new product!";
 
     private DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     private String storeID;
