@@ -42,13 +42,13 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String id = snapshot.getKey();
+                String id = snapshot.child("Orders").child(list.get(position)).getKey();
                 String other = snapshot.child("Orders").child(list.get(position)).child("storeID").getValue(String.class);
                 String storeName = snapshot.child("Stores").child(other).child("storeName").getValue(String.class);
-                String status = snapshot.child("Orders").child(list.get(position)).child("complete").getValue(String.class);
+                Boolean status = snapshot.child("Orders").child(list.get(position)).child("complete").getValue(Boolean.class);
                 holder.idField.setText(id);
                 holder.otherField.setText(storeName);
-                holder.statusField.setText(status);
+                holder.statusField.setText(String.valueOf(status));
 
             }
             @Override
