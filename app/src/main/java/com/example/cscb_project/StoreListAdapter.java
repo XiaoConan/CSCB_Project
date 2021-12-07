@@ -32,7 +32,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
+        View view = inflater.inflate(R.layout.store_list_row, parent, false);
         return new MyViewHolder(view);
     }
 

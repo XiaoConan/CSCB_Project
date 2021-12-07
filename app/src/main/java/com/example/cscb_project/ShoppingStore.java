@@ -47,7 +47,7 @@ public class ShoppingStore extends AppCompatActivity {
 
         DatabaseReference storeRef = FirebaseDatabase.getInstance().getReference("Stores").child(storeID).child("productList");
 
-        storeRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        storeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 productIDs = new ArrayList<>();

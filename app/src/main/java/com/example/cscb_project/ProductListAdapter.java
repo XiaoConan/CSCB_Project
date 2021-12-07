@@ -55,7 +55,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         DatabaseReference productRef = FirebaseDatabase.getInstance().getReference("Products").child(list.get(position));
 
-        productRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        productRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String name = snapshot.child("name").getValue(String.class);
@@ -63,7 +63,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 String brand = snapshot.child("brand").getValue(String.class);
                 holder.productPrice.setText(brand);
                 Double d = snapshot.child("price").getValue(Double.class);
-                String price = Double.toString(d);
+                String price = "$" + Double.toString(d);
                 holder.productBrand.setText(price);
                 holder.myLayout.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -36,7 +36,7 @@ public class Order {
     }
 
     public double getSubtotal() {
-        return subtotal;
+        return Math.round(subtotal*100.0)/100.0;
     }
 
     public void setSubtotal(double subtotal) {

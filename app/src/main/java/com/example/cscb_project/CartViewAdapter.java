@@ -10,12 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyViewHolder> {
     ArrayList<Order> products;
     Context context;
     String myAccount;
+    DecimalFormat df = new DecimalFormat("#.00");
 
     public CartViewAdapter(ArrayList<Order> products, Context context, String myAccount) {
         this.products = products;
@@ -36,10 +38,11 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyView
         String name = products.get(position).getName();
         holder.productName.setText(name);
         int amount = products.get(position).getQuantity();
-        String amountS = String.valueOf(amount);
+        String amountS = String.valueOf(amount) + "x";
         holder.productAmount.setText(amountS);
         Double subtotal = products.get(position).getSubtotal();
-        String subtotalS = String.valueOf(subtotal);
+
+        String subtotalS = "$" + df.format(subtotal);
         holder.subtotal.setText(subtotalS);
     }
 

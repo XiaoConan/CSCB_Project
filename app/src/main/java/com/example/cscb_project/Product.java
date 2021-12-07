@@ -15,7 +15,7 @@ public class Product {
 
     public Product(String name, String brand, double price, String storeID) {
         this.name = name;
-        this.price = price;
+        this.price = Math.round(price*100.0)/100.0;;
         this.brand = brand;
         this.storeID = storeID;
     }
@@ -43,7 +43,7 @@ public class Product {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.price = Math.round(price*100.0)/100.0;;
     }
 
     public void setStoreID(String store) { this.storeID = store; }

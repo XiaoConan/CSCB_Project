@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/drawable/bmazon_background.xml" value="0.21302083333333333" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/drawable/ic_bmazon.xml" value="0.37552083333333336" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37552083333333336" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/drawable/scrollbar.xml" value="0.37552083333333336" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_cart_page.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_customer_page.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_login_page.xml" value="0.33" />
@@ -10,20 +14,24 @@
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_order_detail.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_owner_orders_page.xml" value="0.67" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_owner_product_page.xml" value="0.33" />
-        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_shopping_store.xml" value="0.67" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_shopping_store.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_sign_up_page.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_list.xml" value="0.33" />
         <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/activity_store_owner_page.xml" value="0.25" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/my_cart_view.xml" value="0.5" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/my_row.xml" value="0.5" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/owner_product_row.xml" value="0.67" />
+        <entry key="..\:/Not Yaoi/2021/Fall/CSCB07 (Software Design - Java)/AndroidStudioProjects/CSCB_Project/app/src/main/res/layout/product_list_view.xml" value="0.5" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_cart_page.xml" value="0.536" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_create_product_page.xml" value="0.5038419319429198" />
-        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_customer_order_page.xml" value="0.4" />
+        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_customer_order_page.xml" value="0.264" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_customer_page.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_display_successful_message.xml" value="0.264" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_login_page.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_order_detail.xml" value="0.536" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_owner_orders_page.xml" value="0.4" />
-        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_owner_product_page.xml" value="0.4421768707482993" />
+        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_owner_product_page.xml" value="0.536" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_sent_to_cart_successfully.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_shopping_store.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_sign_up_page.xml" value="0.4" />
@@ -31,8 +39,7 @@
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_store_managing_page.xml" value="0.536" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/activity_store_owner_page.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/customer_order_view.xml" value="0.42539388322520855" />
-        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/my_cart_view.xml" value="0.4" />
-        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/my_cart_view1.xml" value="0.264" />
+        <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/my_cart_view.xml" value="0.264" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/my_row.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/my_row1.xml" value="0.4" />
         <entry key="..\:/Users/Hsupe/OneDrive/Desktop/CSCB07Lab/WorkingCopy/app/src/main/res/layout/owner_product_row.xml" value="0.4040778498609824" />

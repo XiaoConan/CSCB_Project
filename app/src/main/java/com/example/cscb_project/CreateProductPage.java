@@ -78,8 +78,4 @@ public class CreateProductPage extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onPrepareSupportNavigateUpTaskStack(@NonNull TaskStackBuilder builder) {
-        super.onPrepareSupportNavigateUpTaskStack(builder);
-    }
 }

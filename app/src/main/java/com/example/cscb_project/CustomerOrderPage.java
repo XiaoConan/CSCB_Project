@@ -36,7 +36,7 @@ public class CustomerOrderPage extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference orderRef = database.getReference("Orders");
 
-        orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        orderRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 productIDs = new ArrayList<>();

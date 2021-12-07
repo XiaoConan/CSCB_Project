@@ -51,7 +51,7 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
         holder.productAmount.setText(amountS);
 
         DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders");
-        orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        orderRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String status = snapshot.child("complete").getValue(String.class);
