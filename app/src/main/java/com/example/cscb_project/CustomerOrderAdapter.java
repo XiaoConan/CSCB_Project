@@ -1,5 +1,6 @@
 package com.example.cscb_project;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,26 +37,25 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomerOrderAdapter.MyViewHolder holder, int position) {
-//        String name = products.get(position);
-//        holder.productName.setText(name);
-//        int amount= quantity.get(position);
-//        String amountS = String.valueOf(amount);
-//        holder.productAmount.setText(amountS);
-//
-//        DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders");
-//        orderRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-////                String status = snapshot.child("complete").getValue(String.class);
-////                holder.textStatus.setText(status);
-////                String brand = snapshot.child("brand").getValue(String.class);
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+    public void onBindViewHolder(@NonNull CustomerOrderAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String id = snapshot.getKey();
+                String other = snapshot.child("Orders").child(list.get(position)).child("storeID").getValue(String.class);
+                String storeName = snapshot.child("Stores").child(other).child("storeName").getValue(String.class);
+                String status = snapshot.child("Orders").child(list.get(position)).child("complete").getValue(String.class);
+                holder.idField.setText(id);
+                holder.otherField.setText(storeName);
+                holder.statusField.setText(status);
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override

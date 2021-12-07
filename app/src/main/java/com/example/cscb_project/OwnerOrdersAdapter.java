@@ -10,6 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.MyViewHolder> {
@@ -31,12 +37,23 @@ public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference("Orders").child(list.get(position));
+        orderRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String id = snapshot.getKey();
+                String other = snapshot.child("customerID").getValue(String.class);
+                String status = snapshot.child("complete").getValue(String.class);
+                holder.idField.setText(id);
+                holder.otherField.setText(other);
+                holder.statusField.setText(status);
 
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-
-
-
-
+            }
+        });
 
     }
 
