@@ -25,12 +25,10 @@ import java.util.Map;
 public class ShoppingStore extends AppCompatActivity {
     public static final String empty_cart_error = "Your cart is empty!";
     public static final String success_message = "Order sent successfully!";
-    String myAccount;
-    String storeID;
+    String myAccount, storeID;
     ArrayList<String> productIDs;
-    RecyclerView productView;
+    RecyclerView productView, cartView;
     Context context;
-    RecyclerView cartView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

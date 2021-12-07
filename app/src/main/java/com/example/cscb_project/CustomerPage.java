@@ -32,8 +32,9 @@ public class CustomerPage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goMyOrders(View view){
+    public void goMyOrders(View view) {
         Intent intent = new Intent(this, CustomerOrderPage.class);
+        intent.putExtra(LoginPage.EXTRA_MESSAGE, username);
         startActivity(intent);
     }
 

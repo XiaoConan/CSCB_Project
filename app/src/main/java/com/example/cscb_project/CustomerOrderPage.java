@@ -21,40 +21,36 @@ import java.util.ArrayList;
 
 public class CustomerOrderPage extends AppCompatActivity {
     String myAccount;
-    ArrayList<String> productIDs;
-    ArrayList<Integer> quantity;
+    ArrayList<String> orderIDs;
     RecyclerView recyclerView;
-    Context context = this;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_order_page);
-        //get user info and store info from intent
+
         Intent intent = getIntent();
         myAccount = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference orderRef = database.getReference("Orders");
 
-        orderRef.addValueEventListener(new ValueEventListener() {
+        recyclerView = findViewById(R.id.cOrdersDisplay);
+        context = this;
+
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference(getString(R.string.users_path));
+        DatabaseReference orderListRef =  usersRef.child(myAccount).child(getString(R.string.order_list));
+
+        orderListRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                productIDs = new ArrayList<>();
+                orderIDs = new ArrayList<>();
 
                 for(DataSnapshot ds: snapshot.getChildren()) {
-                    if (ds.child("customerID").getKey().equals(myAccount)){
-                        String productID = ds.getKey();
-                        int num = (int) ds.getValue();
-                        productIDs.add(productID);
-                        quantity.add(num);
-                    }
-
+                    String orderID = ds.getKey();
+                    orderIDs.add(orderID);
                 }
 
-                recyclerView = findViewById(R.id.cOrdersDisplay);
-
-                CustomerOrderAdapter myAdapter = new CustomerOrderAdapter(context, productIDs, quantity, myAccount);
-                //recyclerView.setAdapter(myAdapter);
+                CustomerOrderAdapter myAdapter = new CustomerOrderAdapter(context, orderIDs);
+                recyclerView.setAdapter(myAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
             }
@@ -64,7 +60,6 @@ public class CustomerOrderPage extends AppCompatActivity {
             }
         });
 
-//        //TextView storeName = findViewById(R.id.currentStoreView);
-//        //storeName.setText(storeID);
+
     }
 }

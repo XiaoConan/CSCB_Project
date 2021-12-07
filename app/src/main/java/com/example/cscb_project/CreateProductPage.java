@@ -24,7 +24,6 @@ public class CreateProductPage extends AppCompatActivity {
 
     private DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     private String storeID;
-    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,6 @@ public class CreateProductPage extends AppCompatActivity {
         display(initial_message);
 
         Intent intent = getIntent();
-        username = intent.getStringExtra(LoginPage.EXTRA_MESSAGE);
         storeID = intent.getStringExtra(StoreList.CURRENT_STORE);
     }
 

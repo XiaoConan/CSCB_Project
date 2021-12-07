@@ -23,7 +23,7 @@ public class StoreList extends AppCompatActivity {
     ArrayList<String> stores;
     ArrayList<String> ids;
     RecyclerView recyclerView;
-    Context con = this;
+    Context con;
 
 
     @Override
@@ -32,6 +32,7 @@ public class StoreList extends AppCompatActivity {
         setContentView(R.layout.activity_store_list);
 
         recyclerView = findViewById(R.id.allStores);
+        con = this;
 
         //get myAccount info from intent
         Intent intent = getIntent();
