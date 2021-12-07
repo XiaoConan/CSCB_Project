@@ -2,7 +2,6 @@ package com.example.cscb_project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,8 @@ import java.util.ArrayList;
 public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdapter.MyViewHolder> {
     ArrayList<String> list; // of orderIDs
     Context context;
+    public static final String complete_message = "Complete";
+    public static final String incomplete_message = "Incomplete";
 
     public CustomerOrderAdapter(Context context, ArrayList<String> orderIDs) {
         this.context = context;
@@ -43,13 +44,21 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String id = snapshot.child("Orders").child(list.get(position)).getKey();
+                String displayID = "#" + id.substring(id.length() - 8);
+
                 String other = snapshot.child("Orders").child(list.get(position)).child("storeID").getValue(String.class);
                 String storeName = snapshot.child("Stores").child(other).child("storeName").getValue(String.class);
-                Boolean status = snapshot.child("Orders").child(list.get(position)).child("complete").getValue(Boolean.class);
-                holder.idField.setText(id);
-                holder.otherField.setText(storeName);
-                holder.statusField.setText(String.valueOf(status));
 
+                Boolean status = snapshot.child("Orders").child(list.get(position)).child("complete").getValue(Boolean.class);
+
+                holder.idField.setText(displayID);
+                holder.otherField.setText(storeName);
+
+                if (status)  {
+                    holder.statusField.setText(complete_message);
+                } else {
+                    holder.statusField.setText(incomplete_message);
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
