@@ -34,7 +34,7 @@ public class StoreOwnerPage extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 String id = snapshot.child("storeID").getValue(String.class);
                 storeID = id;
-                searchStoreName(id);
+                searchStoreName();
             }
 
             @Override
@@ -45,7 +45,13 @@ public class StoreOwnerPage extends AppCompatActivity {
 
     }
 
-    public void searchStoreName(String storeID) {
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        searchStoreName();
+    }
+
+    public void searchStoreName() {
         DatabaseReference storesRef = FirebaseDatabase.getInstance().getReference(getString(R.string.stores_path));
 
         storesRef.child(storeID).child("storeName").addListenerForSingleValueEvent(new ValueEventListener() {
