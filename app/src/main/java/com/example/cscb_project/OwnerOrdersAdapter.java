@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -47,6 +48,12 @@ public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.
                 holder.idField.setText(id);
                 holder.otherField.setText(other);
                 holder.statusField.setText(status);
+                holder.myLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        orderRef.child("complete").setValue("true");
+                    }
+                });
 
             }
             @Override
@@ -64,12 +71,14 @@ public class OwnerOrdersAdapter extends RecyclerView.Adapter<OwnerOrdersAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView idField, otherField, statusField;
+        ConstraintLayout myLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             idField = itemView.findViewById(R.id.orderField);
             otherField = itemView.findViewById(R.id.otherField);
             statusField = itemView.findViewById(R.id.status);
+            myLayout = itemView.findViewById(R.id.customerOrderView);
         }
     }
 }
