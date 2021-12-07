@@ -42,7 +42,7 @@ public class CustomerOrderPage extends AppCompatActivity {
                 productIDs = new ArrayList<>();
 
                 for(DataSnapshot ds: snapshot.getChildren()) {
-                    if (ds.child("customerID").getKey().equals("aSD")){
+                    if (ds.child("customerID").getKey().equals(myAccount)){
                         String productID = ds.getKey();
                         int num = (int) ds.getValue();
                         productIDs.add(productID);

@@ -53,13 +53,13 @@ public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyView
         TextView productName;
         TextView productAmount;
         TextView subtotal;
-        ConstraintLayout myLayout;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             productName = itemView.findViewById(R.id.cartProductName);
             productAmount = itemView.findViewById(R.id.cartProductAmount);
             subtotal = itemView.findViewById(R.id.cartProductPrice);
-            myLayout = itemView.findViewById(R.id.myCartView);
+
         }
     }
 }

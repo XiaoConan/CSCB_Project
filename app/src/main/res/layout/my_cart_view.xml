@@ -4,65 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/myCartView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        app:layout_constraintBottom_toTopOf="parent"
-        tools:layout_editor_absoluteX="65dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="@android:drawable/progress_horizontal"
+        android:backgroundTint="@color/blue_light"
+        app:cardBackgroundColor="@color/blue_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="516dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="374dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/scrollbar"
+        android:backgroundTint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/cartProductName"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="50dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
             android:text="TextView"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cartProductAmount"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/cartProductAmount"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="50dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="44dp"
             android:text="TextView"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cartProductPrice"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.511" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/cartProductPrice"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="60dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="20dp"
             android:text="TextView"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.985"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.511" />

@@ -8,8 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productView"
-        android:layout_width="411dp"
-        android:layout_height="323dp"
+        android:layout_width="409dp"
+        android:layout_height="296dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,38 +18,38 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartView"
-        android:layout_width="411dp"
-        android:layout_height="281dp"
+        android:layout_width="400dp"
+        android:layout_height="252dp"
         android:layout_marginTop="12dp"
         app:layout_constraintBottom_toTopOf="@+id/sentOrder"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productView"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.836" />
 
     <Button
         android:id="@+id/sentOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/label_submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/setOrderInfo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="185dp"
+        android:layout_height="38dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/sentOrder"
         app:layout_constraintTop_toBottomOf="@+id/cartView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -60,9 +60,9 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/cartView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
