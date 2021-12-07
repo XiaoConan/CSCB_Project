@@ -1,6 +1,5 @@
 package com.example.cscb_project;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -77,8 +74,8 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
         TextView textStatus;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            productName = itemView.findViewById(R.id.orderProductName);
-            productAmount = itemView.findViewById(R.id.orderProductAmount);
+            productName = itemView.findViewById(R.id.orderField);
+            productAmount = itemView.findViewById(R.id.otherField);
             textStatus = itemView.findViewById(R.id.status);
         }
     }

@@ -48,7 +48,7 @@
     <string name="button_store">Manage My Store</string>
     <string name="button_products">View Your Products</string>
     <string name="button_orders">My Orders</string>
-    <string name="label_ownerOrders">My Orders</string>
+    <string name="label_ownerOrders">Pending Orders</string>
     <string name="button_shop">Browse Stores</string>
     <string name="button_store_orders">Pending Orders</string>
     <string name="label_cart">My Cart</string>
@@ -60,20 +60,8 @@
     <string name="label_editStore">Edit Store Name</string>
     <string name="label_ownerProducts">My Products</string>
     <string name="label_submit">Place Order</string>
-
-
-
-    <!-- Haven't really gotten to these yet-->
     <string name="label_complete">Complete</string>
+    <string name="label_setComplete">Complete</string>
+    <string name="label_orderDetails">Order Details</string>
 
-
-    <string name="textview_total_price">Total price</string>
-    <string name="button_AddToCart">Add to Cart</string>
-    <string name="store">Store</string>
-
-    <string name="your_order_sent_successfully">Your Order Sent Successfully</string>
-    <string name="your_order_add_to_cart_successfully">Your Order Added To Cart Successfully</string>
-
-    <string name="no_products_available">No products available, please add products in </string>
-    <string name="statusString">Status:</string>
 </resources>

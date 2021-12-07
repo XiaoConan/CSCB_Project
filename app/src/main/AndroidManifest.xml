@@ -78,6 +78,17 @@
         </activity>
 
         <activity
+            android:name=".OrderDetail"
+            android:exported="false"
+            android:label="@string/label_orderDetails"
+            android:launchMode="singleTop"
+            android:parentActivityName=".OwnerOrdersPage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".OwnerOrdersPage" />
+        </activity>
+
+        <activity
             android:name=".StoreList"
             android:exported="false"
             android:label="@string/label_storeList"
