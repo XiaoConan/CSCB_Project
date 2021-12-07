@@ -27,7 +27,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     ArrayList<Order> cart;
     RecyclerView cartView;
     CartViewAdapter cartAdapter;
-    DecimalFormat df = new DecimalFormat("#.00");
+    DecimalFormat df = new DecimalFormat("#0.00");
 
 
     public ProductListAdapter(Context ct, ArrayList<String> s1, RecyclerView recyclerView){

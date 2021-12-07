@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CartViewAdapter extends RecyclerView.Adapter<CartViewAdapter.MyViewHolder> {
     ArrayList<Order> cart;
     Context context;
-    DecimalFormat df = new DecimalFormat("#.00");
+    DecimalFormat df = new DecimalFormat("#0.00");
 
     public CartViewAdapter(ArrayList<Order> products, Context context) {
         this.cart = products;
