@@ -1,53 +1,78 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Put points here ...
+	- Complete some basic activity functions to achieve the requirements for User Stories 6 (both store owner and customer account interface).
+	- Reviewed and checked the codes from other group members.
+	- Improved the layout design and build interaction between codes and interface.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Finish up all the activities functions to satisfy all requirements for User Story 6.
+	- Make sure the User Story requirements can be achieved by manipulating the application interface.
+	- Peer-reviewed the code from other group members.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the Android Studios and it's layout functions.
   
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Decided the final data saving format and put some related test datas to the firebase.
+	- Complete the activities that achieved the requirements for User Stores 3 and 4.
+	- Give thoughtful advices and help completing other User Stores.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Make the application interface more organized and understandable.
+	- Make sure all User Story requirements can be achieved by manipulating the application interface.
+	- Peer-reviewed the code from other group members.
+	- Create more datas in firebase to test each function of applications.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Hard to come up with a not nested data saving format and build connections between different datas types (Eg. Connection between Users and Orders).
+	- Lack of understanding to the firebase and Android Studios.
   
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Put points here ...
+	- Solved the problem of reading and writing data to firebase.
+	- Finished the activities to perform functions required for User Stories 1 and 5 (Login Part).
+	- Give thoughtful advices and help others building interations between codes and interfaces.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Make the application interface more organized and understandable.
+	- Make sure all User Story requirements can be achieved by manipulating the application interface.
+	- Peer-reviewed the code from other group members.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase and Android Studios.
+	- Hard to display dynamic storage infomation in the interface.
   
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Solved the problem of reading and writing data to firebase.
+	- Finished the activities to perform functions required for User Stories 7 and 8.
+	- Give thoughtful advices and help completing other User Stores.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Make sure all User Story requirements can be achieved by manipulating the application interface.
+	- Peer-reviewed the code from other group members.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase and Android Studios.
+	- Hard to display dynamic storage infomation in the interface.
 
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Put points here ...
+	- Finished activity functions to ahieve the requirements for User Stories 1(Sign Up part).
+	- Complete most activity functions to achieve the requirements for User Store 2.
+	- Peer-reviewed the code from other group members.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Finish all activities that achieve the requirements for User Stories 1,2.
+	- Make sure all User Story requirements can be achieved by manipulating the application interface.
+	- Peer-reviewed the code from other group members.
 
 Any impediments or stumbling blocks?
+	- Lack of understanding to the firebase and Android Studios.
+	- Hard to display dynamic storage infomation in the interface.
