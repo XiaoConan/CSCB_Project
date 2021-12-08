@@ -9,7 +9,8 @@ What are you planning on doing today?
 	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase.
+	- Hard to come up with a clear interface design due to limited understanding to Android Studios layout.
   
 Name: Irene Cao
 
@@ -22,7 +23,7 @@ What are you planning on doing today?
 	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase and Android Studios.
   
 Name: Jerry Han
 
@@ -35,7 +36,8 @@ What are you planning on doing today?
 	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase.
+	- Hard to come up with a clear interface design due to limited understanding to Android Studios layout.
   
 Name: Sean Xiao
 
@@ -48,7 +50,7 @@ What are you planning on doing today?
 	- Explore and work on how we can save and read data from firebase.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase and Android Studios.
 
 Name: Sunny Jin
 
@@ -57,7 +59,8 @@ What have you done since yesterday?
 	- Learned some of it's functions and think of how to use it to help the application.
 
 What are you planning on doing today?
-	- Create some activities in Android Studios that perform the singup functions.
+	- Create some activities in Android Studios that perform the SingUp functions.
 	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
+	- Lack of understanding to the firebase and Android Studios.
