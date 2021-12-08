@@ -3,6 +3,7 @@ Name: Haoming Hu
 What have you done since yesterday?
 	- Figured out how to build connections between Githubs and Android Studios.
 	- Linked the application to the Github to achieve version control.
+	- Figured out how commit/push/merge works for version control.
 	
 What are you planning on doing today?
 	- Go over all the user stories and come up with a brief solution for each.
@@ -17,6 +18,7 @@ Name: Irene Cao
 What have you done since yesterday?
 	- Figured out how to build connections between Githubs and Android Studios.
 	- Linked the application to the Github to achieve version control.
+	- Figured out how commit/push/merge works for version control.
 
 What are you planning on doing today?
 	- Go over all the user stories and come up with a brief solution for each.
@@ -31,6 +33,7 @@ Name: Jerry Han
 What have you done since yesterday?
 	- Figured out how to build connections between Githubs and Android Studios.
 	- Linked the application to the Github to achieve version control.
+	- Figured out how commit/push/merge works for version control.
 	
 What are you planning on doing today?
 	- Go over all the user stories and come up with a brief solution for each.
@@ -45,6 +48,7 @@ Name: Sean Xiao
 What have you done since yesterday?
 	- Figured out how to build connections between Githubs and Android Studios.
 	- Linked the application to the Github to achieve version control.
+	- Figured out how commit/push/merge works for version control.
 
 What are you planning on doing today?
 	- Go over all the user stories and come up with a brief solution for each.
@@ -59,6 +63,7 @@ Name: Sunny Jin
 What have you done since yesterday?
 	- Figured out how to build connections between Githubs and Android Studios.
 	- Linked the application to the Github to achieve version control.
+	- Figured out how commit/push/merge works for version control.
 
 What are you planning on doing today?
 	- Go over all the user stories and come up with a brief solution for each.
