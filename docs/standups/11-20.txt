@@ -1,0 +1,69 @@
+Name: Haoming Hu
+
+What have you done since yesterday?
+	- Scheduled times for all daily standup meetings.
+	- Decided Where the project will be Version Controlled (Gibhub).
+	- Helped come up with working agreements.
+	
+What are you planning on doing today?
+	- Create a Gibhub account and learn about how it functions.
+	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+	
+Any impediments or stumbling blocks?
+	- Lack of understanding of gibhub
+  
+Name: Irene Cao
+
+What have you done since yesterday?
+	- Scheduled times for all daily standup meetings
+	- Decided Where the project will be Version Controlled (Gibhub)
+	- Help come up with working agreements.
+
+What are you planning on doing today?
+	- Create a Gibhub account and learn about how it functions.
+	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+
+Any impediments or stumbling blocks?
+	- Lack of understanding of gibhub
+  
+Name: Jerry Han
+
+What have you done since yesterday?
+	- Scheduled times for all daily standup meetings
+	- Decided Where the project will be Version Controlled (Gibhub)
+	- Help come up with working agreements.
+
+What are you planning on doing today?
+	- Create a Gibhub account and learn about how it functions.
+	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+
+Any impediments or stumbling blocks?
+	- Lack of understanding of gibhub
+  
+Name: Sean Xiao
+
+What have you done since yesterday?
+	- Scheduled times for all daily standup meetings
+	- Decided Where the project will be Version Controlled (Gibhub)
+	- Help come up with working agreements.
+
+What are you planning on doing today?
+	- Create a Gibhub account and learn about how it functions.
+	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+
+Any impediments or stumbling blocks?
+	- Lack of understanding of gibhub
+
+Name: Sunny Jin
+
+What have you done since yesterday?
+	- Scheduled times for all daily standup meetings
+	- Decided Where the project will be Version Controlled (Gibhub)
+	- Help come up with working agreements.
+
+What are you planning on doing today?
+	- Create a Gibhub account and learn about how it functions.
+	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+
+Any impediments or stumbling blocks?
+	- Lack of understanding of gibhub
