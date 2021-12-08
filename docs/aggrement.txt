@@ -10,6 +10,9 @@ Group Members:
 Primary Method of communication: Discord
 
 Sprint Length: 1 weeks (Nov 15th – Dec 3rd, 3 in total)
+    - Sprint 1: Explore how Gibhub works and create a brief structure for application.
+    - Sprint 2: Plan and analyze solving every user story, create interface layouts and expore how Firebase works.
+    - Sprint 3: Finish the application to satisfy all user story requirements, testing, debugging and make final packaging.
 
 Planning session: Friday at 12:00 PM EST
 
