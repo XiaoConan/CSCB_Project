@@ -1,1 +1,12 @@
-
+Group Members:
+    Haoming Hu
+    Irene Cao
+    Jerry Han (Scrum Master)
+    Sean Xiao
+    Sunny Jin
+Primary Method of communication: Discord
+Scheduled times for all daily standup meetings:
+    Saturday at 2:00 PM EST
+    Tuesday at 2:00 PM EST
+    Thursday at 2:00 PM EST
+Where the project will be Version Controlled: Gibhub
