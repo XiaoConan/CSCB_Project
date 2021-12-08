@@ -1,69 +1,69 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Scheduled times for all daily standup meetings.
-	- Decided Where the project will be Version Controlled (Gibhub).
-	- Helped come up with working agreements.
+	- Figured out how to build connections between Githubs and Android Studios.
+	- Linked the application to the Github to achieve version control.
 	
 What are you planning on doing today?
-	- Create a Gibhub account and learn about how it functions.
-	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+	- Go over all the user stories and come up with a brief solution for each.
+	- Start working on the creation of android application for the project.
 	
 Any impediments or stumbling blocks?
-	- Lack of understanding to Gibhub
+	- This planning process runs smoothly, we all have a clear understanding of what we need to achieve.
+	- Lack of understanding to Gibhub and Android Studios.
   
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Scheduled times for all daily standup meetings
-	- Decided Where the project will be Version Controlled (Gibhub)
-	- Help come up with working agreements.
+	- Figured out how to build connections between Githubs and Android Studios.
+	- Linked the application to the Github to achieve version control.
 
 What are you planning on doing today?
-	- Create a Gibhub account and learn about how it functions.
-	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+	- Go over all the user stories and come up with a brief solution for each.
+	- Start working on the creation of android application for the project.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding to Gibhub
+	- This planning process runs smoothly, we all have a clear understanding of what we need to achieve.
+	- Lack of understanding to Gibhub and Android Studios.
   
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Scheduled times for all daily standup meetings
-	- Decided Where the project will be Version Controlled (Gibhub)
-	- Help come up with working agreements.
-
+	- Figured out how to build connections between Githubs and Android Studios.
+	- Linked the application to the Github to achieve version control.
+	
 What are you planning on doing today?
-	- Create a Gibhub account and learn about how it functions.
-	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+	- Go over all the user stories and come up with a brief solution for each.
+	- Start working on the creation of android application for the project.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding to Gibhub
+	- This planning process runs smoothly, we all have a clear understanding of what we need to achieve.
+	- Lack of understanding to Gibhub and Android Studios.
   
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Scheduled times for all daily standup meetings
-	- Decided Where the project will be Version Controlled (Gibhub)
-	- Help come up with working agreements.
+	- Figured out how to build connections between Githubs and Android Studios.
+	- Linked the application to the Github to achieve version control.
 
 What are you planning on doing today?
-	- Create a Gibhub account and learn about how it functions.
-	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+	- Go over all the user stories and come up with a brief solution for each.
+	- Start working on the creation of android application for the project.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding to Gibhub
+	- This planning process runs smoothly, we all have a clear understanding of what we need to achieve.
+	- Lack of understanding to Gibhub and Android Studios.
 
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Scheduled times for all daily standup meetings
-	- Decided Where the project will be Version Controlled (Gibhub)
-	- Help come up with working agreements.
+	- Figured out how to build connections between Githubs and Android Studios.
+	- Linked the application to the Github to achieve version control.
 
 What are you planning on doing today?
-	- Create a Gibhub account and learn about how it functions.
-	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
+	- Go over all the user stories and come up with a brief solution for each.
+	- Start working on the creation of android application for the project.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding to Gibhub
+	- This planning process runs smoothly, we all have a clear understanding of what we need to achieve.
+	- Lack of understanding to Gibhub and Android Studios.
