@@ -1,53 +1,71 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Put points here ...
-
+	- Finished activities functions to satisfy all requirements for User Store6.
+	- Build interaction between codes and the application interfaces.
+	- Peer-reviewed the code from other group members.
+	
 What are you planning on doing today?
-	- Put points here ...
+	- Debug and solve last potential problems.
+	- Make the project more organized and submit the work.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Degugging is a long difficult process.
   
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Fnished and checked other activities functions to satisfy all User Stories requirements.
+	- Peer-reviewed the code from other group members and help solve their problems.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Test the application interface with existed datas.
+	- Debug and solve the last potential problems.
+	- Make the project more organized and submit the work.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Degugging is a long difficult process.
+	- Problem of reading boolean values from database.
   
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Put points here ...
+	- Fnished and checked activities functions to satisfy User Story requirements.
+	- Peer-reviewed the code from other group members.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Test the application interface with existed datas.
+	- Debug and solve the last potential problems.
+	- Make the project more organized and submit the work.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Degugging is a long difficult process.
+	- Problem of reading boolean values from database.
   
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Fnished and checked activities functions to satisfy User Story requirements.
+	- Peer-reviewed the code from other group members.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Debug and solve the last potential problems.
+	- Make the project more organized and submit the work.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Degugging is a long difficult process.
+	- Problem of reading boolean values from database.
 
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Put points here ...
+	- Finished all activities that achieve the requirements for User Stories 1,2.
+	- Build interaction between codes and the application interfaces.
+	- Peer-reviewed the code from other group members.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Debug and solve last potential problems.
+	- Make the project more organized and submit the work.
 
 Any impediments or stumbling blocks?
+	- Degugging is a long difficult process.
