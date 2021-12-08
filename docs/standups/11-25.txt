@@ -1,53 +1,71 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Put points here ...
+	- Provided thoughful ideas for the creation of the application.
+	- Listed all the components(classes, interfaces) we need to make the application function properly.
+	- Participate in coming up with plans to solve all user stories with the existing components(classes).
 
 What are you planning on doing today?
-	- Put points here ...
+	- Review and check the code done by other group members.
+	- Improving the basic classes with better design.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
   
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Provided thoughful ideas for the creation of the application.
+	- Start setting up the basic classes in Android Studios that we need for application.
+	- Participate in coming up with plans to solve all user stories with the existing components(classes).
 
 What are you planning on doing today?
-	- Put points here ...
+	- Improving the basic classes with better design.
+	- Work on building connections between classes to achieve different functions that the user stories required.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
   
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Put points here ...
+	- Provided thoughful ideas for the creation of the application.
+	- Listed all the components(classes, interfaces) we need to make the application function properly.
+	- Participate in coming up with plans to solve all user stories with the existing components(classes).
 
 What are you planning on doing today?
-	- Put points here ...
+	- Created the biref starting interface of the application.
+	- Review and check the code done by other group members.
+	- Improving the basic classes with better design.
+	
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
   
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Provided thoughful ideas for the creation of the application.
+	- Tried to work on how the application read and save datas.
+	- Participate in coming up with plans to solve all user stories with the existing components(classes).
 
 What are you planning on doing today?
-	- Put points here ...
+	- Review and check the code done by other group members.
+	- Work on reading and saving datas of the application to files.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
 
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Put points here ...
+	- Provided thoughful ideas for the creation of the application.
+	- Listed all the components(classes, interfaces) we need to make the application function properly.
+	- Participate in coming up with plans to solve all user stories with the existing components(classes).
 
 What are you planning on doing today?
-	- Put points here ...
+	- Review and check the code done by other group members.
+	- Improving the basic classes with better design.
 
 Any impediments or stumbling blocks?
+	- Lack of understanding to Gibhub and Android Studios.
