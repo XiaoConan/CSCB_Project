@@ -1,53 +1,77 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Put points here ...
+	- Learned about firebase's other methods/functions and how to use the "RecyclerView" layout in Andriod Studios.
+	- Finished the layout design part in Android Studios and creates the corresponding activities.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Work on the activities to display store owner/customer account interface after logging in successfully (parts of User Story 3 and 6 ).
+	- Peer-review the codes from other group members.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase.
+	- Limited understanding to Android Studios layout (hard to find suitable layout for the design).
   
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Tried to read and write some draft datas to firebase using the data format we came up.
+	- Complete the basic activity functions to achieve the requirements for User Stories 3 and 4.
+	- Reviewed the layout design and give thoughtful suggestions.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Solve the problem of reading and saving data to firebase.
+	- Finish up the activities that performs the requirements for User Stores 3 and 4.
+	- Peer-review the codes from group members.
+	- Make the data saving format more organized.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase (Particular read and save data).
   
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Put points here ...
+	- Come up with all interface layout diagrams of the application.
+	- Finished the layout design part in Android Studios and creates the corresponding activities.
+	- Tried to read and write some draft datas to firebase using the data format we came up.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Help solving the problem of reading data from firebase.
+	- Work on the activities to perform functions required for User Stories 1 and 5(About the Login part)
+	- Peer-review the codes from other group members.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase.
+	- Limited understanding to Android Studios layout (hard to find suitable layout for the design).
   
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Learned about how firebase functions in reading and saving data.
+	- Explored how to use the "RecyclerView" layout in Andriod Studios to display dynamic informations.
+	- Complete some basic activity functions to ahieve the requirements for User Stories 7,8.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Solve the problem of reading and saving data to firebase.
+	- Finish up the activities that performs the requirements for User Stores 7,8.
+	- Peer-review the codes from group members.
+	- Make the data saving format more organized.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to the firebase and Android Studios.
+	- Hard to deal with the onclick function of the "RecyclerView".
 
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Put points here ...
+	- Reviewed the layout design and give thoughtful suggestions.
+	- Complete some basic activity functions to ahieve the requirements for User Stories 1(Sign Up part).
+	- Explored how to use the "RecyclerView" layout in Andriod Studios.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Finish up the activities that performs the requirements for the SignUp function.
+	- Work on the activities to perform functions required for User Story 2 (display the product info in the store).
+	- Peer-view the codes from group members.
 
 Any impediments or stumbling blocks?
+	- Lack of understanding to the firebase and Android Studios.
