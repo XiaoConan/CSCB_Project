@@ -1,12 +1,41 @@
+Product Owner: Navinn Ravindaran
+
 Group Members:
-    Haoming Hu
-    Irene Cao
-    Jerry Han (Scrum Master)
-    Sean Xiao
-    Sunny Jin
+    - Haoming Hu
+    - Irene Cao
+    - Jerry Han (Scrum Master)
+    - Sean Xiao
+    - Sunny Jin
+    
 Primary Method of communication: Discord
+
+Sprint Length: 1 weeks (Nov 15th – Dec 3rd, 3 in total)
+
+Planning session: Friday at 12:00 PM EST
+
 Scheduled times for all daily standup meetings:
-    Saturday at 2:00 PM EST
-    Tuesday at 2:00 PM EST
-    Thursday at 2:00 PM EST
-Where the project will be Version Controlled: Gibhub
+    - Saturday at 2:00 PM EST
+    - Tuesday at 2:00 PM EST
+    - Thursday at 2:00 PM EST
+    
+Where the project will be Version Controlled: Github
+
+Working Agreements:
+    - The standup meeting will be once every two days.
+    - Work are best to be done before Tutorial.
+    - All work must be peer-reviewed.
+    - Listen with an open mind before you speak.
+    - Make meaningful comments.
+    - Encourage everyone to participate.
+    - Concentrate during working hours.
+    - Perform strong teamwork and have good communications.
+
+Agreement of when work is considered complete:
+    - All code are peer-reviewed and commented meaningfully
+    - All user stories can be performed by manipulating the application interface.
+    - The application interface must be easy to understand and use.
+
+Some existing dummy accounts:
+    - Stores Users: test2, store3, store1, store2, test3 (pw: test)
+    - Customer Users: test1 (pw: test), cust1 (pw: 111333)
+    - Or create your own
