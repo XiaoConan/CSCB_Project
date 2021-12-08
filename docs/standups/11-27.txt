@@ -1,53 +1,70 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Put points here ...
+	- Peer-reviewed the code from group members.
+	- Edited and add more features to the existing classes.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Create a Firebase account and learn about how it functions.
+	- Make connections between the firebase the Android application.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
+	- Confused on how to build connections with firebase.
   
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Edited and add more features to the existing classes.
+	- Created some basic activities in Android Studios that manipulates the existing classes to make the application function.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Create a Firebase account and learn about how it functions.
+	- Make connections between the firebase the Android application.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
+	- Confused on how to build connections with firebase.
   
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Put points here ...
+	- Peer-reviewed and edited the code from group members.
+	- Created some basic activities in Android Studios that manipulates the existing classes to make the application function.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Create a Firebase account and learn about how it functions.
+	- Make connections between the firebase the Android application.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
+	- Confused on how to build connections with firebase.
   
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Found the problem of reading/saving data using file.
+	- Peer-reviewed and edited the code from group members.
+	- Created some basic activities in Android Studios that manipulates the existing classes to make the application function.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Create a Firebase account and learn about how it functions.
+	- Make connections between the firebase the Android application.
 
 Any impediments or stumbling blocks?
-	- Put points here ...
+	- Lack of understanding to Gibhub and Android Studios.
+	- Confused on how to build connections with firebase.
 
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Put points here ...
+	- Peer-reviewed the code from group members.
+	- Edited and add more features to the existing classes.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Create a Firebase account and learn about how it functions.
+	- Make connections between the firebase the Android application.
 
 Any impediments or stumbling blocks?
+	- Lack of understanding to Gibhub and Android Studios.
+	- Confused on how to build connections with firebase.
