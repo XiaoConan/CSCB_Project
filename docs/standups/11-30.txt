@@ -1,10 +1,12 @@
 Name: Haoming Hu
 
 What have you done since yesterday?
-	- Put points here ...
-
+	- Successfully created a realtime database and connected it with the Android application.
+	- Learned some of it's functions and think of how to use it to help the application.
+	
 What are you planning on doing today?
-	- Put points here ...
+	- Design the layout of the application interface.
+	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
 	- Put points here ...
@@ -12,10 +14,12 @@ Any impediments or stumbling blocks?
 Name: Irene Cao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Successfully created a realtime database and connected it with the Android application.
+	- Learned some of it's functions and think of how to use it to help the application.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Work on the activities to perform functions required for User Stories 3 and 4(About the orders and order status in the store).
+	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
 	- Put points here ...
@@ -23,10 +27,12 @@ Any impediments or stumbling blocks?
 Name: Jerry Han
 
 What have you done since yesterday?
-	- Put points here ...
+	- Successfully created a realtime database and connected it with the Android application.
+	- Learned some of it's functions and think of how to use it to help the application.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Design the layout of the application interface.
+	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
 	- Put points here ...
@@ -34,10 +40,12 @@ Any impediments or stumbling blocks?
 Name: Sean Xiao
 
 What have you done since yesterday?
-	- Put points here ...
+	- Successfully created a realtime database and connected it with the Android application.
+	- Learned some of it's functions and think of how to use it to help the application.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Come up with the data saving format in the firebase.
+	- Explore and work on how we can save and read data from firebase.
 
 Any impediments or stumbling blocks?
 	- Put points here ...
@@ -45,9 +53,11 @@ Any impediments or stumbling blocks?
 Name: Sunny Jin
 
 What have you done since yesterday?
-	- Put points here ...
+	- Successfully created a realtime database and connected it with the Android application.
+	- Learned some of it's functions and think of how to use it to help the application.
 
 What are you planning on doing today?
-	- Put points here ...
+	- Create some activities in Android Studios that perform the singup functions.
+	- Come up with the data saving format in the firebase.
 
 Any impediments or stumbling blocks?
