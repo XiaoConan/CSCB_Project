@@ -10,7 +10,7 @@ What are you planning on doing today?
 	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
 	
 Any impediments or stumbling blocks?
-	- Lack of understanding of gibhub
+	- Lack of understanding to Gibhub
   
 Name: Irene Cao
 
@@ -24,7 +24,7 @@ What are you planning on doing today?
 	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding of gibhub
+	- Lack of understanding to Gibhub
   
 Name: Jerry Han
 
@@ -38,7 +38,7 @@ What are you planning on doing today?
 	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding of gibhub
+	- Lack of understanding to Gibhub
   
 Name: Sean Xiao
 
@@ -52,7 +52,7 @@ What are you planning on doing today?
 	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding of gibhub
+	- Lack of understanding to Gibhub
 
 Name: Sunny Jin
 
@@ -66,4 +66,4 @@ What are you planning on doing today?
 	- Join the reporsitory and add issues(User Stories) that needs to be worked on.
 
 Any impediments or stumbling blocks?
-	- Lack of understanding of gibhub
+	- Lack of understanding to Gibhub
